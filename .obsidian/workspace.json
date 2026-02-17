@@ -1,0 +1,215 @@
+{
+  "main": {
+    "id": "7a1a8fae17308a4e",
+    "type": "split",
+    "children": [
+      {
+        "id": "344fa81e379d0bd0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8493fdc4a87ad998",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "z. Ressources/Sliver/LabManual_Sliver.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "LabManual_Sliver"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "67c58e1acdc182bf",
+    "type": "split",
+    "children": [
+      {
+        "id": "661fb7e545b78049",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "754ccd302727f8a4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorateur de fichiers"
+            }
+          },
+          {
+            "id": "f46f4fbaedd03ea2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Rechercher"
+            }
+          },
+          {
+            "id": "1e9874cf847928bc",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Signets"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b32dfdb38e42f989",
+    "type": "split",
+    "children": [
+      {
+        "id": "6a777b4eb12ca5f4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dddbdd300acd05a9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "1. Objectives/Sans titre.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Rétrolien pour Sans titre"
+            }
+          },
+          {
+            "id": "8cfd6df85db67012",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "1. Objectives/Sans titre.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Liens sortants de Sans titre"
+            }
+          },
+          {
+            "id": "bb4aa2cfa0ca337c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Mots-clés"
+            }
+          },
+          {
+            "id": "5622dc9fa5075175",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Toutes les propriétés"
+            }
+          },
+          {
+            "id": "fd09a02ff1a6a6cf",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "1. Objectives/Sans titre.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Plan de Sans titre"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Ouvrir le sélecteur rapide": false,
+      "graph:Ouvrir la vue graphique": false,
+      "canvas:Créer une nouvelle toile": false,
+      "daily-notes:Ouvrir la note quotidienne": false,
+      "templates:Insérer le modèle": false,
+      "command-palette:Ouvrir la palette de commandes": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "8493fdc4a87ad998",
+  "lastOpenFiles": [
+    "z. Ressources/Slides/Attacking_and_Defending_ActiveDirectory - SlideNotes.pdf",
+    "z. Ressources/Slides/Attacking_and_Defending_ActiveDirectory.pdf",
+    "z. Ressources/Schema/The Lab Environment.png",
+    "z. Ressources/Schema/The Lab Environment_Attack_Paths.png",
+    "z. Ressources/Schema/ACL_Mindmap.png",
+    "z. Ressources/Lab-Manual/LabManualV1.5.pdf",
+    "b. PowerShell/What is PowerShell.md",
+    "z. Ressources/Tools/ToolsPassword.txt",
+    "z. Ressources/Tools/Tools.zip",
+    "z. Ressources/Tools",
+    "z. Ressources/Sliver/LabManual_Sliver.pdf",
+    "z. Ressources/Sliver/LabManual_Sliver.docx",
+    "z. Ressources/Sliver",
+    "z. Ressources/Slides",
+    "z. Ressources/IMG/Pasted image 20260211114825.png",
+    "z. Ressources/IMG/Pasted image 20260211113826.png",
+    "z. Ressources/IMG/Pasted image 20260211105416.png",
+    "z. Ressources/IMG/Pasted image 20260211105342.png",
+    "z. Ressources/IMG/Pasted image 20260211105211.png",
+    "z. Ressources/IMG/Pasted image 20260211104325.png",
+    "z. Ressources/IMG/Pasted image 20260211104154.png",
+    "a. Active Directory/Components/Components of AD.md",
+    "a. Active Directory/General Notes.md",
+    "1. Objectives/Context.md",
+    "Domain Enumeration/BloodHound/Sans titre.canvas",
+    "créez un lien.md",
+    "Bienvenue.md",
+    "Sans titre.md"
+  ]
+}
