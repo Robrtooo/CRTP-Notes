@@ -71,8 +71,19 @@
               "icon": "lucide-bookmark",
               "title": "Signets"
             }
+          },
+          {
+            "id": "95321f0a70b65fcf",
+            "type": "leaf",
+            "state": {
+              "type": "file-tree-view",
+              "state": {},
+              "icon": "sheets-in-box",
+              "title": "File Tree"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -162,6 +173,16 @@
               "icon": "lucide-list",
               "title": "Plan de Sans titre"
             }
+          },
+          {
+            "id": "59275578bdb9aef7",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
           }
         ]
       }
@@ -172,16 +193,19 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-importer:Open Importer": false,
       "switcher:Ouvrir le sélecteur rapide": false,
       "graph:Ouvrir la vue graphique": false,
       "canvas:Créer une nouvelle toile": false,
       "daily-notes:Ouvrir la note quotidienne": false,
       "templates:Insérer le modèle": false,
       "command-palette:Ouvrir la palette de commandes": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "file-tree-alternative:File Tree Alternative Plugin": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8493fdc4a87ad998",
+  "active": "95321f0a70b65fcf",
   "lastOpenFiles": [
     "z. Ressources/Slides/Attacking_and_Defending_ActiveDirectory - SlideNotes.pdf",
     "z. Ressources/Slides/Attacking_and_Defending_ActiveDirectory.pdf",
