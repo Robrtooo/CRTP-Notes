@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "b. PowerShell/What is PowerShell.md",
+                "file": "b. PowerShell/2. Good practices.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "What is PowerShell"
+              "title": "2. Good practices"
             }
           }
         ]
@@ -208,6 +208,8 @@
   },
   "active": "dd2d627db26a589c",
   "lastOpenFiles": [
+    "b. PowerShell/What is PowerShell.md",
+    "b. PowerShell/2. Good practices.md",
     "z. Ressources/IMG/Pasted image 20260227124251.png",
     "z. Ressources/IMG/Pasted image 20260227124057.png",
     "z. Ressources/Sliver/LabManual_Sliver.pdf",
@@ -217,7 +219,6 @@
     "z. Ressources/Schema/The Lab Environment_Attack_Paths.png",
     "z. Ressources/Schema/ACL_Mindmap.png",
     "z. Ressources/Lab-Manual/LabManualV1.5.pdf",
-    "b. PowerShell/What is PowerShell.md",
     "z. Ressources/Tools/ToolsPassword.txt",
     "z. Ressources/Tools/Tools.zip",
     "z. Ressources/Tools",
@@ -229,7 +230,6 @@
     "z. Ressources/IMG/Pasted image 20260211105416.png",
     "z. Ressources/IMG/Pasted image 20260211105342.png",
     "z. Ressources/IMG/Pasted image 20260211105211.png",
-    "z. Ressources/IMG/Pasted image 20260211104325.png",
     "a. Active Directory/Components/Components of AD.md",
     "a. Active Directory/General Notes.md",
     "1. Objectives/Context.md",

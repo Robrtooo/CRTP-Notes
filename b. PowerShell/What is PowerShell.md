@@ -94,4 +94,11 @@ You can still try to edit these and perform analysis again till it not get flag 
 > ![[Pasted image 20260227124251.png]]
 
 
+## NB !!!
+
+
+> [!Danger] IMPORTANT
+> It can be super usefull to keep only the fonctionnalities we need in the code.
+> -> Less chance to get flagged / Signature will change
+
 
