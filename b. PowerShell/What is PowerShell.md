@@ -101,4 +101,5 @@ You can still try to edit these and perform analysis again till it not get flag 
 [> It can be super usefull to keep only the fonctionnalities we need in the code.]()
 > -> Less chance to get flagged / Signature will change
 
-	[[[2. Good practices]] | Tools]
+	[[[2. Good practices ]] 
+	
