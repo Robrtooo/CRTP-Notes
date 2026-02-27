@@ -3,4 +3,6 @@
 
 ### Using Invoke-Mimikatz
 
-A Mimikatz is the most heavily flag script world wide , their are few manipulation to execute if you want to not ruin the whole current exploitatio
+A Mimikatz is the most heavily flag script world wide , their are few manipulation to execute if you want to not ruin the whole current exploitation. 
+Here's a checklist :
+![[Pasted image 20260227130540.png]]
