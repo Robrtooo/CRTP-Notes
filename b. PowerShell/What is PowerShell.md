@@ -73,4 +73,25 @@ Known as MZ.
 -> To avoid detection, you can still load your script from memory to perform AMSI bypass
 
 
-### BE SURE ABOUT WHAT YOU 
+### BE SURE ABOUT WHAT YOU DO !!
+
+
+Their are multiple tool that call help you to see what Defender may flag as malicious.
+
+* AMSITrigger
+* DefenderCheck
+
+These tool will scan binaries to see if it'll be flag.
+You can still try to edit these and perform analysis again till it not get flag as malicious.
+
+
+> [!NOTE] How to use
+> ![[Pasted image 20260227124057.png]]
+
+
+> [!NOTE] How to obfuscate 
+> Use tool Invoke-Obfuscation
+> ![[Pasted image 20260227124251.png]]
+
+
+
