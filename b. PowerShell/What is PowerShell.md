@@ -1,4 +1,4 @@
-
+[]()
 > [!NOTE] Microsoft Def
 > "PowerShell is a cross-platform task automation solution made up of a command-line shell, a scripting language, and a configuration management framework."
 > 
@@ -98,7 +98,7 @@ You can still try to edit these and perform analysis again till it not get flag 
 
 
 > [!Danger] IMPORTANT
-> It can be super usefull to keep only the fonctionnalities we need in the code.
+[> It can be super usefull to keep only the fonctionnalities we need in the code.]()
 > -> Less chance to get flagged / Signature will change
 
-
+	[[[2. Good practices]] | Tools]
