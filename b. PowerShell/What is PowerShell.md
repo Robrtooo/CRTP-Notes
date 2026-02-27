@@ -61,3 +61,16 @@ Known as MZ.
 - Possible to bypass to exec scripts.
 
 ![[Pasted image 20260211114825.png]]
+
+
+### Bypass Security security controls PS
+
+* Use **Invisi Shell**
+* Hook .NET Assembly instead of PS
+* Use CLR Profiler API to perform the hook
+
+
+-> To avoid detection, you can still load your script from memory to perform AMSI bypass
+
+
+### BE SURE ABOUT WHAT YOU 

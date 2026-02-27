@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "344fa81e379d0bd0",
+        "id": "bd8775e0be201a46",
         "type": "tabs",
         "children": [
           {
-            "id": "8493fdc4a87ad998",
+            "id": "dd2d627db26a589c",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "z. Ressources/Sliver/LabManual_Sliver.pdf"
+                "file": "b. PowerShell/What is PowerShell.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "LabManual_Sliver"
+              "icon": "lucide-file",
+              "title": "What is PowerShell"
             }
           }
         ]
@@ -82,12 +84,11 @@
               "title": "File Tree"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 369.5
   },
   "right": {
     "id": "b32dfdb38e42f989",
@@ -205,8 +206,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "95321f0a70b65fcf",
+  "active": "dd2d627db26a589c",
   "lastOpenFiles": [
+    "z. Ressources/Sliver/LabManual_Sliver.pdf",
     "z. Ressources/Slides/Attacking_and_Defending_ActiveDirectory - SlideNotes.pdf",
     "z. Ressources/Slides/Attacking_and_Defending_ActiveDirectory.pdf",
     "z. Ressources/Schema/The Lab Environment.png",
@@ -217,7 +219,6 @@
     "z. Ressources/Tools/ToolsPassword.txt",
     "z. Ressources/Tools/Tools.zip",
     "z. Ressources/Tools",
-    "z. Ressources/Sliver/LabManual_Sliver.pdf",
     "z. Ressources/Sliver/LabManual_Sliver.docx",
     "z. Ressources/Sliver",
     "z. Ressources/Slides",
