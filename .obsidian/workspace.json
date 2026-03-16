@@ -113,8 +113,7 @@
               "title": "File Tree"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -236,7 +235,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "82c9ffde9f1d6985",
+  "active": "754ccd302727f8a4",
   "lastOpenFiles": [
     "z. Ressources/IMG/Pasted image 20260227130540.png",
     "b. PowerShell/What is PowerShell.md",
