@@ -10,4 +10,5 @@ We will focus on **Signature base detection** by Windows Defender
 > We can again use DefenderCheck to identify code / strings not properly hidden / flagged by Defender
 > Or source code obfuscation
 
-
+- **Evade AV with [[Offensiv .NET#^419960]]
+- Obfuscate compiled binary with  [[Offensiv .NET#^oe]] 
