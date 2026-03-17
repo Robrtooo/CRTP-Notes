@@ -8,4 +8,7 @@ It provides :
 
 Meanwhile PowerShell (System.Management.Automation.dll) is built in .NET
 
--> 
+### 3 challenges in offensicv 
+
+- Detection countermeasures
+- Delivery
