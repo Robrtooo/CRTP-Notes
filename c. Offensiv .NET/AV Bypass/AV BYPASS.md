@@ -12,3 +12,4 @@ We will focus on **Signature base detection** by Windows Defender
 
 - **Evade AV with [[Offensiv .NET#^419960]]
 - Obfuscate compiled binary with  [[Offensiv .NET#^oe]] 
+- 
