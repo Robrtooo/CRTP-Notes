@@ -48,8 +48,21 @@
               "icon": "lucide-file",
               "title": "Offensiv .NET"
             }
+          },
+          {
+            "id": "e746c9839a1d2d2c",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Notes de version 1.12.4"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -112,7 +125,8 @@
               "title": "File Tree"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -222,6 +236,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Créer une nouvelle base": false,
       "obsidian-importer:Open Importer": false,
       "switcher:Ouvrir le sélecteur rapide": false,
       "graph:Ouvrir la vue graphique": false,
@@ -229,12 +244,11 @@
       "daily-notes:Ouvrir la note quotidienne": false,
       "templates:Insérer le modèle": false,
       "command-palette:Ouvrir la palette de commandes": false,
-      "bases:Create new base": false,
       "file-tree-alternative:File Tree Alternative Plugin": false,
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "754ccd302727f8a4",
+  "active": "e746c9839a1d2d2c",
   "lastOpenFiles": [
     "c. Offensiv .NET/e. Assume Breach/Sans titre.md",
     "z. Ressources/IMG/Pasted image 20260318144226.png",
