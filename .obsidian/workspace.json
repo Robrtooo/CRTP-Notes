@@ -53,12 +53,14 @@
             "id": "e746c9839a1d2d2c",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.12.4"
+                "file": "swdw.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Notes de version 1.12.4"
+              "icon": "lucide-file",
+              "title": "swdw"
             }
           }
         ],
@@ -125,8 +127,7 @@
               "title": "File Tree"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -250,6 +251,7 @@
   },
   "active": "e746c9839a1d2d2c",
   "lastOpenFiles": [
+    "swdw.md",
     "c. Offensiv .NET/e. Assume Breach/Sans titre.md",
     "z. Ressources/IMG/Pasted image 20260318144226.png",
     "c. Offensiv .NET/AV Bypass/AV BYPASS.md",
@@ -284,7 +286,6 @@
     "1. Objectives/Context.md",
     "Domain Enumeration/BloodHound/Sans titre.canvas",
     "créez un lien.md",
-    "Bienvenue.md",
-    "Sans titre.md"
+    "Bienvenue.md"
   ]
 }
