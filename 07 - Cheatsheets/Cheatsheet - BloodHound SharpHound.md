@@ -19,6 +19,8 @@
 
 ## Commandes
 
+## SharpHound
+
 ### Objectif
 
 Lancer une collecte SharpHound sur un hôte Windows.
@@ -63,6 +65,8 @@ Pertinent pour comparer une collecte exécutable et une collecte PowerShell.
 ### Précautions
 
 Rester dans le périmètre du lab et noter la méthode utilisée pour la révision.
+
+## BloodHound
 
 ### Objectif
 

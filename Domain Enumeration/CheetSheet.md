@@ -1,74 +1,158 @@
-### First is PowerView
-### Second is ActiveDirectory Module
-- Get current domain 
-```
+# Cheatsheet d'énumération AD
+
+> [!summary] Résumé
+> Note historique d'énumération centrée sur PowerView et le module Active Directory. Le fichier reste nommé `CheetSheet` pour préserver l'existant dans ce lot.
+
+> [!warning] Cadre d'utilisation
+> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
+
+## Outils couverts
+
+## PowerView
+
+## Active Directory Module
+
+## Commandes de base
+
+### Objectif
+
+Identifier le domaine courant et un autre domaine du lab.
+
+### Commande
+
+```powershell
 Get-Domain
-Get-ADDomain 
+Get-ADDomain
+
+Get-Domain -Domain moneycorp.local
+Get-ADDomain -Identity moneycorp.local
 ```
-- Get object of another domain
-```
- Get-Domain -Domain moneycorp.local
- Get-ADDomain -Identity moneycorp.local
-```
-- Get domain SID for the current domain
-```
+
+### Explication
+
+Compare les sorties de PowerView et du module Active Directory pour la même information de domaine.
+
+### Contexte d’utilisation
+
+Utile au début d'une session d'énumération pour confirmer le périmètre AD étudié.
+
+### Précautions
+
+Remplacer `moneycorp.local` par le domaine réellement concerné dans le lab.
+
+### Objectif
+
+Récupérer le SID du domaine et identifier les contrôleurs de domaine.
+
+### Commande
+
+```powershell
 Get-DomainSID
 (Get-ADDomain).DomainSID
-```
-- Get domain controllers for the current domain
-```
+
 Get-DomainController
 Get-ADDomainController
-```
-- Get domain controllers for another domain
-```
+
 Get-DomainController -Domain moneycorp.local
 Get-ADDomainController -DomainName moneycorp.local -Discover
 ```
-- Get information from Domain Policy
-```
+
+### Explication
+
+Ces informations servent de base à la cartographie AD et aux vérifications d'accès.
+
+### Contexte d’utilisation
+
+À utiliser après l'identification du domaine pour savoir où adresser les requêtes LDAP, SMB et Kerberos.
+
+### Précautions
+
+Noter distinctement les DC du domaine courant et ceux des domaines voisins du lab.
+
+### Objectif
+
+Consulter la politique de domaine.
+
+### Commande
+
+```powershell
 Get-DomainPolicyData
 ```
-- Get a list of users in the current domain
-```
+
+### Explication
+
+Expose des paramètres de politique utiles pour la compréhension du comportement du domaine.
+
+### Contexte d’utilisation
+
+Utile pour préparer la suite de l'énumération et relier les paramètres globaux aux comportements observés.
+
+### Précautions
+
+Documenter les valeurs pertinentes dans les notes de lab plutôt que de garder une sortie brute uniquement.
+
+### Objectif
+
+Lister les utilisateurs et leurs propriétés importantes.
+
+### Commande
+
+```powershell
 Get-DomainUser
 Get-DomainUser -Identity student1
 
 Get-ADUser -Filter * -Properties *
 Get-ADUser -Identity student1 -Properties *
-```
-- Get list of all properties for users in the current domain
-```
+
 Get-DomainUser -Identity student1 -Properties *
 Get-DomainUser -Properties samaccountname, logonCount
 
-Get-ADUser -Filter * -Properties * | select -First 1 | Get-Member -MemberType *Property | select Name
-Get-ADUser -Filter * -Properties * | select name,logoncunt,@{expression={[datetime]::fromFileTime($_.pwdlastset)}} 
+Get-ADUser -Filter * -Properties * | Select-Object -First 1 | Get-Member -MemberType *Property | Select-Object Name
+Get-ADUser -Filter * -Properties * | Select-Object name,logoncount,@{expression={[datetime]::fromFileTime($_.pwdlastset)}}
 ```
 
+### Explication
 
-> [!DANGER] Logoncount
-> If logoncount <= 10, le compte est dormant, ou que c'est un **decoy**.
-> If logoncount > 10000, il y a un subway, service ou une schedul task associée **-> Vecteur D'ATTAQUE potentiellement important**
+Ces commandes permettent d'énumérer les utilisateurs, leurs attributs et certains indicateurs utiles pour l'analyse en lab.
 
-- Search for a particular string in a user's attributes 
+### Contexte d’utilisation
+
+Pertinent quand il faut repérer des comptes intéressants, de service ou peu utilisés.
+
+### Précautions
+
+Vérifier les sorties attribut par attribut avant d'en tirer une conclusion.
+
+> [!warning] Point d'analyse sur `logonCount`
+> En lab, un `logonCount` très faible peut indiquer un compte rarement utilisé ou un leurre pédagogique. Un `logonCount` élevé peut signaler un compte de service ou d'automatisation. Ce n'est qu'un indicateur, pas une preuve.
+
+### Objectif
+
+Rechercher une chaîne spécifique dans les attributs utilisateurs.
+
+### Commande
+
+```powershell
+Get-DomainUser -LDAPFilter "Description=*built*" | Select-Object name,Description
+Get-ADUser -Filter 'Description -like "*built*"' -Properties Description | Select-Object name,Description
 ```
-Get-DomainUser -LDAPFilter "Description=*built*" | Select name,Description 
 
-Get-ADUser -Filter 'Description -like "*built*"' -Properties Description | select name,Description
-```
+### Explication
 
+Les descriptions et attributs proches contiennent parfois des indices utiles dans les exercices de lab.
 
-> [!NOTE] Information
-> Sometimes, some attributes, password or service owned by the user are wrote in description.
-> It can be really usefull to check it
+### Contexte d’utilisation
 
+À utiliser lorsqu'une étape demande d'identifier un indice textuel dans les métadonnées du domaine.
 
-- Get current domain 
-```
- 
-```
-- Get current domain 
-```
- 
-```
+### Précautions
+
+Traiter ces champs comme des indices à confirmer, pas comme des faits définitifs.
+
+### Notes associées
+
+- [[Cheatsheet - Reconnaissance AD]]
+- [[Cheatsheet - LDAP SMB Kerberos]]
+- [[CheetSheet]]
+- [[PowerShell - MOC]]
+- [[Active Directory - MOC]]

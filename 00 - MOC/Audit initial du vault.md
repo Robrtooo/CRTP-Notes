@@ -46,5 +46,5 @@
 ## Vérifications à poursuivre
 
 - Vérifier les liens internes après refactor des notes prioritaires.
-- Contrôler les images potentiellement orphelines avant toute action future.
+- Aucune image orpheline détectée à ce stade dans `z. Ressources/IMG`.
 - Identifier les notes à renommer plus tard après validation manuelle.

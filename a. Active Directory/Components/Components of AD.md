@@ -1,6 +1,12 @@
+# Components of AD
+
+> [!summary] Résumé
+> Rappel des composants essentiels d'Active Directory et de la structure forêt/domaine à comprendre pour les labs CRTP.
+
+## Composants clés
 
 1. Schéma - Defines objects and their attributes
-Ex : What could be attributes of a user objects ? 
+Ex : What could be attributes of a user objects ?
 
 2. Query and index mechanism - Provides searching and publication of objects and their properties
 -> Component that will be abuse
@@ -9,15 +15,19 @@ Ex : What could be attributes of a user objects ?
 
 4. Replication Service - Distributes information across domain controllers.
 
+## Structure
 
-Structure : 
 ![[Pasted image 20260211102326.png]]
+
+*Légende : relation entre forêt, domaines et composants de l'annuaire.*
 
 **Many of the attack tool for AD that exists, and that we will use works ONLY if ur present in the forest**
 
-> [!DANGER]
-> -> If Domain 1 is compromised in this schéma, attacker can easely mouv to domain 2. 
-> A single domain compromise ALL THE FOREST
+> [!warning] Point de vigilance
+> Une compromission d'un domaine peut avoir des conséquences sur le reste de la forêt selon les relations de confiance et les privilèges présents. À réviser uniquement dans le cadre du lab.
 
+## Notes associées
 
+- [[General Notes]]
+- [[Active Directory - MOC]]
 
