@@ -1,12 +1,12 @@
 # Active Directory - MOC
 
-> [!summary] Objectif
-> Regrouper les notes liées aux concepts Active Directory nécessaires pour la préparation CRTP.
+> [!summary] Résumé
+> Carte de navigation des notes Active Directory pour comprendre les composants, structurer l'énumération et relier les prérequis techniques aux attaques étudiées en préparation CRTP.
 
 > [!warning] Cadre d'utilisation
-> Les procédures associées doivent être utilisées uniquement dans un environnement autorisé ou un lab CRTP.
+> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
 
-## Concepts de base
+## Fondamentaux
 
 - [[General Notes]]
 - [[Components of AD]]
@@ -27,8 +27,8 @@
 - [[Cheatsheet - Kerberoasting]]
 - [[Cheatsheet - AS-REP Roasting]]
 - [[Cheatsheet - Delegation attacks]]
-- [[Cheatsheet - Lateral movement]]
 - [[Cheatsheet - Privilege escalation]]
+- [[Cheatsheet - Lateral movement]]
 - [[Cheatsheet - Persistence]]
 - [[Cheatsheet - Post-exploitation]]
 
