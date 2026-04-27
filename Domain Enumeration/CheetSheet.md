@@ -53,10 +53,17 @@ Get-ADUser -Filter * -Properties * | select name,logoncunt,@{expression={[dateti
 
 - Search for a particular string in a user's attributes 
 ```
-Get-DomainUser -LDAPFilter "Description=*built*" | Select name,Description
+Get-DomainUser -LDAPFilter "Description=*built*" | Select name,Description 
 
-Get-ADUser -Filter 'Description -like '
+Get-ADUser -Filter 'Description -like "*built*"' -Properties Description | select name,Description
 ```
+
+
+> [!NOTE] Information
+> Sometimes, some attributes, password or service owned by the user are wrote in description.
+> It can be really usefull to check it
+
+
 - Get current domain 
 ```
  
