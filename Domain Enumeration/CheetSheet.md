@@ -47,14 +47,15 @@ Get-ADUser -Filter * -Properties * | select name,logoncunt,@{expression={[dateti
 ```
 
 
-> [!DANGER ] Title
-> Contents
+> [!DANGER] Logoncount
+> If logoncount <= 10, le compte est dormant, ou que c'est un **decoy**.
+> If logoncount > 10000, il y a un subway, service ou une schedul task associée **-> Vecteur D'ATTAQUE potentiellement important**
 
-
-
-- Get current domain 
+- Search for a particular string in a user's attributes 
 ```
- 
+Get-DomainUser -LDAPFilter "Description=*built*" | Select name,Description
+
+Get-ADUser -Filter 'Description -like '
 ```
 - Get current domain 
 ```
