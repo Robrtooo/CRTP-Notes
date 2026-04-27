@@ -78,3 +78,4 @@ Get-DomainGroup *admin*
 
 Get-ADGroup -Filter 'Name -like "*admin*"' | select Name
 ```
+- 
