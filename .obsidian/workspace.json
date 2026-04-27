@@ -62,9 +62,21 @@
               "icon": "lucide-file",
               "title": "swdw"
             }
+          },
+          {
+            "id": "fb1054603101808d",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Notes de version 1.12.7"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -250,7 +262,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e746c9839a1d2d2c",
+  "active": "fb1054603101808d",
   "lastOpenFiles": [
     "swdw.md",
     "c. Offensiv .NET/e. Assume Breach/Sans titre.md",
