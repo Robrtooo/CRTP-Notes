@@ -64,11 +64,17 @@ Get-ADUser -Filter 'Description -like "*built*"' -Properties Description | sele
 > It can be really usefull to check it
 
 
-- Get current domain 
+- Get all the groups in the current domain-
 ```
- 
+Get-DomainGroup | select Name
+Get-DomainGroup -Domain <targetdomain>
+
+Get-ADGroup -Filter * | select Name
+Get-ADGroup -Filter * -Properties
 ```
-- Get current domain 
+- Get all groups containing the word "admin" in group name
 ```
- 
+Get-DomainGroup *admin*
+
+Get-ADGroup -Filter 'Name -like "*admin*"' | select Name
 ```
