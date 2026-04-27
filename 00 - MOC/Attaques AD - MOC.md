@@ -8,13 +8,19 @@
 
 ## Attaques et scénarios
 
+- [[Cheatsheet - ACL et droits AD]]
+- [[Cheatsheet - GPO et OU]]
 - [[Cheatsheet - Kerberoasting]]
 - [[Cheatsheet - AS-REP Roasting]]
 - [[Cheatsheet - Delegation attacks]]
+- [[Cheatsheet - RBCD]]
 - [[Cheatsheet - Privilege escalation]]
 - [[Cheatsheet - Lateral movement]]
 - [[Cheatsheet - Persistence]]
 - [[Cheatsheet - Post-exploitation]]
+- [[Cheatsheet - Trusts et forêts]]
+- [[Cheatsheet - AD CS et certificats]]
+- [[Cheatsheet - MSSQL et PowerUpSQL]]
 
 ## Notes associées
 
@@ -23,4 +29,3 @@
 - [[What is PowerShell]]
 - [[Offensiv .NET]]
 - [[AV BYPASS]]
-

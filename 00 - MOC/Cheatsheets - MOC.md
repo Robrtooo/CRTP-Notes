@@ -14,16 +14,22 @@
 
 ## Attaques
 
+- [[Cheatsheet - ACL et droits AD]]
+- [[Cheatsheet - GPO et OU]]
 - [[Cheatsheet - Kerberoasting]]
 - [[Cheatsheet - AS-REP Roasting]]
 - [[Cheatsheet - Delegation attacks]]
+- [[Cheatsheet - RBCD]]
 - [[Cheatsheet - Privilege escalation]]
 - [[Cheatsheet - Lateral movement]]
 - [[Cheatsheet - Persistence]]
 - [[Cheatsheet - Post-exploitation]]
+- [[Cheatsheet - Trusts et forêts]]
+- [[Cheatsheet - AD CS et certificats]]
+- [[Cheatsheet - MSSQL et PowerUpSQL]]
+- [[Cheatsheet - Monitoring et détections]]
 
 ## Plateformes et outils
 
 - [[Cheatsheet - PowerShell]]
 - [[Cheatsheet - Outils Windows Linux]]
-

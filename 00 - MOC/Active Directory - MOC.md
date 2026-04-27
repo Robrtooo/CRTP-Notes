@@ -20,6 +20,9 @@
 - [[Cheatsheet - Reconnaissance AD]]
 - [[Cheatsheet - LDAP SMB Kerberos]]
 - [[Cheatsheet - BloodHound SharpHound]]
+- [[Cheatsheet - ACL et droits AD]]
+- [[Cheatsheet - GPO et OU]]
+- [[Cheatsheet - Trusts et forêts]]
 
 ## Attaques et chemins d'attaque
 
@@ -27,10 +30,12 @@
 - [[Cheatsheet - Kerberoasting]]
 - [[Cheatsheet - AS-REP Roasting]]
 - [[Cheatsheet - Delegation attacks]]
+- [[Cheatsheet - RBCD]]
 - [[Cheatsheet - Privilege escalation]]
 - [[Cheatsheet - Lateral movement]]
 - [[Cheatsheet - Persistence]]
 - [[Cheatsheet - Post-exploitation]]
+- [[Cheatsheet - AD CS et certificats]]
 
 ## Méthode de révision
 
