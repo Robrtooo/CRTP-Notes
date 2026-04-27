@@ -15,21 +15,27 @@ Get-ADDomain
 Get-DomainSID
 (Get-ADDomain).DomainSID
 ```
-- Get current domain 
+- Get domain controllers for the current domain
 ```
- 
+Get-DomainController
+Get-ADDomainController
 ```
-- Get current domain 
+- Get domain controllers for another domain
 ```
- 
+Get-DomainController -Domain moneycorp.local
+Get-ADDomainController -DomainName moneycorp.local -Discover
 ```
-- Get current domain 
+- Get information from Domain Policy
 ```
- 
+Get-DomainPolicyData
 ```
-- Get current domain 
+- Get a list of users in the current domain
 ```
- 
+Get-DomainUser
+Get-DomainUser -Identity student1
+
+Get-ADUser -Filter * -Properties *
+Get-ADUser -Identity student1 -Properties **
 ```
 - Get current domain 
 ```
