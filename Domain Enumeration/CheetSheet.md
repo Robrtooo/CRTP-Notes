@@ -1,5 +1,11 @@
 ### First is PowerView
 ### Second is ActiveDirectory Module
+
+- Get 
+```
+
+```
+
 - Get current domain 
 ```
 Get-Domain
@@ -78,4 +84,32 @@ Get-DomainGroup *admin*
 
 Get-ADGroup -Filter 'Name -like "*admin*"' | select Name
 ```
-- 
+
+- Get 
+```
+
+```
+- Get 
+```
+
+```
+- Get 
+```
+
+```
+- Get 
+```
+
+```
+- Get 
+```
+
+```
+- Get 
+```
+
+```
+- Get 
+```
+
+```
