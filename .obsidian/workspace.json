@@ -67,12 +67,14 @@
             "id": "fb1054603101808d",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.12.7"
+                "file": "swdw.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Notes de version 1.12.7"
+              "icon": "lucide-file",
+              "title": "swdw"
             }
           }
         ],
@@ -139,8 +141,7 @@
               "title": "File Tree"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
