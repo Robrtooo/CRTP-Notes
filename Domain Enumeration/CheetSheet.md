@@ -39,8 +39,19 @@ Get-ADUser -Identity student1 -Properties *
 ```
 - Get list of all properties for users in the current domain
 ```
- 
+Get-DomainUser -Identity student1 -Properties *
+Get-DomainUser -Properties samaccountname, logonCount
+
+Get-ADUser -Filter * -Properties * | select -First 1 | Get-Member -MemberType *Property | select Name
+Get-ADUser -Filter * -Properties * | select name,logoncunt,@{expression={[datetime]::fromFileTime($_.pwdlastset)}} 
 ```
+
+
+> [!DANGER ] Title
+> Contents
+
+
+
 - Get current domain 
 ```
  
