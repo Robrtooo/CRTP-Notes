@@ -35,9 +35,9 @@ Get-DomainUser
 Get-DomainUser -Identity student1
 
 Get-ADUser -Filter * -Properties *
-Get-ADUser -Identity student1 -Properties **
+Get-ADUser -Identity student1 -Properties *
 ```
-- Get current domain 
+- Get list of all properties for users in the current domain
 ```
  
 ```
