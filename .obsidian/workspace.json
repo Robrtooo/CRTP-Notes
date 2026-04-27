@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "c. Offensiv .NET/1. General Notes.md",
+                "file": "Domain Enumeration/Enumeration.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1. General Notes"
+              "title": "Enumeration"
             }
           },
           {
@@ -277,6 +277,8 @@
   },
   "active": "fb1054603101808d",
   "lastOpenFiles": [
+    "c. Offensiv .NET/1. General Notes.md",
+    "Domain Enumeration/Enumeration.md",
     "c. Offensiv .NET/e. Assume Breach/Sans titre.md",
     "y. Tools/Offensiv .NET.md",
     "c. Offensiv .NET/AV Bypass/AV BYPASS.md",
@@ -291,7 +293,6 @@
     "z. Ressources/IMG/Pasted image 20260318144226.png",
     "y. Tools/PowerShell.md",
     "[Offensiv .NET.md",
-    "c. Offensiv .NET/1. General Notes.md",
     "z. Ressources/IMG/Pasted image 20260227130540.png",
     "y. Tools",
     "z. Ressources/IMG/Pasted image 20260227124251.png",
