@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "b. PowerShell/What is PowerShell.md",
+                "file": "c. Offensiv .NET/1. General Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "What is PowerShell"
+              "title": "1. General Notes"
             }
           },
           {
@@ -277,18 +277,18 @@
   },
   "active": "fb1054603101808d",
   "lastOpenFiles": [
-    "b. PowerShell/2. Good practices.md",
+    "c. Offensiv .NET/e. Assume Breach/Sans titre.md",
+    "y. Tools/Offensiv .NET.md",
+    "c. Offensiv .NET/AV Bypass/AV BYPASS.md",
     "b. PowerShell/What is PowerShell.md",
+    "b. PowerShell/2. Good practices.md",
     "b. PowerShell/ByPassing AV Signature/Using tools.md",
     "a. Active Directory/General Notes.md",
     "z. Ressources/IMG/Pasted image 20260211101806.png",
     "a. Active Directory/Components/Components of AD.md",
     "1. Objectives/Context.md",
     "swdw.md",
-    "c. Offensiv .NET/e. Assume Breach/Sans titre.md",
     "z. Ressources/IMG/Pasted image 20260318144226.png",
-    "c. Offensiv .NET/AV Bypass/AV BYPASS.md",
-    "y. Tools/Offensiv .NET.md",
     "y. Tools/PowerShell.md",
     "[Offensiv .NET.md",
     "c. Offensiv .NET/1. General Notes.md",
