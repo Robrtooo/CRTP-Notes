@@ -152,9 +152,19 @@
               "icon": "sheets-in-box",
               "title": "File Tree"
             }
+          },
+          {
+            "id": "d03c2beabf5f05b0",
+            "type": "leaf",
+            "state": {
+              "type": "file-tree-view",
+              "state": {},
+              "icon": "sheets-in-box",
+              "title": "File Tree"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -251,8 +261,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           }
         ]
@@ -265,7 +275,6 @@
   "left-ribbon": {
     "hiddenItems": {
       "bases:Créer une nouvelle base": false,
-      "obsidian-importer:Open Importer": false,
       "switcher:Ouvrir le sélecteur rapide": false,
       "graph:Ouvrir la vue graphique": false,
       "canvas:Créer une nouvelle toile": false,
