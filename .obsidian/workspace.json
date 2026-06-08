@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "b. PowerShell/What is PowerShell.md",
+                "file": "Domain Enumeration/CheetSheet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "What is PowerShell"
+              "title": "CheetSheet"
             }
           },
           {
@@ -152,18 +152,9 @@
               "icon": "sheets-in-box",
               "title": "File Tree"
             }
-          },
-          {
-            "id": "d03c2beabf5f05b0",
-            "type": "leaf",
-            "state": {
-              "type": "file-tree-view",
-              "state": {},
-              "icon": "sheets-in-box",
-              "title": "File Tree"
-            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -260,8 +251,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "calendar"
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           }
         ]
@@ -274,6 +265,7 @@
   "left-ribbon": {
     "hiddenItems": {
       "bases:Créer une nouvelle base": false,
+      "obsidian-importer:Open Importer": false,
       "switcher:Ouvrir le sélecteur rapide": false,
       "graph:Ouvrir la vue graphique": false,
       "canvas:Créer une nouvelle toile": false,
@@ -281,32 +273,28 @@
       "templates:Insérer le modèle": false,
       "command-palette:Ouvrir la palette de commandes": false,
       "file-tree-alternative:File Tree Alternative Plugin": false,
-      "obsidian-git:Open Git source control": false,
-      "obsidian-importer:Open Importer": false
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "fb1054603101808d",
   "lastOpenFiles": [
-    "a. Active Directory/General Notes.md",
-    "a. Active Directory/Components/Components of AD.md",
-    "z. Ressources/Schema/The Lab Environment_Attack_Paths.png",
-    "z. Ressources/Schema/The Lab Environment.png",
-    "z. Ressources/IMG/Pasted image 20260205135516.png",
-    "y. Tools/PowerShell.md",
-    "y. Tools/Offensiv .NET.md",
-    "1. Objectives/Context.md",
-    "b. PowerShell/ByPassing AV Signature/Using tools.md",
-    "b. PowerShell/2. Good practices.md",
-    "b. PowerShell/What is PowerShell.md",
+    "Sans titre.base",
     "Domain Enumeration/Enumeration.md",
     "Domain Enumeration/CheetSheet.md",
-    "Sans titre.base",
     "c. Offensiv .NET/1. General Notes.md",
     "c. Offensiv .NET/e. Assume Breach/Sans titre.md",
+    "y. Tools/Offensiv .NET.md",
     "c. Offensiv .NET/AV Bypass/AV BYPASS.md",
+    "b. PowerShell/What is PowerShell.md",
+    "b. PowerShell/2. Good practices.md",
+    "b. PowerShell/ByPassing AV Signature/Using tools.md",
+    "a. Active Directory/General Notes.md",
     "z. Ressources/IMG/Pasted image 20260211101806.png",
+    "a. Active Directory/Components/Components of AD.md",
+    "1. Objectives/Context.md",
     "swdw.md",
     "z. Ressources/IMG/Pasted image 20260318144226.png",
+    "y. Tools/PowerShell.md",
     "[Offensiv .NET.md",
     "z. Ressources/IMG/Pasted image 20260227130540.png",
     "y. Tools",
@@ -315,13 +303,17 @@
     "z. Ressources/Sliver/LabManual_Sliver.pdf",
     "z. Ressources/Slides/Attacking_and_Defending_ActiveDirectory - SlideNotes.pdf",
     "z. Ressources/Slides/Attacking_and_Defending_ActiveDirectory.pdf",
+    "z. Ressources/Schema/The Lab Environment.png",
+    "z. Ressources/Schema/The Lab Environment_Attack_Paths.png",
     "z. Ressources/Schema/ACL_Mindmap.png",
     "z. Ressources/Lab-Manual/LabManualV1.5.pdf",
     "z. Ressources/Tools/ToolsPassword.txt",
     "z. Ressources/Tools/Tools.zip",
     "z. Ressources/Tools",
     "z. Ressources/Sliver/LabManual_Sliver.docx",
+    "z. Ressources/Sliver",
     "z. Ressources/IMG/Pasted image 20260211114825.png",
+    "z. Ressources/IMG/Pasted image 20260211113826.png",
     "Domain Enumeration/BloodHound/Sans titre.canvas",
     "créez un lien.md",
     "Bienvenue.md"
