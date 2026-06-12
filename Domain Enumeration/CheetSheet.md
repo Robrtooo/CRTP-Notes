@@ -127,11 +127,11 @@ Invoke-ShareFinder -Verbose
 ```
 - Find sensitive files on computers in the domain
 ```
-Invoke-FileFinder -Verb
+Invoke-FileFinder -Verbose
 ```
-- Get
+- Get all fileservers of the domain
 ```
-
+Get-NetFileServer
 ```
 - Get
 ```
