@@ -102,11 +102,11 @@ Get-NetLocalGroup -ComputerName dcorp-dc
 ```
 - Get members of the local group "Administrators" on a machine -> /!\ need admin priv on non-dc machines
 ```
-
+Get-NetLocalGroup -ComputerName dcorp-dc
 ```
-- Get 
+- Get members of the local group 'Administrators' on a machine (needs administrator privs on non-dc machines)
 ```
-
+Get-NetLocalGroupMember -ComputerName dcorp-dc -GroupName Administrators
 ```
 - Get 
 ```
