@@ -85,7 +85,7 @@ Get-DomainGroup *admin*
 Get-ADGroup -Filter 'Name -like "*admin*"' | select Name
 ```
 
-- Get 
+- Get all the members of 
 ```
 
 ```
