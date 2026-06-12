@@ -69,7 +69,6 @@ Get-ADUser -Filter 'Description -like "*built*"' -Properties Description | sele
 > Sometimes, some attributes, password or service owned by the user are wrote in description.
 > It can be really usefull to check it
 
-
 - Get all the groups in the current domain-
 ```
 Get-DomainGroup | select Name
@@ -85,19 +84,23 @@ Get-DomainGroup *admin*
 Get-ADGroup -Filter 'Name -like "*admin*"' | select Name
 ```
 
-- Get all the members of 
+- Get all the members of the Domain Admin group *can be whatever else group*
+```
+Get-DomainGroupMember -Identity "Domain Admins" -Recurse
+Get-ADGroupMember -Identity "Domain Admins" -Recursive
+```
+- Get the group membership for a user 
+```
+Get-DomainGroup -UserName "student1"
+Get-ADPrincipalGroupMembership -Identity student1
 ```
 
-```
-- Get 
-```
 
+- List all the local groups on a machine -> /!\ need admin priv on non-dc machines
 ```
-- Get 
+Get-NetLocalGroup -ComputerName dcorp-dc
 ```
-
-```
-- Get 
+- Get members of the local group "Administrators" on a machine -> /!\ need admin priv on non-dc machines
 ```
 
 ```
