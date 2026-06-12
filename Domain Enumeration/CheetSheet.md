@@ -108,11 +108,84 @@ Get-NetLocalGroup -ComputerName dcorp-dc
 ```
 Get-NetLocalGroupMember -ComputerName dcorp-dc -GroupName Administrators
 ```
-- Get 
+- Get actively logged users on a computer (needs local admin rights on the target)
+```
+Get-NetLoggedon -ComputerName dcorp-adminsrv
+```
+- Get locally logged users on a computer (needs remote registry on the target - started by-default on a server OS)
+```
+Get-LoggedonLocal -ComputerName dcorp-adminsrv
+```
+- Get the lost logged user on a computer (needs administrative rights and remote registry on the target)
+```
+Get-LastLoggedOn -ComputerName dcorp-adminsrv
+```
+
+- Find shares on hosts in current domain
+```
+Invoke-ShareFinder -Verbose
+```
+- Find sensitive files on computers in the domain
+```
+Invoke-FileFinder -Verb
+```
+- Get
 ```
 
 ```
-- Get 
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
 ```
 
 ```
