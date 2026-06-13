@@ -133,9 +133,10 @@ Invoke-FileFinder -Verbose
 ```
 Get-NetFileServer
 ```
-- Get
+- Enumerating shares, - can also use **PowerHuntShare**
+-> Discover shares, senstives files, ACLs for shares, networks computers, identities and generates report (éviter les DC dans la hostlist)
 ```
-
+Invoke-HuntSMBShares -NoPing -OutpoutDirectory /MonChemin -HostList /maHostList
 ```
 - Get
 ```
