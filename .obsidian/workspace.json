@@ -153,8 +153,7 @@
               "title": "File Tree"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -276,7 +275,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fb1054603101808d",
+  "active": "754ccd302727f8a4",
   "lastOpenFiles": [
     "Domain Enumeration/Enumeration.md",
     "[Offensiv .NET.md",
