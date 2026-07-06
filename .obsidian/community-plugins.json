@@ -3,5 +3,8 @@
   "obsidian-git",
   "calendar",
   "obsidian-importer",
-  "obsidian-tasks-plugin"
+  "obsidian-tasks-plugin",
+  "dataview",
+  "obsidian-spaced-repetition",
+  "homepage"
 ]

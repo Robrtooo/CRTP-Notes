@@ -1,23 +1,25 @@
 # Synthèse - ACL et GPO
 
 > [!summary] Résumé
-> Fiche courte pour relier ACL AD, GPO, OU et contrôle d'objet avant d'entrer dans les labs de privilèges de domaine.
+> Contrôle d'objet par les droits. Cours lié : [[Attaques AD]]. Cartes : [[Flashcards - Attaques AD]].
 
 ## À retenir
 
-- Les ACL déterminent qui peut contrôler un objet et comment.
-- Une GPO a son propre objet AD, donc ses propres ACL intéressantes.
-- Il faut toujours relier un droit observé à l'objet précis qu'il contrôle.
+- La **DACL** dit qui contrôle un objet et comment ; c'est un chemin d'attaque à part entière.
+- Droits clés : **GenericAll**, **GenericWrite**, **WriteDACL**, **WriteOwner**, **ForceChangePassword**, **AllExtendedRights**.
+- Une **GPO** est un objet AD → elle a sa propre DACL. Droit d'écriture sur une GPO liée à une OU = exécution de code sur toutes les machines de l'OU.
+- **AdminSDHolder** : écrire dedans propage des droits vers les groupes protégés (persistance discrète).
 
-## Réflexes de révision
+## Enchaînements types
 
-- Identifier l'objet.
-- Identifier le droit exact.
-- Vérifier l'impact pratique sur le lab.
+- GenericWrite sur un user → poser un SPN (targeted Kerberoast) ou reset du mot de passe.
+- GenericWrite/GenericAll sur un computer → **RBCD**.
+- WriteDACL → s'octroyer soi-même GenericAll.
+
+## Réflexe
+
+Objet précis → droit exact → impact concret. BloodHound révèle ces chemins en masse.
 
 ## Notes associées
 
-- [[Cheatsheet - ACL et droits AD]]
-- [[Cheatsheet - GPO et OU]]
-- [[Attaques AD - MOC]]
-
+- [[Cheatsheet - ACL et droits AD]] · [[Cheatsheet - GPO et OU]] · [[Cheatsheet - RBCD]] · [[Attaques AD]]

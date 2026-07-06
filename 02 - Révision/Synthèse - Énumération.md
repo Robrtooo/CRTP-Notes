@@ -1,31 +1,31 @@
 # Synthèse - Énumération
 
 > [!summary] Résumé
-> Fiche courte pour organiser une énumération Active Directory en lab sans perdre le fil entre réseau, annuaire et relations d'accès.
+> Ordre et outils d'une énumération AD. Cours : [[Énumération AD]]. Cartes : [[Flashcards - Énumération]].
 
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
+## Pourquoi
+
+Tout compte authentifié lit l'annuaire par LDAP → énumérer d'abord, largement, sans privilège.
 
 ## Ordre logique
 
-1. Identifier le domaine, le DNS et les contrôleurs de domaine.
-2. Vérifier les services exposés utiles : LDAP, SMB, Kerberos, DNS.
-3. Recueillir les objets importants : utilisateurs, groupes, machines, partages.
-4. Cartographier les relations avec BloodHound ou des outils équivalents.
-5. Relier les résultats aux scénarios du lab.
+1. Domaine, SID, DC, DNS.
+2. Users : SPN (Kerberoast), preauth off (AS-REP), `adminCount=1`, descriptions.
+3. Groupes (DA/EA, imbrications), ordinateurs (OS, délégations).
+4. ACL (chemin vers DA), GPO/OU, trusts.
+5. Sessions (chasse au DA), AD CS, MSSQL.
+6. Graphe BloodHound → chemin le plus court vers Domain Admin.
 
-## Outils souvent utilisés
+## Outils selon la furtivité
 
-- `nmap`
-- `ldapsearch`
-- `smbclient`
-- `Get-ADUser` / `Get-DomainUser`
-- `SharpHound` / `BloodHound`
+- **PowerView / SharpView** : complet mais signé (→ lancer sous InviShell).
+- **Module AD (ADWS)** : signé Microsoft, fonctionne en Constrained Language Mode.
+- **BloodHound / SharpHound** : analyse en graphe. **SOAPHound** : collecte ADWS furtive.
+
+## Réflexe
+
+« Quel acquis, vers quelle attaque ? » — pas de collecte gratuite. Fractionner (jamais un SharpHound « All » d'un coup).
 
 ## Notes associées
 
-- [[Enumeration]]
-- [[CheetSheet]]
-- [[Cheatsheet - Reconnaissance AD]]
-- [[Cheatsheet - BloodHound SharpHound]]
-
+- [[Énumération AD]] · [[Cheatsheet - Reconnaissance AD]] · [[Cheatsheet - BloodHound SharpHound]] · [[Enumeration]]

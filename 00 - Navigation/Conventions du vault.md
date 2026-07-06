@@ -3,9 +3,6 @@
 > [!summary] Résumé
 > Conventions de structure, nommage, Markdown, images et Git pour garder le vault CRTP cohérent et navigable.
 
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
-
 ## Nommage
 
 - Préférer des titres explicites orientés apprentissage : `Cheatsheet - Sujet`, `Synthèse - Sujet`, `Checklist - Sujet`.
@@ -39,6 +36,14 @@
 ## Cadre éditorial
 
 - Garder les notes centrées sur l'apprentissage, la certification, les labs et les environnements autorisés.
-- Ajouter le rappel de cadre d'utilisation dans les notes sensibles.
-- Ne pas enrichir les notes avec du contenu orienté usage réel non autorisé, destruction ou furtivité avancée.
+- Pas d'encart « Cadre d'utilisation » dans les notes : la vault entière est un support de préparation CRTP en lab autorisé, le rappeler à chaque note est redondant.
+- Registre : dense, pédagogique, prose FR + termes/actions techniques en anglais. Pas d'emoji décoratif, titres simples.
+
+## Format d'apprentissage
+
+- **Cours** (`03 - Cours/`) : prose pédagogique dense pour comprendre le *pourquoi*.
+- **Cheatsheets** (`01 - Cheatsheets/`) : commandes prêtes à l'emploi, format `### Action` + bloc de code + explication.
+- **Synthèses** (`02 - Révision/`) : rappel condensé pour réviser vite.
+- **Flashcards** (`03 - Cours/**/Flashcards - *`) : rappel actif, format Spaced Repetition (`#flashcards/<thème>`, séparateur `?`).
+- **Attack flow** : chemin de décision « ce que j'ai → ce que je peux en faire », pivot de toute la vault.
 

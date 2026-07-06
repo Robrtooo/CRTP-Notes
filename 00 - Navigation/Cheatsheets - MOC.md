@@ -3,8 +3,9 @@
 > [!summary] Résumé
 > Index des fiches rapides pour réviser les commandes, outils et séquences de travail utiles aux labs CRTP.
 
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
+## Master
+
+- [[1. Cheatsheet - Toutes les commandes]] — toutes les commandes du vault en une fiche
 
 ## Énumération
 
@@ -29,7 +30,12 @@
 - [[Cheatsheet - MSSQL et PowerUpSQL]]
 - [[Cheatsheet - Monitoring et détections]]
 
+## Discrétion
+
+- [[Cheatsheet - Évasion et OPSEC]]
+
 ## Plateformes et outils
 
 - [[Cheatsheet - PowerShell]]
 - [[Cheatsheet - Outils Windows Linux]]
+- [[Tools list]]

@@ -1,78 +1,68 @@
 # CRTP - Index
 
 > [!summary] Résumé
-> Point d'entrée principal du vault CRTP pour naviguer entre les concepts, les labs, les commandes utiles, les fiches de révision et les conventions du dépôt.
+> Page d'accueil du vault CRTP. Point d'entrée unique vers le chemin d'attaque, les cours, les cheatsheets, les fiches de révision et les flashcards.
 
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
+> [!tip] Par où commencer — le chemin d'attaque
+> **➜ [[Attack flow]]** — le cœur du vault : « ce que je possède → ce que je peux en faire ». On y entre par son état courant (un compte, un droit, un admin local, un hash, DA…) et il déroule les actions possibles et leur gain. Commence toujours ici, puis descends vers le cours ou la cheatsheet concernée.
 
-## Navigation principale
+## Chemin d'attaque et raisonnement
 
-- [[Active Directory - MOC]]
-- [[PowerShell - MOC]]
-- [[Attaques AD - MOC]]
-- [[Cheatsheets - MOC]]
-- [[Labs - MOC]]
+- [[Attack flow]] — arbre de décision état → action → nouvel acquis
+- [[Checklist - Méthodologie CRTP]] — dérouler un engagement pas à pas
+- [[Flashcards - Attack flow]] — réviser le raisonnement
 
-## Révision rapide
+## Cours
 
-- [[Synthèse - Active Directory]]
-- [[Synthèse - Kerberos]]
-- [[Synthèse - Énumération]]
-- [[Synthèse - Attaques AD]]
-- [[Checklist - Méthodologie CRTP]]
+Comprendre le *pourquoi* avant d'exécuter. Carte complète : [[Cours - MOC]].
 
-## Notes existantes importantes
+- [[Fondamentaux AD]] · [[Attaques AD]] · [[Kerberos]]
+- [[Énumération AD]]
+- [[What is PowerShell]] · [[Offensive .NET]]
 
-- [[Context]]
-- [[General Notes]]
-- [[Components of AD]]
-- [[Enumeration]]
-- [[CheetSheet]]
-- [[What is PowerShell]]
-- [[2. Good practices]]
-- [[PowerShell]]
-- [[Offensiv .NET]]
+## Cheatsheets
 
-## Cheatsheets principales
+Commandes prêtes à l'emploi. Master : **[[1. Cheatsheet - Toutes les commandes]]**. Index : [[Cheatsheets - MOC]].
 
-- [[Cheatsheet - Reconnaissance AD]]
-- [[Cheatsheet - LDAP SMB Kerberos]]
-- [[Cheatsheet - BloodHound SharpHound]]
-- [[Cheatsheet - ACL et droits AD]]
-- [[Cheatsheet - GPO et OU]]
-- [[Cheatsheet - Kerberoasting]]
-- [[Cheatsheet - AS-REP Roasting]]
-- [[Cheatsheet - Delegation attacks]]
-- [[Cheatsheet - RBCD]]
-- [[Cheatsheet - Lateral movement]]
-- [[Cheatsheet - Privilege escalation]]
-- [[Cheatsheet - Persistence]]
-- [[Cheatsheet - Post-exploitation]]
-- [[Cheatsheet - Trusts et forêts]]
-- [[Cheatsheet - AD CS et certificats]]
-- [[Cheatsheet - MSSQL et PowerUpSQL]]
-- [[Cheatsheet - Monitoring et détections]]
-- [[Cheatsheet - PowerShell]]
-- [[Cheatsheet - Outils Windows Linux]]
+- Reco : [[Cheatsheet - Reconnaissance AD]] · [[Cheatsheet - LDAP SMB Kerberos]] · [[Cheatsheet - BloodHound SharpHound]]
+- ACL/GPO : [[Cheatsheet - ACL et droits AD]] · [[Cheatsheet - GPO et OU]]
+- Kerberos : [[Cheatsheet - Kerberoasting]] · [[Cheatsheet - AS-REP Roasting]] · [[Cheatsheet - Tickets Kerberos]]
+- Délégation : [[Cheatsheet - Delegation attacks]] · [[Cheatsheet - RBCD]]
+- Escalade/latéral : [[Cheatsheet - Privilege escalation]] · [[Cheatsheet - Lateral movement]] · [[Cheatsheet - Post-exploitation]]
+- Domination/persistance : [[Cheatsheet - Persistence]] · [[Cheatsheet - Trusts et forêts]]
+- Voies transverses : [[Cheatsheet - AD CS et certificats]] · [[Cheatsheet - MSSQL et PowerUpSQL]]
+- Discrétion : [[Cheatsheet - Évasion et OPSEC]] · [[Cheatsheet - Monitoring et détections]]
+- Support : [[Cheatsheet - PowerShell]] · [[Cheatsheet - Outils Windows Linux]] · [[Tools list]]
 
-## Références du vault
+## Révision
 
-- [[Conventions du vault]]
-- [[Audit initial du vault]]
+- [[Synthèse - Active Directory]] · [[Synthèse - Kerberos]] · [[Synthèse - Énumération]] · [[Synthèse - Attaques AD]]
+- [[Synthèse - ACL et GPO]] · [[Synthèse - Trusts et forêts]] · [[Synthèse - AD CS]] · [[Synthèse - MSSQL]] · [[Synthèse - Monitoring et détections]]
 
-## Ressources
+## Flashcards (Spaced Repetition)
 
-- `z. Ressources/Slides/`
-- `z. Ressources/Lab-Manual/`
-- `z. Ressources/Tools/`
-- `z. Ressources/IMG/`
-- `z. Ressources/Schema/`
+Rappel actif — le plugin Spaced Repetition transforme ces decks en file de révision. Liste auto-actualisée :
 
-## À traiter progressivement
+```dataview
+LIST
+FROM "03 - Cours"
+WHERE contains(file.name, "Flashcards")
+SORT file.name ASC
+```
 
-- Harmoniser les noms de fichiers.
-- Remplacer les notes temporaires par des titres explicites.
-- Ajouter des liens internes depuis chaque note technique vers les MOC.
-- Ajouter une légende courte aux images importantes.
-- Identifier les images non référencées sans les supprimer.
+## Cartes de navigation
+
+- [[Cours - MOC]] · [[Cheatsheets - MOC]] · [[Active Directory - MOC]] · [[Attaques AD - MOC]] · [[PowerShell - MOC]] · [[Labs - MOC]]
+
+## Notes brutes (captures de cours)
+
+Notes d'origine conservées pour leurs schémas et images. La version « propre » est le cours correspondant.
+
+- [[Context]] · [[General Notes]] · [[Components of AD]] · [[Enumeration]] · [[CheetSheet]]
+- [[1. General Notes]] · [[AV BYPASS]] · [[Assume Breach]] · [[2. Good practices]] · [[Using tools]]
+- Tools : [[PowerShell]] · [[Offensiv .NET]]
+
+## Références et ressources
+
+- [[Conventions du vault]] · [[Audit initial du vault]]
+- `z. Ressources/` : `Slides/` · `Lab-Manual/` · `Tools/` · `IMG/` · `Schema/`

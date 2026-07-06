@@ -3,11 +3,9 @@
 > [!summary] Résumé
 > Vue d'ensemble des notes et ressources utiles pour travailler la méthodologie en lab, suivre le contexte réseau et préparer les exercices CRTP.
 
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
-
 ## Démarrage
 
+- [[Attack flow]] — par où commencer, chemin de décision
 - [[Context]]
 - [[Checklist - Méthodologie CRTP]]
 

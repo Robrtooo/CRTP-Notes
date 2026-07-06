@@ -1,29 +1,28 @@
 # Synthèse - Attaques AD
 
 > [!summary] Résumé
-> Carte mentale courte des familles d'attaques AD couvertes par le vault pour réviser les prérequis et la logique d'enchaînement en lab.
+> Familles d'attaques et leur logique. Cours : [[Attaques AD]]. Chemin : [[Attack flow]]. Cartes : [[Flashcards - Attaques AD]].
 
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
+## Quatre leviers
 
-## Familles à relier
+Secret Kerberos · DACL trop large · délégation mal cadrée · protocole de confiance (réplication, trust).
 
-- Mauvaise configuration de comptes : SPN, préauthentification, délégations.
-- Mauvaise attribution de droits : groupes, ACL, administration locale.
-- Accès distant : WinRM, SMB, sessions et rebonds de lab.
-- Post-exploitation : inventaire de contexte, tickets, surfaces de persistance.
+## Par famille (prérequis → gain)
 
-## Réflexe de révision
+- **Kerberoasting** : compte + SPN cible → hash de service crackable offline.
+- **AS-REP Roasting** : compte sans pré-authentification → hash crackable offline.
+- **ACL** : GenericAll/GenericWrite, WriteDACL, ForceChangePassword → contrôle d'objet.
+- **RBCD** : GenericWrite sur un computer → admin via S4U.
+- **Délégation** : unconstrained (+ coercition d'un DC) / constrained (S4U).
+- **Tickets forgés** : Silver (clé service), Golden (krbtgt), Diamond (vrai TGT re-signé, furtif).
+- **DCSync** : droits de réplication → tous les hash (dont krbtgt).
+- **Trust** : clé de trust + SID History → Enterprise Admin / autre forêt.
+- **Transverses** : AD CS (ESC1/ESC3), MSSQL database links.
 
-- Identifier le prérequis exact avant la commande.
-- Lister l'information recherchée.
-- Valider l'étape suivante avec les sorties du lab plutôt qu'avec des suppositions.
+## Réflexe
+
+Prérequis exact → information recherchée → gain → état suivant. Valider avec les sorties du lab, pas les suppositions.
 
 ## Notes associées
 
-- [[Attaques AD - MOC]]
-- [[Cheatsheet - Kerberoasting]]
-- [[Cheatsheet - AS-REP Roasting]]
-- [[Cheatsheet - Delegation attacks]]
-- [[Cheatsheet - Lateral movement]]
-
+- [[Attaques AD]] · [[Attack flow]] · [[Attaques AD - MOC]] · [[1. Cheatsheet - Toutes les commandes]]

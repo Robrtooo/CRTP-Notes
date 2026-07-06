@@ -3,9 +3,6 @@
 > [!summary] Résumé
 > Checklist courte pour dérouler un lab CRTP avec méthode, garder des notes exploitables et éviter les angles morts pendant les révisions.
 
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
-
 ## Avant de commencer
 
 - Vérifier le périmètre autorisé du lab.

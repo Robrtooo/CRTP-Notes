@@ -3,8 +3,11 @@
 > [!summary] Résumé
 > Point d'accès aux notes liées aux techniques étudiées en environnement CRTP autorisé : découverte, exploitation contrôlée et post-exploitation en lab.
 
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
+## Comprendre et raisonner
+
+- [[Attack flow]] — ce que j'ai → ce que je peux en faire
+- [[Attaques AD]] — mécanisme de chaque famille d'attaque
+- [[Fondamentaux AD]] · [[Kerberos]]
 
 ## Attaques et scénarios
 

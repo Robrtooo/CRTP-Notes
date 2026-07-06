@@ -1,31 +1,27 @@
 # Synthèse - Kerberos
 
 > [!summary] Résumé
-> Rappel rapide des principes Kerberos utiles aux labs CRTP : comptes, tickets, SPN et préauthentification.
+> Rappel express du protocole et des attaques dérivées. Cours : [[Kerberos]]. Cartes : [[Flashcards - Kerberos]].
 
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
+## Le flux
 
-## À retenir
+- **AS-REQ / AS-REP** : pré-authentification = timestamp chiffré avec le hash du user → **TGT** (chiffré par **krbtgt**).
+- **TGS-REQ / TGS-REP** : TGT + SPN → **TGS** (chiffré par la clé du **compte de service**).
+- **AP-REQ** : TGS présenté au service, qui le déchiffre avec sa propre clé — le KDC n'est plus dans la boucle.
+- **PAC** (droits de l'utilisateur) signé par krbtgt, embarqué dans le ticket.
 
-- Kerberos repose sur des échanges de tickets plutôt que sur des mots de passe transmis directement au service.
-- Les SPN relient des services à des comptes, ce qui explique leur rôle dans Kerberoasting.
-- La préauthentification protège les comptes contre certaines demandes triviales d'AS-REP.
+## Chaque secret = une attaque
 
-## Tickets à connaître
+- Pré-auth désactivée → **AS-REP Roasting**.
+- TGS d'un compte à SPN → **Kerberoasting**.
+- Clé de **krbtgt** → **Golden Ticket** (TGT arbitraire).
+- Clé d'un service → **Silver Ticket** (TGS forgé, sans passer par le KDC).
+- Vrai TGT re-signé avec la clé AES de krbtgt → **Diamond Ticket** (furtif).
 
-- TGT : ticket initial délivré par le KDC.
-- TGS : ticket de service demandé pour accéder à un service particulier.
+## RC4 vs AES
 
-## Points de vigilance
-
-- Toujours relier le ticket observé au compte et au service concernés.
-- Vérifier si le scénario porte sur un compte de service, un compte sans préauthentification ou une délégation.
+Forcer RC4 sur un compte AES-only = downgrade visible (event 4769 avec type de chiffrement anormal). Préférer AES ; `/rc4opsec` côté Rubeus.
 
 ## Notes associées
 
-- [[Cheatsheet - Kerberoasting]]
-- [[Cheatsheet - AS-REP Roasting]]
-- [[Cheatsheet - Delegation attacks]]
-- [[Components of AD]]
-
+- [[Kerberos]] · [[Cheatsheet - Tickets Kerberos]] · [[Cheatsheet - Kerberoasting]] · [[Cheatsheet - AS-REP Roasting]]

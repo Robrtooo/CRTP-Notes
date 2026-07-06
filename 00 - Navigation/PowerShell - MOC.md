@@ -3,15 +3,15 @@
 > [!summary] Résumé
 > Navigation dédiée aux notes PowerShell du vault : bases, bonnes pratiques, outils et rappels utiles pour les labs CRTP.
 
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
+## Cours
 
-## Notes existantes
+- [[What is PowerShell]] — cours
+- [[Flashcards - PowerShell]]
+- Suite naturelle : [[Offensive .NET]] · [[Flashcards - Offensive .NET]]
 
-- [[What is PowerShell]]
-- [[2. Good practices]]
-- [[Using tools]]
-- [[PowerShell]]
+## Notes brutes
+
+- [[2. Good practices]] · [[Using tools]] · [[PowerShell]]
 
 ## Compléments de révision
 

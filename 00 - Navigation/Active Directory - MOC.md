@@ -3,15 +3,12 @@
 > [!summary] Résumé
 > Carte de navigation des notes Active Directory pour comprendre les composants, structurer l'énumération et relier les prérequis techniques aux attaques étudiées en préparation CRTP.
 
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
-
 ## Fondamentaux
 
-- [[General Notes]]
-- [[Components of AD]]
-- [[Synthèse - Active Directory]]
-- [[Synthèse - Kerberos]]
+- [[Fondamentaux AD]] — cours
+- [[Kerberos]] — cours
+- [[General Notes]] · [[Components of AD]] — notes brutes
+- [[Synthèse - Active Directory]] · [[Synthèse - Kerberos]] — révision
 
 ## Énumération
 
@@ -26,6 +23,8 @@
 
 ## Attaques et chemins d'attaque
 
+- [[Attack flow]] — chemin de décision état → action
+- [[Attaques AD]] — cours des mécanismes
 - [[Attaques AD - MOC]]
 - [[Cheatsheet - Kerberoasting]]
 - [[Cheatsheet - AS-REP Roasting]]

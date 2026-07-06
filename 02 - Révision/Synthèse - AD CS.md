@@ -1,23 +1,21 @@
 # Synthèse - AD CS
 
 > [!summary] Résumé
-> Rappel rapide sur AD CS, les templates et la logique des abus basés sur les certificats dans le parcours CRTP.
+> Abus de certificats. Cours lié : [[Attaques AD]]. Fiche : [[Cheatsheet - AD CS et certificats]].
 
-## À retenir
+## Mécanique
 
-- Une CA délivre des certificats selon des templates.
-- Les droits d'enrôlement et les propriétés du template changent complètement l'impact.
-- Les noms de templates et les EKU doivent être notés précisément.
+Une **CA** délivre des certificats selon des **templates**. Deux leviers décident de l'impact : qui peut **enroll** + ce que le template autorise.
 
-## Questions de révision
+## ESC à connaître
 
-- Qui peut enroll ?
-- Le template autorise-t-il `altname` ou `enrollee supplies subject` ?
-- Quel rôle joue le certificat obtenu dans la suite du lab ?
+- **ESC1** : template avec **`ENROLLEE_SUPPLIES_SUBJECT`** (SAN arbitraire) + EKU d'authentification client + enrôlement ouvert aux Domain Users → demander un certificat **au nom d'un DA** → TGT DA.
+- **ESC3** : template *Enrollment Agent* → obtenir un certificat d'agent puis demander un certificat **au nom d'un autre** compte → même effet.
+
+## À noter précisément
+
+Nom du template, EKU, droits d'enrôlement, flag `ENROLLEE_SUPPLIES_SUBJECT`. Le certificat → TGT via PKINIT → DA/EA. Court-circuite la chaîne classique : un simple Domain User suffit.
 
 ## Notes associées
 
-- [[Cheatsheet - AD CS et certificats]]
-- [[Cheatsheet - Trusts et forêts]]
-- [[Attaques AD - MOC]]
-
+- [[Cheatsheet - AD CS et certificats]] · [[Attaques AD]] · [[Attack flow]]

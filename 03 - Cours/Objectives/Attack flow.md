@@ -3,6 +3,26 @@
 > [!summary] Objectif
 > Chemin de réflexion offensif : au lieu de mémoriser des attaques isolées, on part de **ce qu'on possède** (un état) pour dériver **ce qu'on peut en faire** (les actions), sachant que chaque action produit un nouvel acquis. L'attaque AD est une machine à états — ce cours donne la carte, les cheatsheets donnent les commandes. Révision : [[Flashcards - Attack flow]].
 
+## Vue d'ensemble
+
+```mermaid
+flowchart TD
+    START([Accès réseau, aucun compte]) -->|AS-REP roasting| ACC[Compte de domaine]
+    ACC -->|énumération + Kerberoasting + BloodHound| ACL[Droit ACL sur un objet]
+    ACC -->|accès interactif + privesc| LOCAL[Admin local]
+    ACL -->|RBCD / ForceChangePassword| LOCAL
+    LOCAL -->|dump LSASS| HASH[Hash ou clé AES]
+    HASH -->|OverPass-the-Hash / Silver Ticket| LOCAL
+    HASH -->|compte privilégié| DA[Domain Admin]
+    LOCAL -->|session DA / unconstrained + coercition| DA
+    DA -->|DCSync + Golden / Diamond| DA
+    DA -->|clé de trust + SID History| EA[Enterprise Admin / forêt]
+    ACC -. AD CS ESC1/ESC3 .-> DA
+    ACC -. MSSQL database links .-> DA
+```
+
+Chaque flèche est une transition détaillée plus bas : à gauche l'état que tu possèdes, sur la flèche l'action, à droite le nouvel acquis.
+
 ## Le principe
 
 Un état = ce que tu contrôles à l'instant T (rien, un compte, un hash, un droit, un accès admin, DA, EA). À chaque état correspond un jeu d'actions possibles, et chaque action réussie te fait *changer d'état*. Progresser = enchaîner les transitions jusqu'à la domination de la forêt.

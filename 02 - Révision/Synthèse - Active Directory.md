@@ -1,35 +1,28 @@
 # Synthèse - Active Directory
 
 > [!summary] Résumé
-> Vue d'ensemble d'Active Directory pour réviser les concepts, composants et relations utiles à la préparation CRTP.
+> Rappel express des fondamentaux AD. Cours : [[Fondamentaux AD]]. Cartes : [[Flashcards - Fondamentaux AD]].
 
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
+## Structure
 
-## À retenir
+- **Forêt** = frontière de sécurité (objectif final : Enterprise Admin). **Domaine** = frontière d'administration/réplication. **OU** = délégation + application de GPO.
+- Les domaines d'une forêt se font confiance automatiquement : trusts parent-enfant bidirectionnels et transitifs.
 
-- Active Directory centralise l'identité, l'authentification et l'autorisation dans un environnement Windows.
-- Les objets AD portent des attributs qui deviennent des sources majeures d'énumération.
-- Les relations entre utilisateurs, groupes, ordinateurs, OU, domaines et forêts comptent autant que les objets eux-mêmes.
+## Cœur technique
 
-## Composants clés
+- **DC** héberge `NTDS.dit` (tous les hash du domaine) + rôle **KDC**. Pivot = **krbtgt** (chiffre tous les TGT).
+- **Tout est objet** + **DACL** → une grande partie des attaques exploite une ACL trop permissive, pas une faille logicielle.
 
-- Schéma : définit les objets et leurs attributs.
-- LDAP : sert à interroger et publier les informations de l'annuaire.
-- Kerberos : gère l'authentification principale en domaine.
-- SMB : expose des ressources et sert souvent de support à l'administration.
-- Global Catalog : agrège des informations utiles à l'échelle de la forêt.
+## À mémoriser
 
-## Questions de révision
+- SID `S-1-5-21-<domaine>-<RID>`. RID : **512** Domain Admins, **519** Enterprise Admins, **518** Schema Admins, **513** Domain Users, **500** Administrator, **502** krbtgt.
+- Composants abusés : **query/index LDAP** (énumération sans privilège), **réplication** (→ DCSync), **catalogue global** (recherche à l'échelle de la forêt).
 
-- Quels objets sont les plus intéressants pour une première énumération ?
-- Quelles différences pratiques entre domaine, forêt et OU ?
-- Quels attributs reviennent souvent dans les chemins d'attaque ?
+## Réflexe
+
+Relier chaque objet/attribut à l'attaque qu'il ouvre : SPN → Kerberoast, preauth off → AS-REP, GenericWrite → RBCD, droits de réplication → DCSync.
 
 ## Notes associées
 
-- [[General Notes]]
-- [[Components of AD]]
-- [[Enumeration]]
-- [[Active Directory - MOC]]
-
+- [[Fondamentaux AD]] · [[Kerberos]] · [[Attaques AD]] · [[Attack flow]]
+- [[General Notes]] · [[Components of AD]] · [[Active Directory - MOC]]
