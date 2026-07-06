@@ -1,7 +1,7 @@
 # Flashcards - MOC
 
 > [!summary] Révision active — 60 cartes, 7 decks
-> Page centralisée des flashcards. Elles sont au format Spaced Repetition : le plugin planifie automatiquement les révisions (algorithme SM-2). Lance la commande **« Spaced Repetition: Review flashcards »** (palette `Ctrl+P`) ou clique l'icône dans la barre latérale pour réviser la file du jour. Chaque deck porte le tag `#flashcards/<thème>`.
+> Page centralisée des flashcards. Chaque carte est un **toggle `[!question]-`** : lis la question, réponds de tête, puis déplie pour vérifier. Format léger, rien à installer.
 
 ## Decks par thème
 
@@ -28,9 +28,9 @@ SORT file.name ASC
 
 ## Comment ça marche
 
-- **Réviser** : la commande ouvre la file du jour ; réponds *Bon / Difficile / À revoir* → le plugin espace ou rapproche la prochaine échéance.
-- **Ajouter une carte** : dans un deck, écris `**Question**`, une ligne contenant seulement `?`, puis la réponse — chaque carte séparée par une ligne vide.
-- **Nouveau deck** : créer une note `Flashcards - X` avec le tag `#flashcards/x` en tête.
+- **Réviser** : ouvre un deck, lis chaque question, réponds de tête, puis clique le toggle pour déplier la réponse.
+- **Ajouter une carte** : `> [!question]- Ma question ?` puis la réponse sur la ligne suivante préfixée de `> `. Une ligne vide entre deux cartes.
+- **Nouveau deck** : créer une note `Flashcards - X` et suivre le même format de toggles.
 
 ## Voir aussi
 
