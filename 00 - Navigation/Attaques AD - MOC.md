@@ -7,7 +7,8 @@
 
 - [[2. Attack flow]] — ce que j'ai → ce que je peux en faire
 - [[Attaques AD]] — mécanisme de chaque famille d'attaque
-- [[Fondamentaux AD]] · [[Kerberos]]
+- [[Fondamentaux AD]]
+- [[Kerberos]]
 
 ## Attaques et scénarios
 

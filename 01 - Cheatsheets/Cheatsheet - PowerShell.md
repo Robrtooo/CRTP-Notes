@@ -20,4 +20,7 @@ $PSVersionTable
 
 Utile pour comparer le comportement d'un script entre deux machines de lab (version, policy).
 
-**Link** — [[What is PowerShell]] · [[2. Good practices]] · [[PowerShell - MOC]]
+**Link**
+- [[What is PowerShell]]
+- [[2. Good practices]]
+- [[PowerShell - MOC]]

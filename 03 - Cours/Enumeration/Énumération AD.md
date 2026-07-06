@@ -34,5 +34,8 @@ Active Directory est conçu pour être *interrogeable* : tout compte authentifi�
 Une requête LDAP isolée ressemble à du trafic normal ; une collecte SharpHound « All » d'un coup est bruyante. Fractionner, préférer le module AD signé quand la surveillance est forte, et lancer PowerView sous InviShell. La reconnaissance discrète conditionne toute la suite. [[Cheatsheet - Monitoring et détections]]
 
 ## Notes associées
-- [[Fondamentaux AD]] · [[2. Attack flow]] · [[Flashcards - Énumération]]
-- [[Synthèse - Énumération]] · [[Cheatsheet - LDAP SMB Kerberos]]
+- [[Fondamentaux AD]]
+- [[2. Attack flow]]
+- [[Flashcards - Énumération]]
+- [[Synthèse - Énumération]]
+- [[Cheatsheet - LDAP SMB Kerberos]]

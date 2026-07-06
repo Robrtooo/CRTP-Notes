@@ -28,4 +28,6 @@ Get-DomainGPO -Identity (Get-DomainOU -Identity DevOps).gplink.substring(11,(Get
 > [!note] Ne pas confondre `displayname` et `name/GUID`. BloodHound (`Search: Applocked / DevOps` → Inbound Object Control) lit plus vite `GenericAll` / `WriteDACL` sur les policies.
 
 ## Related
-[[Cheatsheet - ACL et droits AD]] · [[Cheatsheet - Monitoring et détections]] · [[Synthèse - ACL et GPO]]
+- [[Cheatsheet - ACL et droits AD]]
+- [[Cheatsheet - Monitoring et détections]]
+- [[Synthèse - ACL et GPO]]

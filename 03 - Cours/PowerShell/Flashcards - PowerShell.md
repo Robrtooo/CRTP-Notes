@@ -46,4 +46,5 @@ Moins de surface de code = moins de signatures potentielles et une analyse plus 
 Non — une relecture manuelle reste souvent nécessaire (même après DefenderCheck) : revenir à la ligne/fonction signalée, comprendre si c'est une chaîne, un bloc ou une fonctionnalité, et réécrire le minimum (ex. transformer une chaîne base64 et la reconstruire au runtime).
 
 ## Voir aussi
-[[What is PowerShell]] · [[Cours - MOC]]
+- [[What is PowerShell]]
+- [[Cours - MOC]]

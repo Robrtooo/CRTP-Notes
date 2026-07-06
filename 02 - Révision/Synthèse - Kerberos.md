@@ -24,4 +24,7 @@ Forcer RC4 sur un compte AES-only = downgrade visible (event 4769 avec type de c
 
 ## Notes associées
 
-- [[Kerberos]] · [[Cheatsheet - Tickets Kerberos]] · [[Cheatsheet - Kerberoasting]] · [[Cheatsheet - AS-REP Roasting]]
+- [[Kerberos]]
+- [[Cheatsheet - Tickets Kerberos]]
+- [[Cheatsheet - Kerberoasting]]
+- [[Cheatsheet - AS-REP Roasting]]

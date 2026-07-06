@@ -29,4 +29,7 @@ Une referral error sur un trust externe non transitif est attendue (le PDF l'exp
 > [!warning]- Required (abus de trust)
 > Privilèges Domain Admin d'un côté du trust, pour en extraire la clé (`lsadump::evasive-trust`). Voir [[Cheatsheet - Tickets Kerberos]] pour obtenir DA au préalable.
 
-**Link** — [[Cheatsheet - Delegation attacks]] · [[Cheatsheet - AD CS et certificats]] · [[Synthèse - Trusts et forêts]]
+**Link**
+- [[Cheatsheet - Delegation attacks]]
+- [[Cheatsheet - AD CS et certificats]]
+- [[Synthèse - Trusts et forêts]]

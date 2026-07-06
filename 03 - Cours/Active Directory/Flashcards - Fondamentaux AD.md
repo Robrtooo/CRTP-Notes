@@ -38,4 +38,5 @@ Objet de configuration/sécurité lié à une OU, un site ou un domaine, appliqu
 1) Lisibilité : tout compte authentifié énumère l'annuaire par LDAP sans privilège. 2) DACL trop larges reliant un compte quelconque à Domain Admin. 3) Kerberos par conception : chaque secret partagé qui fuit crée une attaque.
 
 ## Voir aussi
-[[Fondamentaux AD]] · [[Cours - MOC]]
+- [[Fondamentaux AD]]
+- [[Cours - MOC]]

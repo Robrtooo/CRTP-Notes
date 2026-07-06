@@ -18,4 +18,7 @@ La session distante n'est pas équivalente à la session locale (CLM, WinRM). Av
 
 ## Notes associées
 
-- [[Cheatsheet - Monitoring et détections]] · [[Cheatsheet - Évasion et OPSEC]] · [[What is PowerShell]] · [[Offensive .NET]]
+- [[Cheatsheet - Monitoring et détections]]
+- [[Cheatsheet - Évasion et OPSEC]]
+- [[What is PowerShell]]
+- [[Offensive .NET]]

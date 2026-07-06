@@ -34,4 +34,5 @@ SORT file.name ASC
 
 ## Voir aussi
 
-- [[Cours - MOC]] · [[1. CRTP - Index]]
+- [[Cours - MOC]]
+- [[1. CRTP - Index]]

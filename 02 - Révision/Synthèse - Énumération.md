@@ -28,4 +28,7 @@ Tout compte authentifié lit l'annuaire par LDAP → énumérer d'abord, largeme
 
 ## Notes associées
 
-- [[Énumération AD]] · [[Cheatsheet - Reconnaissance AD]] · [[Cheatsheet - BloodHound SharpHound]] · [[Enumeration]]
+- [[Énumération AD]]
+- [[Cheatsheet - Reconnaissance AD]]
+- [[Cheatsheet - BloodHound SharpHound]]
+- [[Enumeration]]

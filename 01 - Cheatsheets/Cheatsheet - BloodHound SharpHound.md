@@ -32,4 +32,7 @@ Inbound / Outbound Object Control   (Applocked, DevOps, studentx, RDPUsers)
 > [!note] Attention à la compatibilité collecteur/UI entre Legacy et CE.
 
 ## Related
-[[Enumeration]] · [[Cheatsheet - ACL et droits AD]] · [[Cheatsheet - GPO et OU]] · [[Cheatsheet - Delegation attacks]]
+- [[Enumeration]]
+- [[Cheatsheet - ACL et droits AD]]
+- [[Cheatsheet - GPO et OU]]
+- [[Cheatsheet - Delegation attacks]]

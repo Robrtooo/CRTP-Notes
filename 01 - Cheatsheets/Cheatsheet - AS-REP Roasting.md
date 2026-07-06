@@ -29,4 +29,6 @@ C:\AD\Tools\john-1.9.0-jumbo-1-win64\run\john.exe -wordlist=C:\AD\Tools\kerberoa
 ```
 
 ## Related
-[[Cheatsheet - Kerberoasting]] · [[Synthèse - Kerberos]] · [[Attaques AD - MOC]]
+- [[Cheatsheet - Kerberoasting]]
+- [[Synthèse - Kerberos]]
+- [[Attaques AD - MOC]]

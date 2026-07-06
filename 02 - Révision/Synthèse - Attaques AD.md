@@ -25,4 +25,7 @@ Prérequis exact → information recherchée → gain → état suivant. Valider
 
 ## Notes associées
 
-- [[Attaques AD]] · [[2. Attack flow]] · [[Attaques AD - MOC]] · [[1. Cheatsheet - Toutes les commandes]]
+- [[Attaques AD]]
+- [[2. Attack flow]]
+- [[Attaques AD - MOC]]
+- [[1. Cheatsheet - Toutes les commandes]]

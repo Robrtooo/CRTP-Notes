@@ -51,5 +51,9 @@ La délégation Kerberos permet à un service d'agir *au nom* d'un utilisateur. 
 - **MSSQL / database links** — une instance SQL qui fait confiance à un compte de domaine permet l'exécution de commandes, et les liens entre bases permettent de rebondir de serveur en serveur, y compris entre forêts. [[Cheatsheet - MSSQL et PowerUpSQL]]
 
 ## Notes associées
-- [[2. Attack flow]] · [[Fondamentaux AD]] · [[Kerberos]] · [[Flashcards - Attaques AD]]
-- [[Synthèse - Attaques AD]] · [[1. Cheatsheet - Toutes les commandes]]
+- [[2. Attack flow]]
+- [[Fondamentaux AD]]
+- [[Kerberos]]
+- [[Flashcards - Attaques AD]]
+- [[Synthèse - Attaques AD]]
+- [[1. Cheatsheet - Toutes les commandes]]

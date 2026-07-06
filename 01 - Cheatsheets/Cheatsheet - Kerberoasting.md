@@ -34,4 +34,7 @@ C:\AD\Tools\john-1.9.0-jumbo-1-win64\run\john.exe --wordlist=C:\AD\Tools\kerbero
 > `...MSSQLSvc/dcorp-mgmt.dollarcorp.moneycorp.local:1433*` → `...moneycorp.local*`
 
 ## Related
-[[Cheatsheet - AS-REP Roasting]] · [[Cheatsheet - Tickets Kerberos]] · [[Cheatsheet - MSSQL et PowerUpSQL]] · [[Synthèse - Kerberos]]
+- [[Cheatsheet - AS-REP Roasting]]
+- [[Cheatsheet - Tickets Kerberos]]
+- [[Cheatsheet - MSSQL et PowerUpSQL]]
+- [[Synthèse - Kerberos]]

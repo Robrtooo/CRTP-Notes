@@ -37,4 +37,7 @@ $ExecutionContext.SessionState.LanguageMode
 
 Le `LanguageMode` peut différer entre la session locale et une session distante sur le même compte — à documenter, ça conditionne les outils utilisables une fois latéralisé.
 
-**Link** — [[Cheatsheet - PowerShell]] · [[Cheatsheet - GPO et OU]] · [[Synthèse - Monitoring et détections]]
+**Link**
+- [[Cheatsheet - PowerShell]]
+- [[Cheatsheet - GPO et OU]]
+- [[Synthèse - Monitoring et détections]]

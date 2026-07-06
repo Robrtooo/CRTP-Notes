@@ -1,0 +1,34 @@
+{
+	"nodes":[
+		{"id":"setup","type":"text","text":"## Setup C2\n\nServeur WSL + listener HTTPS + implant.\n\n[[Sliver - Setup et beacons|Setup et beacons]]","x":60,"y":0,"width":320,"height":120,"color":"5"},
+		{"id":"foothold","type":"text","text":"## Foothold beacon\n\ngenerate → BinLoader → session → migrate.\n\n[[Sliver - Setup et beacons|Beacon + migrate]]","x":20,"y":210,"width":380,"height":150},
+		{"id":"enum","type":"text","text":"## Énumération\n\nUsers, groupes, ACL, trusts, graphe.\n\n[[Sliver - Énumération AD|StandIn / ADSearch / SharpHound]]","x":10,"y":430,"width":400,"height":150},
+		{"id":"kerb","type":"text","text":"## Kerberos / creds\n\n[[Sliver - Kerberos et tickets|Kerberoast · OverPass · DCSync]]","x":10,"y":920,"width":400,"height":160},
+		{"id":"legend","type":"text","text":"### Attack map — Sliver\n\nClique un lien pour ouvrir la fiche.\n\n- Cyan : mise en place C2\n- Rouge : objectif (DA / EA)\n- Orange : voie transverse\n\nCours : [[Qu'est-ce que Sliver]] · [[Workflow Sliver]]","x":-675,"y":95,"width":365,"height":265},
+		{"id":"privesc","type":"text","text":"## Privesc locale\n\n[[Sliver - Privesc et lateral|SharpUp / Seatbelt]] → service (remote-sc / scshell) en SYSTEM.","x":-800,"y":710,"width":380,"height":170},
+		{"id":"mssql","type":"text","text":"## Voie MSSQL\n\n[[Sliver - AD CS, SQL et persistance|SharpSQL / PowerUpSQL]] → RCE.","x":-800,"y":1290,"width":380,"height":150,"color":"2"},
+		{"id":"adcs","type":"text","text":"## Voie AD CS\n\n[[Sliver - AD CS, SQL et persistance|Certify ESC1 / ESC3]] → TGT DA.","x":-800,"y":1080,"width":380,"height":150,"color":"2"},
+		{"id":"lateral","type":"text","text":"## Mouvement latéral\n\n[[Sliver - Privesc et lateral|LACheck · winrs · WMI · Scshell]] · pivots TCP.","x":880,"y":710,"width":380,"height":150},
+		{"id":"deleg","type":"text","text":"## Délégation\n\n[[Sliver - Delegation et RBCD|Unconstrained · Constrained (S4U) · RBCD]]","x":880,"y":930,"width":380,"height":150},
+		{"id":"exec","type":"text","text":"## Moteur d'exécution\n\nTout passe par execute-assembly (fork & run vs `-i -M -E`).\n\n[[Sliver - Exécution et évasion|Exécution et évasion]]","x":880,"y":190,"width":380,"height":190},
+		{"id":"da","type":"text","text":"## Domain Admin\n\n[[Sliver - Kerberos et tickets|Golden / Diamond]] · [[Sliver - AD CS, SQL et persistance|DSRM · LSASS · DCSync rights]]","x":0,"y":1290,"width":420,"height":200,"color":"1"},
+		{"id":"ea","type":"text","text":"## Enterprise Admin / forêt\n\n[[Sliver - AD CS, SQL et persistance|Clé de trust + SID History]] → EA","x":0,"y":1680,"width":420,"height":160,"color":"1"}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"setup","fromSide":"bottom","toNode":"foothold","toSide":"top","label":"generate + deliver + migrate"},
+		{"id":"e2","fromNode":"foothold","fromSide":"right","toNode":"exec","toSide":"left","label":"moteur"},
+		{"id":"e3","fromNode":"foothold","fromSide":"bottom","toNode":"enum","toSide":"top","label":"énumérer"},
+		{"id":"e4","fromNode":"enum","fromSide":"left","toNode":"privesc","toSide":"top","label":"SharpUp / Seatbelt"},
+		{"id":"e5","fromNode":"enum","fromSide":"right","toNode":"lateral","toSide":"top","label":"LACheck (dérivée admin)"},
+		{"id":"e6","fromNode":"privesc","fromSide":"right","toNode":"lateral","toSide":"left","label":"remote-sc / scshell (SYSTEM)"},
+		{"id":"e7","fromNode":"lateral","fromSide":"bottom","toNode":"deleg","toSide":"top","label":"délégation"},
+		{"id":"e8","fromNode":"privesc","fromSide":"bottom","toNode":"kerb","toSide":"left","label":"dump secrets / Kerberoast"},
+		{"id":"e9","fromNode":"kerb","fromSide":"bottom","toNode":"da","toSide":"top","label":"OverPass / Golden / DCSync"},
+		{"id":"e10","fromNode":"deleg","fromSide":"bottom","toNode":"da","toSide":"right","label":"S4U / unconstrained + coercition"},
+		{"id":"e11","fromNode":"enum","fromSide":"left","toNode":"adcs","toSide":"top","color":"2","label":"AD CS"},
+		{"id":"e12","fromNode":"enum","fromSide":"left","toNode":"mssql","toSide":"top","color":"2","label":"MSSQL"},
+		{"id":"e13","fromNode":"adcs","fromSide":"right","toNode":"da","toSide":"left","color":"2","label":"TGT DA/EA"},
+		{"id":"e14","fromNode":"mssql","fromSide":"right","toNode":"da","toSide":"left","color":"2","label":"RCE cross-forest"},
+		{"id":"e15","fromNode":"da","fromSide":"bottom","toNode":"ea","toSide":"top","label":"clé de trust + SID History"}
+	]
+}

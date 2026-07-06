@@ -85,5 +85,9 @@ Après passage des outils d'analyse, une relecture manuelle reste souvent néces
 - Réécrire le minimum (ex. transformer une chaîne base64 flaggée et la reconstruire au runtime).
 
 ## Notes associées
-- [[2. Good practices]] · [[Using tools]] · [[Flashcards - PowerShell]]
-- [[Cheatsheet - PowerShell]] · [[Tools list]] · [[PowerShell - MOC]]
+- [[2. Good practices]]
+- [[Using tools]]
+- [[Flashcards - PowerShell]]
+- [[Cheatsheet - PowerShell]]
+- [[Tools list]]
+- [[PowerShell - MOC]]

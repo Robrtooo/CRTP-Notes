@@ -29,4 +29,8 @@ Quand `Loader.exe` est bloqué par AppLocker sur la cible mais que le dot-sourci
 
 > [!note] Si les identifiants sont déjà présents dans la session, éviter d'en ajouter en clair sur la ligne de commande.
 
-**Link** — [[Cheatsheet - Privilege escalation]] · [[Cheatsheet - Post-exploitation]] · [[Cheatsheet - Tickets Kerberos]] · [[What is PowerShell]]
+**Link**
+- [[Cheatsheet - Privilege escalation]]
+- [[Cheatsheet - Post-exploitation]]
+- [[Cheatsheet - Tickets Kerberos]]
+- [[What is PowerShell]]

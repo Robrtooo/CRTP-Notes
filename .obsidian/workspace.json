@@ -38,14 +38,17 @@
             "id": "30d46bfec00be220",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "00 - Navigation/Flashcards - MOC.md",
-                "mode": "source",
-                "source": false
+                "file": "w. Sliver C2/Sliver - Attack map.canvas",
+                "viewState": {
+                  "x": 481.3134171907758,
+                  "y": 1047.800209643606,
+                  "zoom": -0.9624655989139701
+                }
               },
-              "icon": "lucide-file",
-              "title": "Flashcards - MOC"
+              "icon": "lucide-layout-dashboard",
+              "title": "Sliver - Attack map"
             }
           }
         ],
@@ -116,7 +119,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5
+    "width": 303.5
   },
   "right": {
     "id": "8950cbc511b9d847",
@@ -259,44 +262,45 @@
   },
   "active": "30d46bfec00be220",
   "lastOpenFiles": [
+    "w. Sliver C2/Sliver - Index.md",
+    "w. Sliver C2/Sliver - Attack map.canvas",
+    "w. Sliver C2/Cheatsheets/Sliver - Toutes les commandes.md",
+    "w. Sliver C2/Cheatsheets/Sliver - Setup et beacons.md",
+    "w. Sliver C2/Cours/Flashcards - Workflow Sliver.md",
+    "w. Sliver C2/Cours/Flashcards - Workflow Sliver.md.tmp.81121.245b3bd5431c",
+    "w. Sliver C2/Cheatsheets/Sliver - Exécution et évasion.md",
+    "w. Sliver C2/Cours/Flashcards - Sliver.md",
+    "w. Sliver C2/Cours/Flashcards - Sliver.md.tmp.81121.a4d1d2626487",
+    "w. Sliver C2/Cheatsheets/Sliver - Énumération AD.md",
+    "w. Sliver C2/Cheatsheets/Sliver - Delegation et RBCD.md",
+    "w. Sliver C2/Cheatsheets/Sliver - AD CS, SQL et persistance.md",
+    "w. Sliver C2/Cours/Workflow Sliver.md",
+    "w. Sliver C2/Cours/Workflow Sliver.md.tmp.81121.a92fe099daee",
+    "w. Sliver C2/Cours/Qu'est-ce que Sliver.md",
+    "w. Sliver C2/Cours/Qu'est-ce que Sliver.md.tmp.81121.4bf3c89399af",
+    "w. Sliver C2/Cours",
+    "w. Sliver C2/Cheatsheets/Sliver - Toutes les commandes.md.tmp.81121.ce2bc131d577",
+    "w. Sliver C2/Cheatsheets/Sliver - AD CS, SQL et persistance.md.tmp.81121.1c44176b57ec",
+    "w. Sliver C2/Cheatsheets/Sliver - Privesc et lateral.md",
+    "w. Sliver C2/Cheatsheets/Sliver - Privesc et lateral.md.tmp.81121.669006a4583c",
+    "w. Sliver C2/Cheatsheets/Sliver - Delegation et RBCD.md.tmp.81121.b06c15278453",
+    "w. Sliver C2/Cheatsheets/Sliver - Kerberos et tickets.md",
+    "w. Sliver C2/Cheatsheets/Sliver - Kerberos et tickets.md.tmp.81121.93775d17d536",
+    "Sliver - Exécution et évasion.md",
+    "00 - Navigation/1. CRTP - Index.md",
+    "00 - Navigation/Flashcards - MOC.md",
     "00 - Navigation/Cours - MOC.md",
-    "00 - Navigation/Conventions du vault.md",
+    "z. Ressources/Conventions du vault.md",
     "00 - Navigation/Cheatsheets - MOC.md",
-    "00 - Navigation/Audit initial du vault.md",
+    "z. Ressources/Audit initial du vault.md",
     "00 - Navigation/3. Attack map.canvas",
     "00 - Navigation/2. Attack flow.md",
-    "00 - Navigation/1. CRTP - Index.md",
     "03 - Cours/Objectives/Carte d'attaque.canvas",
     "01 - Cheatsheets/Cheatsheet - Trusts et forêts.md",
     "01 - Cheatsheets/Cheatsheet - Lateral movement.md",
     "01 - Cheatsheets/Cheatsheet - RBCD.md",
     "01 - Cheatsheets/Cheatsheet - Reconnaissance AD.md",
-    "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
-    "01 - Cheatsheets/Cheatsheet - PowerShell.md",
-    "01 - Cheatsheets/Cheatsheet - Persistence.md",
-    "01 - Cheatsheets/Cheatsheet - Post-exploitation.md",
-    "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
-    "01 - Cheatsheets/Cheatsheet - Tickets Kerberos.md",
-    "01 - Cheatsheets/Cheatsheet - Outils Windows Linux.md",
-    "01 - Cheatsheets/Cheatsheet - Delegation attacks.md",
-    "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md",
-    "03 - Cours/Enumeration/Énumération AD.md",
-    "03 - Cours/Enumeration/Enumeration.md",
-    "03 - Cours/Active Directory/Fondamentaux AD.md",
-    "03 - Cours/Active Directory/Kerberos.md",
-    "03 - Cours/Active Directory/Flashcards - Attaques AD.md",
-    "02 - Révision/Checklist - Méthodologie CRTP.md",
-    "01 - Cheatsheets/Cheatsheet - MSSQL et PowerUpSQL.md",
     "Sans titre.canvas",
-    "00 - Navigation/CRTP - Index.md.tmp.81121.2756816ccd3e",
-    "03 - Cours/Objectives/Attack flow.md.tmp.81121.df2b06aea3e2",
-    "Sans titre.base",
-    "old-refactor-CRTP-bad-backup",
-    "z. Ressources/Tools/ToolsPassword.txt",
-    "z. Ressources/Sliver/LabManual_Sliver.pdf",
-    "z. Ressources/Sliver/LabManual_Sliver.docx",
-    "z. Ressources/Slides/Attacking_and_Defending_ActiveDirectory.pdf",
-    "z. Ressources/Slides/Attacking_and_Defending_ActiveDirectory - SlideNotes.pdf",
     "z. Ressources/Schema/The Lab Environment_Attack_Paths.png",
     "z. Ressources/Schema/The Lab Environment.png",
     "z. Ressources/Schema/ACL_Mindmap.png",
@@ -306,7 +310,6 @@
     "z. Ressources/IMG/Pasted image 20260227124057.png",
     "z. Ressources/IMG/Pasted image 20260211114825.png",
     "z. Ressources/IMG/Pasted image 20260211113826.png",
-    "z. Ressources/IMG/Pasted image 20260211105416.png",
-    "z. Ressources/Lab-Manual/LabManualV1.5.pdf"
+    "z. Ressources/IMG/Pasted image 20260211105416.png"
   ]
 }

@@ -38,4 +38,5 @@ On se fait passer pour un DC et on demande une réplication des secrets (DRSGetN
 Un template de certificat mal configuré laisse un simple Domain User demander un certificat au nom d'un autre compte (ex. un DA). Le certificat sert ensuite à obtenir un TGT DA/EA, sans compromission machine intermédiaire.
 
 ## Voir aussi
-[[Attaques AD]] · [[Cours - MOC]]
+- [[Attaques AD]]
+- [[Cours - MOC]]

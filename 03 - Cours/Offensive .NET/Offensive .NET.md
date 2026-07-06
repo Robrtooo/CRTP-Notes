@@ -45,5 +45,9 @@ La détection Defender la plus simple est **basée sur la signature** : elle rec
 PowerShell reste pratique pour l'énumération légère ; dès qu'il s'agit d'exécuter un outil offensif connu, on passe en .NET compilé, en mémoire, obfusqué, avec AMSI/ETW neutralisés. Détection, livraison, journalisation : chaque choix technique vise l'un de ces trois fronts.
 
 ## Notes associées
-- [[What is PowerShell]] · [[2. Attack flow]] · [[Flashcards - Offensive .NET]]
-- [[Cheatsheet - PowerShell]] · [[Cheatsheet - Post-exploitation]] · [[Tools list]]
+- [[What is PowerShell]]
+- [[2. Attack flow]]
+- [[Flashcards - Offensive .NET]]
+- [[Cheatsheet - PowerShell]]
+- [[Cheatsheet - Post-exploitation]]
+- [[Tools list]]

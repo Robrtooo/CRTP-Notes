@@ -18,4 +18,6 @@ Nom du template, EKU, droits d'enrôlement, flag `ENROLLEE_SUPPLIES_SUBJECT`. Le
 
 ## Notes associées
 
-- [[Cheatsheet - AD CS et certificats]] · [[Attaques AD]] · [[2. Attack flow]]
+- [[Cheatsheet - AD CS et certificats]]
+- [[Attaques AD]]
+- [[2. Attack flow]]

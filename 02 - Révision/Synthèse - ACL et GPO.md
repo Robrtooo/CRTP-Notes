@@ -22,4 +22,7 @@ Objet précis → droit exact → impact concret. BloodHound révèle ces chemin
 
 ## Notes associées
 
-- [[Cheatsheet - ACL et droits AD]] · [[Cheatsheet - GPO et OU]] · [[Cheatsheet - RBCD]] · [[Attaques AD]]
+- [[Cheatsheet - ACL et droits AD]]
+- [[Cheatsheet - GPO et OU]]
+- [[Cheatsheet - RBCD]]
+- [[Attaques AD]]

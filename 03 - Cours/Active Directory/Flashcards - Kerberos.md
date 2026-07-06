@@ -46,4 +46,5 @@ Demander/forger un ticket en RC4 dans un environnement AES est un *encryption do
 Unconstrained : le service capte le TGT complet de l'utilisateur. Constrained : S4U vers une liste de SPN autorisés. RBCD : la cible déclare elle-même qui peut la déléguer (`msDS-AllowedToActOnBehalfOf`).
 
 ## Voir aussi
-[[Kerberos]] · [[Cours - MOC]]
+- [[Kerberos]]
+- [[Cours - MOC]]

@@ -27,4 +27,7 @@ Outbound Object Control · Inbound Object Control
 > [!note] Workflow du lab : user direct puis groupes du user — `RDPUsers` ressort souvent là où `studentx` seul ne remonte rien. Toujours noter : ObjectDN, droit exact, principal, impact.
 
 ## Related
-[[Cheatsheet - BloodHound SharpHound]] · [[Cheatsheet - GPO et OU]] · [[Cheatsheet - RBCD]] · [[Synthèse - ACL et GPO]]
+- [[Cheatsheet - BloodHound SharpHound]]
+- [[Cheatsheet - GPO et OU]]
+- [[Cheatsheet - RBCD]]
+- [[Synthèse - ACL et GPO]]

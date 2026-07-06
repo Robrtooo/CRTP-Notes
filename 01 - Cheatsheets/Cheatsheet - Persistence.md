@@ -44,4 +44,7 @@ Get-ScheduledTask | Select-Object TaskName, TaskPath, State
 Get-ItemProperty "HKLM:\Software\Microsoft\Windows\CurrentVersion\Run"
 ```
 
-**Link** — [[Cheatsheet - Tickets Kerberos]] · [[Cheatsheet - Post-exploitation]] · [[Cheatsheet - Privilege escalation]]
+**Link**
+- [[Cheatsheet - Tickets Kerberos]]
+- [[Cheatsheet - Post-exploitation]]
+- [[Cheatsheet - Privilege escalation]]

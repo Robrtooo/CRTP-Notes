@@ -36,4 +36,6 @@ Rubeus.exe s4u /user:<svc> /rc4:<hash> /impersonateuser:administrator /msdsspn:<
 > [!note] Deux commandes à retenir d'abord : `Get-DomainComputer -Unconstrained` et `Get-DomainUser -TrustedToAuth`. RBCD (délégation définie côté cible, pas côté délégué) → fiche dédiée. Coercition (Printer Bug / MS-WSP / MS-DFSNM) et abus unconstrained → [[1. Cheatsheet - Toutes les commandes]].
 
 ## Related
-[[Cheatsheet - RBCD]] · [[Cheatsheet - Trusts et forêts]] · [[Synthèse - Kerberos]]
+- [[Cheatsheet - RBCD]]
+- [[Cheatsheet - Trusts et forêts]]
+- [[Synthèse - Kerberos]]

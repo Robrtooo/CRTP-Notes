@@ -44,5 +44,9 @@ La délégation permet à un service d'agir *au nom* d'un utilisateur vers un au
 - **RBCD** — la cible déclare elle-même qui peut la déléguer (attribut `msDS-AllowedToActOnBehalfOf`).
 
 ## Notes associées
-- [[Flashcards - Kerberos]] · [[Cheatsheet - Tickets Kerberos]] · [[Cheatsheet - Kerberoasting]] · [[Cheatsheet - AS-REP Roasting]]
-- [[Components of AD]] · [[Synthèse - Kerberos]]
+- [[Flashcards - Kerberos]]
+- [[Cheatsheet - Tickets Kerberos]]
+- [[Cheatsheet - Kerberoasting]]
+- [[Cheatsheet - AS-REP Roasting]]
+- [[Components of AD]]
+- [[Synthèse - Kerberos]]

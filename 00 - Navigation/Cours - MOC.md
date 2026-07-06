@@ -6,29 +6,45 @@
 ## Raisonnement
 
 - [[2. Attack flow]] — ce que j'ai → ce que je peux en faire
-- [[Flashcards - Attack flow]] · toutes les flashcards : [[Flashcards - MOC]]
+- [[Flashcards - Attack flow]]
+- toutes les flashcards : [[Flashcards - MOC]]
 
 ## Active Directory
 
-- [[Fondamentaux AD]] · [[Flashcards - Fondamentaux AD]]
-- [[Attaques AD]] · [[Flashcards - Attaques AD]]
-- [[Kerberos]] · [[Flashcards - Kerberos]]
-- Notes brutes : [[General Notes]] · [[Components of AD]]
+- [[Fondamentaux AD]]
+- [[Flashcards - Fondamentaux AD]]
+- [[Attaques AD]]
+- [[Flashcards - Attaques AD]]
+- [[Kerberos]]
+- [[Flashcards - Kerberos]]
+- Notes brutes :
+    - [[General Notes]]
+    - [[Components of AD]]
 
 ## Énumération
 
-- [[Énumération AD]] · [[Flashcards - Énumération]]
-- Notes brutes : [[Enumeration]] · [[CheetSheet]]
+- [[Énumération AD]]
+- [[Flashcards - Énumération]]
+- Notes brutes :
+    - [[Enumeration]]
+    - [[CheetSheet]]
 
 ## PowerShell
 
-- [[What is PowerShell]] · [[Flashcards - PowerShell]]
-- Notes brutes : [[2. Good practices]] · [[Using tools]]
+- [[What is PowerShell]]
+- [[Flashcards - PowerShell]]
+- Notes brutes :
+    - [[2. Good practices]]
+    - [[Using tools]]
 
 ## Offensive .NET
 
-- [[Offensive .NET]] · [[Flashcards - Offensive .NET]]
-- Notes brutes : [[1. General Notes]] · [[AV BYPASS]] · [[Assume Breach]]
+- [[Offensive .NET]]
+- [[Flashcards - Offensive .NET]]
+- Notes brutes :
+    - [[1. General Notes]]
+    - [[AV BYPASS]]
+    - [[Assume Breach]]
 
 ## Tous les cours (auto)
 
@@ -41,4 +57,7 @@ SORT file.folder ASC, file.name ASC
 
 ## Voir aussi
 
-- [[1. CRTP - Index]] · [[Cheatsheets - MOC]] · [[Attaques AD - MOC]] · [[Active Directory - MOC]]
+- [[1. CRTP - Index]]
+- [[Cheatsheets - MOC]]
+- [[Attaques AD - MOC]]
+- [[Active Directory - MOC]]

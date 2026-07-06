@@ -54,4 +54,8 @@ Même prérequis que Golden (clé `krbtgt`), mais le TGT de base est authentique
 > 
 > Diamond : clé krbtgt sur un vrai TGT, tout le domaine, contacte le KDC mais reste le plus furtif des trois.
 
-**Link** — [[Cheatsheet - Kerberoasting]] · [[Cheatsheet - AS-REP Roasting]] · [[Cheatsheet - Persistence]] · [[Synthèse - Kerberos]]
+**Link**
+- [[Cheatsheet - Kerberoasting]]
+- [[Cheatsheet - AS-REP Roasting]]
+- [[Cheatsheet - Persistence]]
+- [[Synthèse - Kerberos]]

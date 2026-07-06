@@ -68,4 +68,6 @@
 - **john.exe** (John the Ripper) — cracking offline des hashes (Kerberoast, AS-REP).
 
 ## Voir aussi
-- [[1. Cheatsheet - Toutes les commandes]] · [[Cheatsheet - PowerShell]] · [[What is PowerShell]]
+- [[1. Cheatsheet - Toutes les commandes]]
+- [[Cheatsheet - PowerShell]]
+- [[What is PowerShell]]

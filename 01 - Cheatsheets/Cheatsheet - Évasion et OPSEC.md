@@ -104,4 +104,9 @@ Une collecte `--collectionmethods All` génère un pic de requêtes LDAP très v
 > Exécuter en mémoire, jamais de binaire offensif sur disque. Injecter les tickets avec `/ptt` (en mémoire) plutôt que des fichiers `.kirbi` qui traînent. Lancer PowerView sous InviShell. Vérifier une détection avant de la subir (DefenderCheck/AMSITrigger). Préférer AES à RC4 quand on a le choix. Nettoyer les tickets (`klist purge`) après usage.
 
 ## Related
-[[Offensive .NET]] · [[What is PowerShell]] · [[Cheatsheet - PowerShell]] · [[Cheatsheet - Post-exploitation]] · [[Cheatsheet - Monitoring et détections]] · [[Tools list]]
+- [[Offensive .NET]]
+- [[What is PowerShell]]
+- [[Cheatsheet - PowerShell]]
+- [[Cheatsheet - Post-exploitation]]
+- [[Cheatsheet - Monitoring et détections]]
+- [[Tools list]]

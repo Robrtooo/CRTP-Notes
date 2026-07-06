@@ -20,4 +20,6 @@ Cartographier les liens avant d'exécuter ; un lien peut mener hors de la forêt
 
 ## Notes associées
 
-- [[Cheatsheet - MSSQL et PowerUpSQL]] · [[Attaques AD]] · [[2. Attack flow]]
+- [[Cheatsheet - MSSQL et PowerUpSQL]]
+- [[Attaques AD]]
+- [[2. Attack flow]]

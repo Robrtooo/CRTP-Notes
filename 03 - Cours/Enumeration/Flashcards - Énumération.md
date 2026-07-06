@@ -38,4 +38,5 @@ Il collecte via ADWS (SOAP) au lieu de LDAP direct, ce qui est plus furtif face 
 Fractionner les collectes (éviter un SharpHound « All » d'un coup, très bruyant) et lancer PowerView sous InviShell / privilégier le module AD signé quand la surveillance est forte.
 
 ## Voir aussi
-[[Énumération AD]] · [[Cours - MOC]]
+- [[Énumération AD]]
+- [[Cours - MOC]]

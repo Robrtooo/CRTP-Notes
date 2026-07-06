@@ -53,5 +53,9 @@ Trois faits structurels rendent AD attaquable même sans faille :
 3. **Kerberos par conception** — chaque secret partagé (compte de service, krbtgt, clé de trust) crée une attaque possible dès qu'il fuit. Voir [[Kerberos]].
 
 ## Notes associées
-- [[Attaques AD]] · [[Enumeration]] · [[2. Attack flow]] · [[Flashcards - Fondamentaux AD]]
-- [[Synthèse - Active Directory]] · [[Active Directory - MOC]]
+- [[Attaques AD]]
+- [[Enumeration]]
+- [[2. Attack flow]]
+- [[Flashcards - Fondamentaux AD]]
+- [[Synthèse - Active Directory]]
+- [[Active Directory - MOC]]

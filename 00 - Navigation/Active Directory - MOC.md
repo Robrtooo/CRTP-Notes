@@ -7,8 +7,10 @@
 
 - [[Fondamentaux AD]] — cours
 - [[Kerberos]] — cours
-- [[General Notes]] · [[Components of AD]] — notes brutes
-- [[Synthèse - Active Directory]] · [[Synthèse - Kerberos]] — révision
+- [[General Notes]]
+- [[Components of AD]] — notes brutes
+- [[Synthèse - Active Directory]]
+- [[Synthèse - Kerberos]] — révision
 
 ## Énumération
 

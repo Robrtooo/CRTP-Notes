@@ -30,4 +30,6 @@ winrs -r:dcorp-mgmt cmd
 > [!note] Récupérer d'abord les clés machine de la student VM avant le s4u. Noter : object controlled, delegated machine, SPN target, user impersonated.
 
 ## Related
-[[Cheatsheet - Delegation attacks]] · [[Cheatsheet - Lateral movement]] · [[Cheatsheet - Trusts et forêts]]
+- [[Cheatsheet - Delegation attacks]]
+- [[Cheatsheet - Lateral movement]]
+- [[Cheatsheet - Trusts et forêts]]

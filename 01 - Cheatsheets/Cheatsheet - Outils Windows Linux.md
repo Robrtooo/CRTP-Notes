@@ -18,4 +18,8 @@ Get-ADComputer -Filter *
 
 Réduire les propriétés demandées (`-Properties <attribut>`) dès qu'une sortie ciblée suffit plutôt que `*`.
 
-**Link** — [[What is PowerShell]] · [[Enumeration]] · [[CheetSheet]] · [[Cheatsheets - MOC]]
+**Link**
+- [[What is PowerShell]]
+- [[Enumeration]]
+- [[CheetSheet]]
+- [[Cheatsheets - MOC]]

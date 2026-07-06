@@ -45,4 +45,6 @@ AD CS (ESC1/ESC3) : un simple Domain User → certificat au nom d'un DA → TGT 
 
 ## Voir aussi
 
-[[2. Attack flow]] · [[Flashcards - MOC]] · [[Cours - MOC]]
+- [[2. Attack flow]]
+- [[Flashcards - MOC]]
+- [[Cours - MOC]]

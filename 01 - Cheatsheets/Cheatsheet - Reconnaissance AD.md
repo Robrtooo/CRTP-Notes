@@ -39,4 +39,7 @@ Get-ADDomainController -DomainName moneycorp.local -Discover
 > [!note] PowerView et AD Module sont les deux pivots montrés en parallèle. Garder domaines et DC séparés dès qu'on passe en multi-domaines / forêts.
 
 ## Related
-[[Enumeration]] · [[CheetSheet]] · [[Cheatsheet - LDAP SMB Kerberos]] · [[Cheatsheet - BloodHound SharpHound]]
+- [[Enumeration]]
+- [[CheetSheet]]
+- [[Cheatsheet - LDAP SMB Kerberos]]
+- [[Cheatsheet - BloodHound SharpHound]]

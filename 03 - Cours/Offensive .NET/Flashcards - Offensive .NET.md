@@ -38,4 +38,5 @@ Source (ex. Codecepticon) : on renomme symboles et chaînes avant compilation, q
 Patch AMSI : l'inspection du code par l'AV juste avant exécution. Patch ETW : la télémétrie .NET qui alimente les EDR. Syscalls directs : les hooks EDR posés sur les API Windows en espace utilisateur.
 
 ## Voir aussi
-[[Offensive .NET]] · [[Cours - MOC]]
+- [[Offensive .NET]]
+- [[Cours - MOC]]

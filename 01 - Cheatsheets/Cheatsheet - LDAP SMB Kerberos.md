@@ -29,4 +29,7 @@ ldapsearch -x -H ldap://<DC_IP> -b "DC=<DOMAIN>,DC=local"
 > [!note] `description`, `logonCount`, `pwdLastSet`, `ServicePrincipalName` cachent souvent des hints. Sortie trop large → repasser sur un attribut précis au lieu de `-Properties *`.
 
 ## Related
-[[CheetSheet]] · [[Cheatsheet - Reconnaissance AD]] · [[Cheatsheet - Kerberoasting]] · [[Cheatsheet - Delegation attacks]]
+- [[CheetSheet]]
+- [[Cheatsheet - Reconnaissance AD]]
+- [[Cheatsheet - Kerberoasting]]
+- [[Cheatsheet - Delegation attacks]]

@@ -7,11 +7,15 @@
 
 - [[What is PowerShell]] — cours
 - [[Flashcards - PowerShell]]
-- Suite naturelle : [[Offensive .NET]] · [[Flashcards - Offensive .NET]]
+- Suite naturelle :
+    - [[Offensive .NET]]
+    - [[Flashcards - Offensive .NET]]
 
 ## Notes brutes
 
-- [[2. Good practices]] · [[Using tools]] · [[PowerShell]]
+- [[2. Good practices]]
+- [[Using tools]]
+- [[PowerShell]]
 
 ## Compléments de révision
 
