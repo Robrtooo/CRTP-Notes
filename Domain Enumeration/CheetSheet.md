@@ -69,7 +69,6 @@ Get-ADUser -Filter 'Description -like "*built*"' -Properties Description | sele
 > Sometimes, some attributes, password or service owned by the user are wrote in description.
 > It can be really usefull to check it
 
-
 - Get all the groups in the current domain-
 ```
 Get-DomainGroup | select Name
@@ -85,31 +84,109 @@ Get-DomainGroup *admin*
 Get-ADGroup -Filter 'Name -like "*admin*"' | select Name
 ```
 
-- Get 
+- Get all the members of the Domain Admin group *can be whatever else group*
+```
+Get-DomainGroupMember -Identity "Domain Admins" -Recurse
+Get-ADGroupMember -Identity "Domain Admins" -Recursive
+```
+- Get the group membership for a user 
+```
+Get-DomainGroup -UserName "student1"
+Get-ADPrincipalGroupMembership -Identity student1
+```
+
+
+- List all the local groups on a machine -> /!\ need admin priv on non-dc machines
+```
+Get-NetLocalGroup -ComputerName dcorp-dc
+```
+- Get members of the local group "Administrators" on a machine -> /!\ need admin priv on non-dc machines
+```
+Get-NetLocalGroup -ComputerName dcorp-dc
+```
+- Get members of the local group 'Administrators' on a machine (needs administrator privs on non-dc machines)
+```
+Get-NetLocalGroupMember -ComputerName dcorp-dc -GroupName Administrators
+```
+- Get actively logged users on a computer (needs local admin rights on the target)
+```
+Get-NetLoggedon -ComputerName dcorp-adminsrv
+```
+- Get locally logged users on a computer (needs remote registry on the target - started by-default on a server OS)
+```
+Get-LoggedonLocal -ComputerName dcorp-adminsrv
+```
+- Get the lost logged user on a computer (needs administrative rights and remote registry on the target)
+```
+Get-LastLoggedOn -ComputerName dcorp-adminsrv
+```
+
+- Find shares on hosts in current domain
+```
+Invoke-ShareFinder -Verbose
+```
+- Find sensitive files on computers in the domain
+```
+Invoke-FileFinder -Verbose
+```
+- Get all fileservers of the domain
+```
+Get-NetFileServer
+```
+- Enumerating shares, - can also use **PowerHuntShare**
+-> Discover shares, senstives files, ACLs for shares, networks computers, identities and generates report (éviter les DC dans la hostlist)
+```
+Invoke-HuntSMBShares -NoPing -OutpoutDirectory /MonChemin -HostList /maHostList
+```
+- Get
 ```
 
 ```
-- Get 
+- Get
 ```
 
 ```
-- Get 
+- Get
 ```
 
 ```
-- Get 
+- Get
 ```
 
 ```
-- Get 
+- Get
 ```
 
 ```
-- Get 
+- Get
 ```
 
 ```
-- Get 
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
+```
+
+```
+- Get
 ```
 
 ```
