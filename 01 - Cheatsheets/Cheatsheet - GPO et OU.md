@@ -4,6 +4,7 @@
 > Lister les OU, relier une OU à sa GPO (`gplink`) et recouper les ACL des policies. Ordre à garder : OU → gplink → GPO → ACL.
 
 ### OU enumeration
+
 ```powershell
 . C:\AD\Tools\PowerView.ps1
 Get-DomainOU | Select-Object -ExpandProperty name
@@ -11,12 +12,14 @@ Get-DomainOU | Select-Object -ExpandProperty name
 ```
 
 ### List and read GPOs
+
 ```powershell
 Get-DomainGPO
 Get-DomainGPO -Identity "DevOps Policy"
 ```
 
 ### Resolve a GPO from OU gplink
+
 ```powershell
 (Get-DomainOU -Identity DevOps).gplink
 Get-DomainGPO -Identity (Get-DomainOU -Identity DevOps).gplink.substring(11,(Get-DomainOU -Identity DevOps).gplink.length-72)
