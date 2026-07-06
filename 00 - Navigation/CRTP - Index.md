@@ -1,5 +1,3 @@
-# CRTP - Index
-
 > [!summary] Résumé
 > Page d'accueil du vault CRTP. Point d'entrée unique vers le chemin d'attaque, les cours, les cheatsheets, les fiches de révision et les flashcards.
 
@@ -41,7 +39,7 @@ Commandes prêtes à l'emploi. Master : **[[1. Cheatsheet - Toutes les commandes
 
 ## Flashcards (Spaced Repetition)
 
-Rappel actif — le plugin Spaced Repetition transforme ces decks en file de révision. Liste auto-actualisée :
+Page centralisée : **[[Flashcards - MOC]]** (60 cartes, 7 decks). Rappel actif — le plugin transforme ces decks en file de révision. Liste auto-actualisée :
 
 ```dataview
 LIST
@@ -52,7 +50,7 @@ SORT file.name ASC
 
 ## Cartes de navigation
 
-- [[Cours - MOC]] · [[Cheatsheets - MOC]] · [[Active Directory - MOC]] · [[Attaques AD - MOC]] · [[PowerShell - MOC]] · [[Labs - MOC]]
+- [[Cours - MOC]] · [[Flashcards - MOC]] · [[Cheatsheets - MOC]] · [[Active Directory - MOC]] · [[Attaques AD - MOC]] · [[PowerShell - MOC]] · [[Labs - MOC]]
 
 ## Notes brutes (captures de cours)
 

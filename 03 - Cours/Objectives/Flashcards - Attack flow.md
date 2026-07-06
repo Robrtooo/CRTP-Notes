@@ -1,13 +1,17 @@
 # Flashcards - Attack flow
 
 > [!summary] Révision active
-> Cartes au format Spaced Repetition — déck `#flashcards/attack-flow`. Ouvre la commande « Spaced Repetition: Review flashcards » pour réviser la file du jour. Cours : [[Attack flow]].
+> Cartes au format Spaced Repetition — déck `#flashcards/attack-flow`. Lance « Spaced Repetition: Review flashcards » pour réviser la file du jour. Cours : [[Attack flow]] · Hub : [[Flashcards - MOC]].
 
 #flashcards/attack-flow
+
+## Principe
 
 **Quelle est l'idée centrale de l'attack flow ?**
 ?
 L'attaque AD est une machine à états : on part de ce qu'on possède (un état) pour dériver les actions possibles, et chaque action réussie fait changer d'état. On enchaîne les transitions jusqu'à la domination de la forêt. Réflexe : « qu'est-ce que je possède, et vers quel acquis chaque option m'emmène ? »
+
+## Progression d'état
 
 **Depuis un simple compte de domaine, quelles sont les 3 premières options à considérer ?**
 ?
@@ -21,11 +25,11 @@ Vers RBCD : écrire `msDS-AllowedToActOnBehalfOf` pour t'ajouter, puis S4U → a
 ?
 Dumper les secrets en mémoire (hash/clés des comptes connectés), chasser une session de DA présente, et vérifier si la machine est en unconstrained delegation (capture de TGT + coercition du DC).
 
-**Tu obtiens un hash/clé AES. Quelles options selon la nature du compte ?**
+**Tu obtiens un hash / une clé AES. Quelles options selon la nature du compte ?**
 ?
 OverPass-the-Hash pour une session complète en tant que ce compte ; si c'est un compte de service/machine, Silver Ticket vers ses services ; si le compte est privilégié, tu passes à l'état DA.
 
-**Depuis Domain Admin, quelles actions de domination/persistance ?**
+**Depuis Domain Admin, quelles actions de domination / persistance ?**
 ?
 DCSync (extraire tout hash, dont krbtgt) → Golden/Diamond ticket ; DSRM (accès DC indépendant du domaine) ; extraction de la clé de trust pour franchir vers un autre domaine/forêt.
 
@@ -33,9 +37,12 @@ DCSync (extraire tout hash, dont krbtgt) → Golden/Diamond ticket ; DSRM (accè
 ?
 Forger un TGT inter-realm en injectant le SID des Enterprise Admins dans le SID History (trust enfant→parent intra-forêt non filtré) → EA.
 
+## Voies transverses
+
 **Quels deux chemins court-circuitent souvent la progression classique, et pourquoi ?**
 ?
 AD CS (ESC1/ESC3) : un simple Domain User → certificat au nom d'un DA → TGT DA/EA, sans passer par une compromission machine. MSSQL : un compte de domaine accepté par une instance SQL → database links → RCE cross-forest.
 
 ## Voir aussi
-[[Attack flow]] · [[Cours - MOC]]
+
+[[Attack flow]] · [[Flashcards - MOC]] · [[Cours - MOC]]

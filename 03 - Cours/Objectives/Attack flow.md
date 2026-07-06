@@ -1,82 +1,116 @@
 # Attack flow
 
 > [!summary] Objectif
-> Chemin de réflexion offensif : au lieu de mémoriser des attaques isolées, on part de **ce qu'on possède** (un état) pour dériver **ce qu'on peut en faire** (les actions), sachant que chaque action produit un nouvel acquis. L'attaque AD est une machine à états — ce cours donne la carte, les cheatsheets donnent les commandes. Révision : [[Flashcards - Attack flow]].
+> L'attaque AD est une **machine à états** : on part de ce qu'on possède (un état) pour dériver ce qu'on peut en faire (les actions), et chaque action réussie fait changer d'état. Ce cours donne la carte ; les cheatsheets donnent les commandes. Révision : [[Flashcards - Attack flow]].
 
-## Vue d'ensemble
+> [!tip] Comment lire cette page
+> Repère ton **état courant** sur la carte → saute à la section numérotée correspondante → applique une action → tu changes d'état. Objectif final : remonter jusqu'à la forêt (Enterprise Admin).
+
+## La carte
 
 ```mermaid
 flowchart TD
-    START([Accès réseau, aucun compte]) -->|AS-REP roasting| ACC[Compte de domaine]
-    ACC -->|énumération + Kerberoasting + BloodHound| ACL[Droit ACL sur un objet]
-    ACC -->|accès interactif + privesc| LOCAL[Admin local]
+    START([Accès réseau]) -->|AS-REP roasting| ACC[1 · Compte de domaine]
+    ACC -->|énumération + Kerberoasting + BloodHound| ACL[2 · Droit ACL]
+    ACC -->|accès interactif + privesc| LOCAL[3 · Admin local]
     ACL -->|RBCD / ForceChangePassword| LOCAL
-    LOCAL -->|dump LSASS| HASH[Hash ou clé AES]
-    HASH -->|OverPass-the-Hash / Silver Ticket| LOCAL
-    HASH -->|compte privilégié| DA[Domain Admin]
+    LOCAL -->|dump LSASS| HASH[4 · Hash ou clé AES]
+    HASH -->|OverPass-the-Hash / Silver| LOCAL
+    HASH -->|compte privilégié| DA[5 · Domain Admin]
     LOCAL -->|session DA / unconstrained + coercition| DA
     DA -->|DCSync + Golden / Diamond| DA
-    DA -->|clé de trust + SID History| EA[Enterprise Admin / forêt]
+    DA -->|clé de trust + SID History| EA[6 · Enterprise Admin / forêt]
     ACC -. AD CS ESC1/ESC3 .-> DA
     ACC -. MSSQL database links .-> DA
+    classDef start fill:#1f6feb,stroke:#0b3d91,color:#ffffff;
+    classDef goal fill:#b30000,stroke:#7a0000,color:#ffffff;
+    class START start;
+    class DA,EA goal;
 ```
 
-Chaque flèche est une transition détaillée plus bas : à gauche l'état que tu possèdes, sur la flèche l'action, à droite le nouvel acquis.
+**Légende** — bleu : point d'entrée · rouge : objectifs (Domain / Enterprise Admin) · trait plein : progression directe · pointillé : raccourci (AD CS, MSSQL). Chaque flèche est détaillée dans la section de son état de départ.
 
 ## Le principe
 
-Un état = ce que tu contrôles à l'instant T (rien, un compte, un hash, un droit, un accès admin, DA, EA). À chaque état correspond un jeu d'actions possibles, et chaque action réussie te fait *changer d'état*. Progresser = enchaîner les transitions jusqu'à la domination de la forêt.
+Un état = ce que tu contrôles à l'instant T (rien, un compte, un droit, un accès admin, un hash, DA, EA). À chaque état correspond un jeu d'actions, et chaque action réussie te fait *changer d'état*. Progresser = enchaîner les transitions.
 
-Toujours se demander : **« qu'est-ce que je possède exactement, et vers quel nouvel acquis chaque option m'emmène ? »**
+Le réflexe unique : **« qu'est-ce que je possède exactement, et vers quel nouvel acquis chaque option m'emmène ? »**
 
-## Tu as : un accès réseau, aucun compte
+## Les états, dans l'ordre
 
-- Un **nom d'utilisateur** sans préauth → **AS-REP roasting** → *rapporte* un hash crackable ([[Cheatsheet - AS-REP Roasting]]).
-- Rien d'autre d'exploitable tant que tu n'as pas d'identité valide. Objectif immédiat : obtenir un compte de domaine (phishing, creds trouvés, null session).
+### 0 · Accès réseau, aucun compte
 
-## Tu as : un compte de domaine (assume breach)
+**Tu possèdes :** une position réseau, éventuellement un nom d'utilisateur.
 
-C'est l'état de départ des labs. AD est lisible par tout compte authentifié → énumérer largement.
+- **AS-REP roasting** (si un compte a la préauth désactivée) — *rapporte* un hash crackable offline. ([[Cheatsheet - AS-REP Roasting]])
+- Sinon : obtenir une identité valide (creds trouvés, null session, phishing).
 
-- **Énumérer** (users, groupes, ACL, GPO, trusts, sessions, ADCS, SQL) → *rapporte* la carte du terrain ([[Enumeration]], [[Cheatsheet - Reconnaissance AD]]).
-- **Kerberoasting** d'un compte à SPN → *rapporte* un hash de compte de service, souvent privilégié ([[Cheatsheet - Kerberoasting]]).
-- **BloodHound** → *rapporte* un chemin visuel vers Domain Admin ([[Cheatsheet - BloodHound SharpHound]]).
-- **Droit ACL intéressant** repéré (GenericWrite, WriteDACL, ForceChangePassword) → voir l'état « tu as un droit ACL ».
-- **Privesc locale** si tu as un accès interactif sur une machine → voir « admin local ».
+**Mène vers →** un compte de domaine (état 1).
 
-## Tu as : un droit ACL sur un objet
+### 1 · Compte de domaine
 
-- `ForceChangePassword` sur un user → réinitialiser son mot de passe → *rapporte* ce compte.
-- `GenericWrite`/`GenericAll` sur un **computer** → **RBCD** → *rapporte* un accès admin sur cette machine ([[Cheatsheet - RBCD]]).
-- `GenericWrite` sur un user → **targeted Kerberoasting** (poser un SPN) ou forcer un logon.
-- Droit sur une **GPO** liée à une OU → exécution/config sur toutes les machines de l'OU ([[Cheatsheet - GPO et OU]]).
+**Tu possèdes :** un compte authentifié — l'état de départ des labs (assume breach). AD est lisible par tout compte → énumérer largement d'abord.
 
-## Tu as : un admin local sur une machine
+- **Énumérer** users, groupes, ACL, GPO, trusts, sessions, AD CS, SQL — *rapporte* la carte du terrain. ([[Énumération AD]], [[Cheatsheet - Reconnaissance AD]])
+- **Kerberoasting** d'un compte à SPN — *rapporte* un hash de service, souvent privilégié. ([[Cheatsheet - Kerberoasting]])
+- **BloodHound** — *rapporte* le chemin le plus court vers Domain Admin. ([[Cheatsheet - BloodHound SharpHound]])
 
-- **Dumper les secrets** en mémoire (SafetyKatz) → *rapporte* les hash/clés des comptes connectés ([[Cheatsheet - Post-exploitation]]).
-- **Chasser les sessions** : un DA connecté ici ? → *rapporte* potentiellement des creds DA.
-- Machine en **unconstrained delegation** → capturer les TGT + coercition du DC → *rapporte* le TGT du DC ([[Cheatsheet - Delegation attacks]]).
+**Mène vers →** un droit ACL (état 2), un admin local (état 3), ou directement DA par une voie transverse.
 
-## Tu as : un hash / une clé AES d'un compte
+### 2 · Un droit ACL sur un objet
 
-- **OverPass-the-Hash** → *rapporte* une session complète en tant que ce compte ([[Cheatsheet - Lateral movement]]).
-- Si c'est un **compte de service/machine** → **Silver Ticket** vers ses services ([[Cheatsheet - Tickets Kerberos]]).
-- Si le compte est privilégié → tu changes d'état vers « DA ».
+**Tu possèdes :** un droit d'écriture sur un objet (repéré via BloodHound / [[Cheatsheet - ACL et droits AD]]).
 
-## Tu as : Domain Admin
+- **ForceChangePassword** sur un user — *rapporte* le contrôle de ce compte.
+- **GenericWrite / GenericAll** sur un computer — **RBCD** → *rapporte* un accès admin sur la machine. ([[Cheatsheet - RBCD]])
+- **GenericWrite** sur un user — *rapporte* un targeted Kerberoasting (poser un SPN).
+- Droit sur une **GPO** liée à une OU — *rapporte* l'exécution sur toutes ses machines. ([[Cheatsheet - GPO et OU]])
 
-- **DCSync** → *rapporte* n'importe quel hash du domaine, dont `krbtgt` ([[Cheatsheet - Persistence]]).
-- Avec `krbtgt` → **Golden / Diamond Ticket** → persistance et re-domination à volonté ([[Cheatsheet - Tickets Kerberos]]).
-- **DSRM** → *rapporte* un accès DC indépendant du domaine ([[Cheatsheet - Persistence]]).
-- **Extraire la clé de trust** → voir « franchir un trust ».
+**Mène vers →** un compte, un admin local (état 3) ou un hash (état 4).
 
-## Tu as : DA d'un domaine, il existe un trust
+### 3 · Admin local sur une machine
 
-- Trust **enfant → parent** (intra-forêt) : forger un TGT inter-realm avec SID History (SID des Enterprise Admins) → *rapporte* **Enterprise Admin** ([[Cheatsheet - Trusts et forêts]]).
-- Trust **inter-forêt** : la clé de trust permet un referral ticket vers un service de l'autre forêt (SID History filtré par `FILTER_SIDS`).
+**Tu possèdes :** des droits d'administration locaux sur un hôte.
 
-> [!note] Voie parallèle : AD CS et MSSQL
-> Deux chemins qui court-circuitent souvent la progression classique. **AD CS** (ESC1/ESC3) : un simple Domain User → certificat au nom d'un DA → TGT DA/EA ([[Cheatsheet - AD CS et certificats]]). **MSSQL** : un compte de domaine accepté par une instance SQL → crawl de database links → RCE cross-forest ([[Cheatsheet - MSSQL et PowerUpSQL]]).
+- **Dumper les secrets** en mémoire (SafetyKatz) — *rapporte* les hash/clés des comptes connectés. ([[Cheatsheet - Post-exploitation]])
+- **Chasser les sessions** — un DA connecté ici ? *rapporte* potentiellement des creds DA.
+- Machine en **unconstrained delegation** + coercition d'un DC — *rapporte* le TGT du DC. ([[Cheatsheet - Delegation attacks]])
+
+**Mène vers →** un hash / une clé (état 4), voire directement DA.
+
+### 4 · Un hash ou une clé AES
+
+**Tu possèdes :** le secret d'un compte (hash NT ou clé AES).
+
+- **OverPass-the-Hash** — *rapporte* une session complète en tant que ce compte. ([[Cheatsheet - Lateral movement]])
+- Compte de **service / machine** → **Silver Ticket** vers ses services. ([[Cheatsheet - Tickets Kerberos]])
+- Compte **privilégié** → tu passes à l'état 5.
+
+**Mène vers →** un mouvement latéral, ou Domain Admin (état 5).
+
+### 5 · Domain Admin
+
+**Tu possèdes :** le contrôle du domaine. Objectif : persister et franchir la forêt.
+
+- **DCSync** — *rapporte* n'importe quel hash, dont `krbtgt`. ([[Cheatsheet - Persistence]])
+- **Golden / Diamond Ticket** (avec `krbtgt`) — *rapporte* la re-domination à volonté. ([[Cheatsheet - Tickets Kerberos]])
+- **DSRM** — *rapporte* un accès DC indépendant du domaine. ([[Cheatsheet - Persistence]])
+- **Extraire la clé de trust** — prépare le franchissement (état 6).
+
+**Mène vers →** Enterprise Admin / la forêt (état 6).
+
+### 6 · Enterprise Admin (via un trust)
+
+**Tu possèdes :** DA d'un domaine, et il existe un trust.
+
+- Trust **enfant → parent** (intra-forêt) — forger un TGT inter-realm avec le SID des Enterprise Admins (SID History non filtré) → *rapporte* **Enterprise Admin**. ([[Cheatsheet - Trusts et forêts]])
+- Trust **inter-forêt** — la clé de trust permet un referral ticket vers un service de l'autre forêt (SID History filtré par `FILTER_SIDS`).
+
+**Objectif atteint :** domination de la forêt.
+
+> [!note] Voies transverses : AD CS et MSSQL
+> Deux raccourcis (flèches pointillées) qui court-circuitent la progression depuis un simple compte. **AD CS** (ESC1/ESC3) : Domain User → certificat au nom d'un DA → TGT DA/EA. ([[Cheatsheet - AD CS et certificats]]) **MSSQL** : compte de domaine accepté par une instance → crawl de database links → RCE cross-forest. ([[Cheatsheet - MSSQL et PowerUpSQL]])
 
 ## Notes associées
-- [[Flashcards - Attack flow]] · [[1. Cheatsheet - Toutes les commandes]] · [[Checklist - Méthodologie CRTP]]
+
+- [[Flashcards - Attack flow]] · [[Flashcards - MOC]] · [[1. Cheatsheet - Toutes les commandes]] · [[Checklist - Méthodologie CRTP]]

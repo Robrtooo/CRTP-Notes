@@ -6,7 +6,7 @@
 ## Raisonnement
 
 - [[Attack flow]] — ce que j'ai → ce que je peux en faire
-- [[Flashcards - Attack flow]]
+- [[Flashcards - Attack flow]] · toutes les flashcards : [[Flashcards - MOC]]
 
 ## Active Directory
 
