@@ -7,7 +7,7 @@
 
 | Thème | Deck | Cartes | Cours |
 |---|---|---|---|
-| Raisonnement | [[Flashcards - Attack flow]] | 8 | [[Attack flow]] |
+| Raisonnement | [[Flashcards - Attack flow]] | 8 | [[2. Attack flow]] |
 | AD — fondamentaux | [[Flashcards - Fondamentaux AD]] | 8 | [[Fondamentaux AD]] |
 | AD — attaques | [[Flashcards - Attaques AD]] | 8 | [[Attaques AD]] |
 | Kerberos | [[Flashcards - Kerberos]] | 10 | [[Kerberos]] |
@@ -34,4 +34,4 @@ SORT file.name ASC
 
 ## Voir aussi
 
-- [[Cours - MOC]] · [[CRTP - Index]]
+- [[Cours - MOC]] · [[1. CRTP - Index]]

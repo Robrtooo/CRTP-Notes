@@ -1,7 +1,7 @@
 # Synthèse - Attaques AD
 
 > [!summary] Résumé
-> Familles d'attaques et leur logique. Cours : [[Attaques AD]]. Chemin : [[Attack flow]]. Cartes : [[Flashcards - Attaques AD]].
+> Familles d'attaques et leur logique. Cours : [[Attaques AD]]. Chemin : [[2. Attack flow]]. Cartes : [[Flashcards - Attaques AD]].
 
 ## Quatre leviers
 
@@ -25,4 +25,4 @@ Prérequis exact → information recherchée → gain → état suivant. Valider
 
 ## Notes associées
 
-- [[Attaques AD]] · [[Attack flow]] · [[Attaques AD - MOC]] · [[1. Cheatsheet - Toutes les commandes]]
+- [[Attaques AD]] · [[2. Attack flow]] · [[Attaques AD - MOC]] · [[1. Cheatsheet - Toutes les commandes]]

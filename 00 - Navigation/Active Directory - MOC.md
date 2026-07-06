@@ -23,7 +23,7 @@
 
 ## Attaques et chemins d'attaque
 
-- [[Attack flow]] — chemin de décision état → action
+- [[2. Attack flow]] — chemin de décision état → action
 - [[Attaques AD]] — cours des mécanismes
 - [[Attaques AD - MOC]]
 - [[Cheatsheet - Kerberoasting]]

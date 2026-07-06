@@ -7,7 +7,7 @@
 
 - Vérifier le périmètre autorisé du lab.
 - Noter les IP, noms de domaine, utilisateurs et objectifs.
-- Ouvrir le MOC adapté : [[CRTP - Index]] ou [[Active Directory - MOC]].
+- Ouvrir le MOC adapté : [[1. CRTP - Index]] ou [[Active Directory - MOC]].
 
 ## Pendant l'énumération
 

@@ -16,4 +16,4 @@ Domaine source · domaine cible · TrustType · TrustDirection · TrustAttribute
 
 ## Notes associées
 
-- [[Cheatsheet - Trusts et forêts]] · [[Fondamentaux AD]] · [[Synthèse - Kerberos]] · [[Attack flow]]
+- [[Cheatsheet - Trusts et forêts]] · [[Fondamentaux AD]] · [[Synthèse - Kerberos]] · [[2. Attack flow]]

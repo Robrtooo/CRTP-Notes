@@ -1,7 +1,7 @@
 # Flashcards - Attack flow
 
 > [!summary] Révision active
-> Cartes au format Spaced Repetition — déck `#flashcards/attack-flow`. Lance « Spaced Repetition: Review flashcards » pour réviser la file du jour. Cours : [[Attack flow]] · Hub : [[Flashcards - MOC]].
+> Cartes au format Spaced Repetition — déck `#flashcards/attack-flow`. Lance « Spaced Repetition: Review flashcards » pour réviser la file du jour. Cours : [[2. Attack flow]] · Hub : [[Flashcards - MOC]].
 
 #flashcards/attack-flow
 
@@ -45,4 +45,4 @@ AD CS (ESC1/ESC3) : un simple Domain User → certificat au nom d'un DA → TGT 
 
 ## Voir aussi
 
-[[Attack flow]] · [[Flashcards - MOC]] · [[Cours - MOC]]
+[[2. Attack flow]] · [[Flashcards - MOC]] · [[Cours - MOC]]

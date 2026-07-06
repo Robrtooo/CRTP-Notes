@@ -5,7 +5,7 @@
 
 ## Démarrage
 
-- [[Attack flow]] — par où commencer, chemin de décision
+- [[2. Attack flow]] — par où commencer, chemin de décision
 - [[Context]]
 - [[Checklist - Méthodologie CRTP]]
 
@@ -17,7 +17,7 @@
 
 ## Pivots de navigation
 
-- [[CRTP - Index]]
+- [[1. CRTP - Index]]
 - [[Cheatsheets - MOC]]
 - [[Active Directory - MOC]]
 

@@ -24,5 +24,5 @@ Relier chaque objet/attribut à l'attaque qu'il ouvre : SPN → Kerberoast, prea
 
 ## Notes associées
 
-- [[Fondamentaux AD]] · [[Kerberos]] · [[Attaques AD]] · [[Attack flow]]
+- [[Fondamentaux AD]] · [[Kerberos]] · [[Attaques AD]] · [[2. Attack flow]]
 - [[General Notes]] · [[Components of AD]] · [[Active Directory - MOC]]

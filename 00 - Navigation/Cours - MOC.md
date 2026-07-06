@@ -1,11 +1,11 @@
 # Cours - MOC
 
 > [!summary] Résumé
-> Carte des cours : la couche « comprendre le pourquoi », en amont des cheatsheets (le comment) et des flashcards (le rappel). Pivot de raisonnement : [[Attack flow]].
+> Carte des cours : la couche « comprendre le pourquoi », en amont des cheatsheets (le comment) et des flashcards (le rappel). Pivot de raisonnement : [[2. Attack flow]].
 
 ## Raisonnement
 
-- [[Attack flow]] — ce que j'ai → ce que je peux en faire
+- [[2. Attack flow]] — ce que j'ai → ce que je peux en faire
 - [[Flashcards - Attack flow]] · toutes les flashcards : [[Flashcards - MOC]]
 
 ## Active Directory
@@ -41,4 +41,4 @@ SORT file.folder ASC, file.name ASC
 
 ## Voir aussi
 
-- [[CRTP - Index]] · [[Cheatsheets - MOC]] · [[Attaques AD - MOC]] · [[Active Directory - MOC]]
+- [[1. CRTP - Index]] · [[Cheatsheets - MOC]] · [[Attaques AD - MOC]] · [[Active Directory - MOC]]

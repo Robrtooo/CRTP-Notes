@@ -1,7 +1,7 @@
 # Synthèse - MSSQL
 
 > [!summary] Résumé
-> SQL Server comme voie transverse. Fiche : [[Cheatsheet - MSSQL et PowerUpSQL]]. Chemin : [[Attack flow]].
+> SQL Server comme voie transverse. Fiche : [[Cheatsheet - MSSQL et PowerUpSQL]]. Chemin : [[2. Attack flow]].
 
 ## À retenir
 
@@ -20,4 +20,4 @@ Cartographier les liens avant d'exécuter ; un lien peut mener hors de la forêt
 
 ## Notes associées
 
-- [[Cheatsheet - MSSQL et PowerUpSQL]] · [[Attaques AD]] · [[Attack flow]]
+- [[Cheatsheet - MSSQL et PowerUpSQL]] · [[Attaques AD]] · [[2. Attack flow]]

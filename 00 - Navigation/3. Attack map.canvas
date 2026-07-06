@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"n1","type":"text","text":"## 1 · Compte de domaine\n\nAssume breach — AD lisible par tout compte.\n\n- [[Cheatsheet - Reconnaissance AD|Énumérer]] largement\n- [[Cheatsheet - Kerberoasting|Kerberoasting]] (compte à SPN)\n- [[Cheatsheet - BloodHound SharpHound|BloodHound]] → chemin vers DA","x":0,"y":220,"width":380,"height":240},
+		{"id":"n_legend","type":"text","text":"### Carte d'attaque interactive\n\nClique un lien pour ouvrir la fiche.\n\n- Cyan : point d'entrée\n- Rouge : objectif (DA / EA)\n- Orange : voie transverse\n\nCours : [[2. Attack flow]]","x":-600,"y":120,"width":341,"height":210},
+		{"id":"n4","type":"text","text":"## 4 · Hash / clé AES\n\n- [[Cheatsheet - Lateral movement|OverPass-the-Hash]]\n- Compte de service → [[Cheatsheet - Tickets Kerberos|Silver Ticket]]\n- Compte privilégié → Domain Admin","x":540,"y":975,"width":380,"height":200},
+		{"id":"n3","type":"text","text":"## 3 · Admin local\n\n- [[Cheatsheet - Post-exploitation|Dump des secrets]] (SafetyKatz)\n- Chasse d'une session DA\n- Unconstrained + coercition → [[Cheatsheet - Delegation attacks|TGT du DC]]","x":540,"y":675,"width":380,"height":230},
+		{"id":"n_adcs","type":"text","text":"## Voie AD CS\n\nDomain User → certificat au nom d'un DA → TGT.\n\n[[Cheatsheet - AD CS et certificats|ESC1 / ESC3]]","x":-760,"y":965,"width":380,"height":160,"color":"2"},
+		{"id":"n2","type":"text","text":"## 2 · Droit ACL\n\n- ForceChangePassword → reset d'un user\n- GenericWrite computer → [[Cheatsheet - RBCD|RBCD]]\n- GenericWrite user → targeted Kerberoast\n- GPO liée à une OU → [[Cheatsheet - GPO et OU|exécution]]\n\nDétail : [[Cheatsheet - ACL et droits AD]]","x":-760,"y":675,"width":380,"height":230},
+		{"id":"n5","type":"text","text":"## 5 · Domain Admin\n\n- [[Cheatsheet - Persistence|DCSync]] → hash de krbtgt\n- [[Cheatsheet - Tickets Kerberos|Golden / Diamond]]\n- [[Cheatsheet - Persistence|DSRM]]\n- Extraire la clé de trust →","x":-10,"y":1265,"width":390,"height":215,"color":"1"},
+		{"id":"n_mssql","type":"text","text":"## Voie MSSQL\n\nCompte de domaine → database links → RCE.\n\n[[Cheatsheet - MSSQL et PowerUpSQL|PowerUpSQL]]","x":-640,"y":1215,"width":380,"height":180,"color":"2"},
+		{"id":"n6","type":"text","text":"## 6 · Enterprise Admin / forêt\n\n- Enfant → parent : SID History (519) → EA\n- Inter-forêt : referral, SID filtré\n\nDétail : [[Cheatsheet - Trusts et forêts]]","x":-15,"y":1640,"width":400,"height":190,"color":"1"},
+		{"id":"n_start","type":"text","text":"## Accès réseau\n\nAucun compte.\nObjectif : obtenir une identité valide (creds, null session, AS-REP).","x":20,"y":-60,"width":340,"height":160,"color":"5"}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"n_start","fromSide":"bottom","toNode":"n1","toSide":"top","label":"AS-REP roasting"},
+		{"id":"e2","fromNode":"n1","fromSide":"left","toNode":"n2","toSide":"top","label":"droit ACL repéré"},
+		{"id":"e3","fromNode":"n1","fromSide":"right","toNode":"n3","toSide":"top","label":"accès interactif + privesc"},
+		{"id":"e4","fromNode":"n2","fromSide":"right","toNode":"n3","toSide":"left","label":"RBCD / ForceChangePassword"},
+		{"id":"e5","fromNode":"n3","fromSide":"bottom","toNode":"n4","toSide":"top","label":"dump LSASS"},
+		{"id":"e6","fromNode":"n4","fromSide":"bottom","toNode":"n5","toSide":"right","label":"compte privilégié"},
+		{"id":"e7","fromNode":"n3","fromSide":"left","toNode":"n5","toSide":"top","label":"session DA / unconstrained + coercition"},
+		{"id":"e8","fromNode":"n1","fromSide":"left","toNode":"n_adcs","toSide":"top","color":"2","label":"AD CS"},
+		{"id":"e10","fromNode":"n_adcs","fromSide":"right","toNode":"n5","toSide":"left","color":"2","label":"TGT DA/EA"},
+		{"id":"e11","fromNode":"n_mssql","fromSide":"right","toNode":"n5","toSide":"left","color":"2","label":"RCE cross-forest"},
+		{"id":"e12","fromNode":"n5","fromSide":"bottom","toNode":"n6","toSide":"top","label":"clé de trust + SID History"},
+		{"id":"e9","fromNode":"n1","fromSide":"left","toNode":"n_mssql","toSide":"top","color":"2","label":"MSSQL"}
+	]
+}
