@@ -1,10 +1,7 @@
 # Enumeration
 
 > [!summary] Résumé
-> Point d'entrée rapide pour les outils d'énumération du domaine utilisés dans le parcours CRTP.
-
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
+> Point d'entrée rapide vers les outils d'énumération du domaine. Pour la théorie (pourquoi/quoi/comment énumérer), voir le cours [[Énumération AD]].
 
 ## Outils
 
@@ -12,7 +9,7 @@
 
 - Cmdlets Microsoft utiles pour interroger objets, groupes, ordinateurs et contrôleurs de domaine.
 
-### [[Cheatsheet - BloodHound SharpHound#BloodHound|BloodHound]]
+### [[Cheatsheet - BloodHound SharpHound|BloodHound]]
 
 - Collecteurs C# et PowerShell pour visualiser les relations d'accès et les chemins d'attaque.
 - Voir aussi [[Cheatsheet - BloodHound SharpHound]].
@@ -27,6 +24,7 @@
 
 ## Navigation associée
 
+- [[Énumération AD]]
 - [[CheetSheet]]
 - [[Cheatsheets - MOC]]
 - [[Cheatsheet - Reconnaissance AD]]

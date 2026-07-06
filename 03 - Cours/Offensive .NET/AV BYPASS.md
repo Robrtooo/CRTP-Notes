@@ -1,10 +1,7 @@
 # AV BYPASS
 
 > [!summary] Résumé
-> Note de liaison vers les approches étudiées pour comprendre la détection par signature sur des outils .NET dans le cadre du lab.
-
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
+> Approches d'évasion de la détection par signature sur des outils .NET. Théorie complète : [[Offensive .NET]].
 
 ## Our point
 
@@ -23,3 +20,8 @@ We will focus on **signature-based detection** by Windows Defender.
 ## Compiled binary obfuscation
 
 - Obfuscate compiled binary with [[Offensiv .NET#^oe]]
+
+## Notes associées
+
+- [[Offensive .NET]]
+- [[Flashcards - Offensive .NET]]

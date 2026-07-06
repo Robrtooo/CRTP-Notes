@@ -1,10 +1,7 @@
 # Cheatsheet d'énumération AD
 
 > [!summary] Résumé
-> Note historique d'énumération centrée sur PowerView et le module Active Directory. Le fichier reste nommé `CheetSheet` pour préserver l'existant dans ce lot.
-
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
+> Note historique d'énumération centrée sur PowerView et le module Active Directory. Le fichier reste nommé `CheetSheet` pour préserver l'existant. Cours : [[Énumération AD]].
 
 ## Outils couverts
 

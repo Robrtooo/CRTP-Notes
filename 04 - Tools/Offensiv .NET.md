@@ -1,10 +1,7 @@
 # Offensiv .NET
 
 > [!summary] Résumé
-> Liste courte d'outils cités pour l'étude d'outils .NET dans les labs CRTP. Le nom du fichier est conservé tel quel dans ce lot.
-
-> [!warning] Cadre d'utilisation
-> À utiliser uniquement dans un environnement de lab autorisé, dans le cadre de l'apprentissage et de la préparation CRTP.
+> Outils d'obfuscation .NET référencés par les cours. Cours : [[Offensive .NET]] · [[AV BYPASS]].
 
 ## Source code obfuscation
 

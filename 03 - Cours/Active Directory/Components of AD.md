@@ -28,6 +28,7 @@ Ex : What could be attributes of a user objects ?
 
 ## Notes associées
 
+- [[Fondamentaux AD]]
 - [[General Notes]]
 - [[Active Directory - MOC]]
 

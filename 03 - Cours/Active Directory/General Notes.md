@@ -26,6 +26,7 @@ Here is what it really looks like :
 
 ## Notes associées
 
+- [[Fondamentaux AD]]
 - [[Components of AD]]
 - [[Active Directory - MOC]]
 - [[Synthèse - Active Directory]]
