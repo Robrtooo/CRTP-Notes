@@ -1,9 +1,7 @@
 {
 	"nodes":[
-		{"id":"setup","type":"text","text":"## Setup C2\n\nServeur WSL + listener HTTPS + implant.\n\n[[Sliver - Setup et beacons|Setup et beacons]]","x":60,"y":0,"width":320,"height":120,"color":"5"},
 		{"id":"foothold","type":"text","text":"## Foothold beacon\n\ngenerate → BinLoader → session → migrate.\n\n[[Sliver - Setup et beacons|Beacon + migrate]]","x":20,"y":210,"width":380,"height":150},
 		{"id":"enum","type":"text","text":"## Énumération\n\nUsers, groupes, ACL, trusts, graphe.\n\n[[Sliver - Énumération AD|StandIn / ADSearch / SharpHound]]","x":10,"y":430,"width":400,"height":150},
-		{"id":"kerb","type":"text","text":"## Kerberos / creds\n\n[[Sliver - Kerberos et tickets|Kerberoast · OverPass · DCSync]]","x":10,"y":920,"width":400,"height":160},
 		{"id":"legend","type":"text","text":"### Attack map — Sliver\n\nClique un lien pour ouvrir la fiche.\n\n- Cyan : mise en place C2\n- Rouge : objectif (DA / EA)\n- Orange : voie transverse\n\nCours : [[Qu'est-ce que Sliver]] · [[Workflow Sliver]]","x":-675,"y":95,"width":365,"height":265},
 		{"id":"privesc","type":"text","text":"## Privesc locale\n\n[[Sliver - Privesc et lateral|SharpUp / Seatbelt]] → service (remote-sc / scshell) en SYSTEM.","x":-800,"y":710,"width":380,"height":170},
 		{"id":"mssql","type":"text","text":"## Voie MSSQL\n\n[[Sliver - AD CS, SQL et persistance|SharpSQL / PowerUpSQL]] → RCE.","x":-800,"y":1290,"width":380,"height":150,"color":"2"},
@@ -11,8 +9,10 @@
 		{"id":"exec","type":"text","text":"## Moteur d'exécution\n\nTout passe par execute-assembly (fork & run vs `-i -M -E`).\n\n[[Sliver - Exécution et évasion|Exécution et évasion]]","x":880,"y":190,"width":380,"height":190},
 		{"id":"da","type":"text","text":"## Domain Admin\n\n[[Sliver - Kerberos et tickets|Golden / Diamond]] · [[Sliver - AD CS, SQL et persistance|DSRM · LSASS · DCSync rights]]","x":0,"y":1290,"width":420,"height":200,"color":"1"},
 		{"id":"ea","type":"text","text":"## Enterprise Admin / forêt\n\n[[Sliver - AD CS, SQL et persistance|Clé de trust + SID History]] → EA","x":0,"y":1680,"width":420,"height":160,"color":"1"},
-		{"id":"deleg","type":"text","text":"## Délégation\n\n[[Sliver - Delegation et RBCD|Unconstrained · Constrained (S4U) · RBCD]]","x":880,"y":950,"width":380,"height":150},
-		{"id":"lateral","type":"text","text":"## Mouvement latéral\n\n[[Sliver - Privesc et lateral|LACheck · winrs · WMI · Scshell]] · pivots TCP.","x":880,"y":700,"width":380,"height":180}
+		{"id":"lateral","type":"text","text":"## Mouvement latéral\n\n[[Sliver - Privesc et lateral|LACheck · winrs · WMI · Scshell]] · pivots TCP.","x":880,"y":700,"width":380,"height":180},
+		{"id":"kerb","type":"text","text":"## Kerberos / creds\n\n[[Sliver - Kerberos et tickets|Kerberoast · OverPass · DCSync]]","x":10,"y":940,"width":400,"height":160},
+		{"id":"deleg","type":"text","text":"## Délégation\n\n[[Sliver - Delegation et RBCD|Unconstrained · Constrained (S4U) · RBCD]]","x":880,"y":945,"width":380,"height":150},
+		{"id":"setup","type":"text","text":"## Setup C2\n\nServeur WSL + listener HTTPS + implant.\n\n[[Sliver - Setup et beacons|Setup et beacons]]","x":55,"y":-85,"width":310,"height":180,"color":"5"}
 	],
 	"edges":[
 		{"id":"e1","fromNode":"setup","fromSide":"bottom","toNode":"foothold","toSide":"top","label":"generate + deliver + migrate"},

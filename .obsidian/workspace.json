@@ -42,8 +42,8 @@
               "state": {
                 "file": "w. Sliver C2/Sliver - Attack map.canvas",
                 "viewState": {
-                  "x": 461.8270440251573,
-                  "y": 958.162893081761,
+                  "x": 337.0023634643766,
+                  "y": 927.3254347540603,
                   "zoom": -0.9624655989139701
                 }
               },
@@ -262,6 +262,9 @@
   },
   "active": "30d46bfec00be220",
   "lastOpenFiles": [
+    "00 - Navigation/Cheatsheets - MOC.md",
+    "00 - Navigation/Attaques AD - MOC.md",
+    "w. Sliver C2/Sliver - Attack map.canvas",
     "training/_Template - LO.md.tmp.81121.d4199316bd05",
     "00 - Navigation/1. CRTP - Index.md.tmp.81121.2fe6b8c96b6f",
     "training/_Template - LO.md",
@@ -288,7 +291,6 @@
     "training/LO04 - Trusts et forêt.md",
     "training/LO03 - ACLs.md",
     "training/LO02 - OUs et GPOs.md",
-    "training/LO01 - Énumération.md",
     "training",
     "02 - Révision/Synthèse - Énumération.md.tmp.81121.03d14a2519b4",
     "w. Sliver C2/Cheatsheets/Sliver - AD CS, SQL et persistance.md.tmp.81121.4441ad77fb3d",
@@ -297,8 +299,6 @@
     "00 - Navigation/Cheatsheets - MOC.md.tmp.81121.a338b9cfeb5f",
     "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md.tmp.81121.951368524726",
     "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md.tmp.81121.f41226cc7f9d",
-    "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md.tmp.81121.ab0ba046052c",
-    "w. Sliver C2/Sliver - Attack map.canvas",
     "00 - Navigation/3. Attack map.canvas",
     "03 - Cours/Objectives/Carte d'attaque.canvas",
     "Sans titre.canvas",
