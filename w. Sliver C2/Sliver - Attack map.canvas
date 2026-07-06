@@ -12,7 +12,7 @@
 		{"id":"lateral","type":"text","text":"## Mouvement latéral\n\n[[Sliver - Privesc et lateral|LACheck · winrs · WMI · Scshell]] · pivots TCP.","x":880,"y":700,"width":380,"height":180},
 		{"id":"kerb","type":"text","text":"## Kerberos / creds\n\n[[Sliver - Kerberos et tickets|Kerberoast · OverPass · DCSync]]","x":10,"y":940,"width":400,"height":160},
 		{"id":"deleg","type":"text","text":"## Délégation\n\n[[Sliver - Delegation et RBCD|Unconstrained · Constrained (S4U) · RBCD]]","x":880,"y":945,"width":380,"height":150},
-		{"id":"setup","type":"text","text":"## Setup C2\n\nServeur WSL + listener HTTPS + implant.\n\n[[Sliver - Setup et beacons|Setup et beacons]]","x":55,"y":-85,"width":310,"height":180,"color":"5"}
+		{"id":"setup","type":"text","text":"## Setup C2\n\nServeur WSL + listener HTTPS + implant.\n\n[[Sliver - Setup et beacons|Setup et beacons]]","x":33,"y":-85,"width":355,"height":180,"color":"5"}
 	],
 	"edges":[
 		{"id":"e1","fromNode":"setup","fromSide":"bottom","toNode":"foothold","toSide":"top","label":"generate + deliver + migrate"},
