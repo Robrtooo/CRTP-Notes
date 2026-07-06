@@ -13,7 +13,7 @@ Tout compte authentifié lit l'annuaire par LDAP → énumérer d'abord, largeme
 2. Users : SPN (Kerberoast), preauth off (AS-REP), `adminCount=1`, descriptions.
 3. Groupes (DA/EA, imbrications), ordinateurs (OS, délégations).
 4. ACL (chemin vers DA), GPO/OU, trusts.
-5. Sessions (chasse au DA), AD CS, MSSQL.
+5. Sessions (chasse au DA), AD CS, MSSQL, **LAPS** (qui peut lire `ms-Mcs-AdmPwd` → admin local en clair, voir [[Cheatsheet - LAPS]]).
 6. Graphe BloodHound → chemin le plus court vers Domain Admin.
 
 ## Outils selon la furtivité

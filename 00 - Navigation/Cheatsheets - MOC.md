@@ -22,6 +22,7 @@
 - [[Cheatsheet - Delegation attacks]]
 - [[Cheatsheet - RBCD]]
 - [[Cheatsheet - Privilege escalation]]
+- [[Cheatsheet - LAPS]]
 - [[Cheatsheet - Lateral movement]]
 - [[Cheatsheet - Persistence]]
 - [[Cheatsheet - Post-exploitation]]
