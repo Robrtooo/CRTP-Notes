@@ -7,6 +7,7 @@
 ## Chemin d'attaque et raisonnement
 
 - [[Attack flow]] — arbre de décision état → action → nouvel acquis
+- [[Carte d'attaque.canvas|Carte d'attaque interactive]] — version cliquable (Canvas)
 - [[Checklist - Méthodologie CRTP]] — dérouler un engagement pas à pas
 - [[Flashcards - Attack flow]] — réviser le raisonnement
 

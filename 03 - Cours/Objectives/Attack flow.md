@@ -8,6 +8,9 @@
 
 ## La carte
 
+> [!tip] Carte interactive
+> Version cliquable plein écran : [[Carte d'attaque.canvas|ouvrir la carte d'attaque]] — chaque état renvoie vers sa cheatsheet. Le schéma ci-dessous en est le résumé compact.
+
 ```mermaid
 flowchart TD
     START([Accès réseau]) -->|AS-REP roasting| ACC[1 · Compte de domaine]
