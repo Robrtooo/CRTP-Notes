@@ -40,12 +40,22 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - AS-REP Roasting.md",
+                "file": "01 - Cheatsheets/Cheatsheet - ACL et droits AD.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Cheatsheet - AS-REP Roasting"
+              "title": "Cheatsheet - ACL et droits AD"
+            }
+          },
+          {
+            "id": "496056b531edacb1",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Nouvel onglet"
             }
           }
         ],
@@ -116,7 +126,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 303.5
+    "width": 200
   },
   "right": {
     "id": "8950cbc511b9d847",
@@ -259,9 +269,11 @@
   },
   "active": "30d46bfec00be220",
   "lastOpenFiles": [
+    "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
+    "01 - Cheatsheets/Cheatsheet - ACL et droits AD.md",
+    "01 - Cheatsheets/Cheatsheet - AS-REP Roasting.md",
     "00 - Navigation/2. Attack flow.md",
     "00 - Navigation/1. CRTP - Index.md",
-    "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
     "00 - Navigation/1. CRTP - Index.md.tmp.81121.dc65a34665ae",
     "00 - Navigation/Flashcards - MOC.md.tmp.81121.b4da5d6bcd6f",
     "00 - Navigation/Flashcards - MOC.md.tmp.81121.389887e837fc",
@@ -289,8 +301,6 @@
     "training/LO09 - Exec sur le DC (HOST et WMI).md",
     "training/LO08 - DCSync et Golden ticket.md",
     "training/LO07 - Session DA et escalade.md",
-    "training/LO06 - Derivative local admin.md",
-    "training/LO05 - Privesc locale et Jenkins.md",
     "training",
     "02 - Révision/Synthèse - Énumération.md.tmp.81121.03d14a2519b4",
     "w. Sliver C2/Cheatsheets/Sliver - AD CS, SQL et persistance.md.tmp.81121.4441ad77fb3d",

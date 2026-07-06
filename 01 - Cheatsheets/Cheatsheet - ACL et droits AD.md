@@ -9,6 +9,12 @@
 . C:\AD\Tools\PowerView.ps1
 Get-DomainObjectAcl -Identity "Domain Admins" -ResolveGUIDs -Verbose
 ```
+`
+
+### Special Acc
+```powershell
+Find-InterestingDomainAcl -ResolveGUIDs | ?{$_.ObjectDN -match "CN=ControlxUser"}
+```
 
 ### Find interesting ACLs for a compromised principal
 
@@ -16,6 +22,7 @@ Get-DomainObjectAcl -Identity "Domain Admins" -ResolveGUIDs -Verbose
 Find-InterestingDomainAcl -ResolveGUIDs | Where-Object {$_.IdentityReferenceName -match "studentx"}
 Find-InterestingDomainAcl -ResolveGUIDs | Where-Object {$_.IdentityReferenceName -match "RDPUsers"}
 ```
+
 
 ### BloodHound pivot
 
