@@ -129,6 +129,7 @@ Listener + hébergement : cf section *Reverse shell* de [[Cheatsheet - Post-expl
 > Une fois shell en tant que service account Jenkins → refais `whoami /all`, cherche ses droits (local admin ? droits AD ?) → souvent le pivot vers dcorp-mgmt / la suite LO7.
 
 **Link**
+- [[Cheatsheet - Quel outil quand]]
 - [[Enumeration]]
 - [[Cheatsheet - Lateral movement]]
 - [[Cheatsheet - Post-exploitation]]

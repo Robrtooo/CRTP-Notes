@@ -129,7 +129,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -337,8 +337,13 @@
       "bases:Créer une nouvelle base": false
     }
   },
-  "active": "0668f4b07ef867de",
+  "active": "2d7b446631585642",
   "lastOpenFiles": [
+    "01 - Cheatsheets/Cheatsheet - Privilege escalation.md.tmp.355327.eb14f5619e07",
+    "01 - Cheatsheets/Cheatsheet - Quel outil quand.md",
+    "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.355327.4e9797cc6460",
+    "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
+    "05 - Training/flags/F07 - User Jenkins console web.md",
     "01 - Cheatsheets/Cheatsheet - Persistence.md.tmp.355327.c682526fde24",
     "01 - Cheatsheets/Cheatsheet - LAPS.md.tmp.355327.74411a9fd5ff",
     "01 - Cheatsheets/Cheatsheet - MSSQL et PowerUpSQL.md.tmp.355327.54fecedf8810",
@@ -348,10 +353,6 @@
     "01 - Cheatsheets/Cheatsheet - Tickets Kerberos.md.tmp.355327.afc09a19304b",
     "01 - Cheatsheets/Cheatsheet - AS-REP Roasting.md.tmp.355327.e0677dc48c51",
     "01 - Cheatsheets/Cheatsheet - Kerberoasting.md.tmp.355327.0a27e2403379",
-    "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.355327.6393edd1c8a1",
-    "01 - Cheatsheets/Cheatsheet - Lateral movement.md.tmp.355327.59b7ccdadf7c",
-    "05 - Training/flags/F07 - User Jenkins console web.md",
-    "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
     "05 - Training/flags/F06 - Script hunt admin via PS Remoting.md",
     "05 - Training/flags/F05 - Service abusé pour privesc locale.md",
     "w. Sliver C2/Cheatsheets/Sliver - AD CS, SQL et persistance.md",
@@ -376,7 +377,6 @@
     "01 - Cheatsheets/Cheatsheet - ACL et droits AD.md",
     "05 - Training/flags/Flags - Index.md",
     "05 - Training/Learning/_Template - LO.md",
-    "05 - Training/Learning/LO23 - LSASS et ASR bypass.md",
     "03 - Cours/Objectives/Carte d'attaque.canvas",
     "w. Sliver C2/Sliver - Attack map.canvas",
     "00 - Navigation/3. Attack map.canvas",
