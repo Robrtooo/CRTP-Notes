@@ -25,6 +25,11 @@ Get-DomainGPO -Identity "DevOps Policy"
 Get-DomainGPO -Identity (Get-DomainOU -Identity DevOps).gplink.substring(11,(Get-DomainOU -Identity DevOps).gplink.length-72)
 ```
 
+Pour lister les GPO d'une OU, lister les OU et récuperer les GUID pour en lister les GPO
+```powershell
+Get-DomainGPO -Identity "{7478F170-6A0C-490C-B355-9E4618BC785D}"
+```
+
 > [!note] Ne pas confondre `displayname` et `name/GUID`. BloodHound (`Search: Applocked / DevOps` → Inbound Object Control) lit plus vite `GenericAll` / `WriteDACL` sur les policies.
 
 ## Related

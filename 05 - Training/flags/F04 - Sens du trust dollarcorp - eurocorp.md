@@ -1,7 +1,7 @@
 ---
 flag: 4
 machine: Student VM
-statut: à faire
+statut: validé
 ---
 # F04 · Sens du trust dollarcorp / eurocorp
 
@@ -10,7 +10,10 @@ statut: à faire
 
 ## Commande qui marche
 ```powershell
+Get-DomainTrust
 ```
+
+-> On obtient directement l'information de l'échange Bidirectionnelle.
 
 ## Fiches liées
 [[Cheatsheet - Trusts et forêts]]

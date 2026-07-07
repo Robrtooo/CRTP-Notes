@@ -1,7 +1,7 @@
 ---
 flag: 3
 machine: Student VM
-statut: à faire
+statut: validé
 ---
 # F03 · GPO appliquée sur StudentMachines OU
 
@@ -9,7 +9,13 @@ statut: à faire
 > Display name of the GPO applied on StudentMachines OU
 
 ## Commande qui marche
+1. Récuperer le GUID de l'OU StudentMachines
 ```powershell
+Get-DomainOU 
+```
+2. Lister les GPO associées à cette OU 
+```powershell
+Get-DomainGPO -Identity "{7478F170-6A0C-490C-B355-9E4618BC785D}"
 ```
 
 ## Fiches liées

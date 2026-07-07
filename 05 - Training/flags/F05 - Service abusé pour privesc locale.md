@@ -9,8 +9,11 @@ statut: à faire
 > Service abused on the student VM for local privilege escalation
 
 ## Commande qui marche
+Script de scan de privesc automatique
 ```powershell
+. C:\AD\Tools\PowerUp.ps1 ; Invoke-AllChecks
 ```
+Flag : AbyssWebServer
 
 ## Fiches liées
 [[Cheatsheet - Privilege escalation]]
