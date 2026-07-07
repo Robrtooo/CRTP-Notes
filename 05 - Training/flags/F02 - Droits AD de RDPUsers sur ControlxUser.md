@@ -1,7 +1,7 @@
 ---
 flag: 2
 machine: Student VM
-statut: à faire
+statut: fait
 ---
 # F02 · Droits AD de RDPUsers sur ControlxUser
 

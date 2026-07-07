@@ -26,12 +26,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "training/LO01 - Énumération.md",
+                "file": "05 - Training/flags/F02 - Droits AD de RDPUsers sur ControlxUser.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "LO01 - Énumération"
+              "title": "F02 - Droits AD de RDPUsers sur ControlxUser"
             }
           },
           {
@@ -59,7 +59,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -267,35 +267,36 @@
       "bases:Créer une nouvelle base": false
     }
   },
-  "active": "4d0b5ff7b710a19c",
+  "active": "30d46bfec00be220",
   "lastOpenFiles": [
-    "training/flags/Flags - Index.md",
-    "training/flags/F40 - Privilèges OS sur eu-sql.md",
-    "training/flags/F39 - Privilèges SQL sur eu-sql.md",
-    "training/flags/F38 - User SQL du lien sql1 - mgmt.md",
-    "training/flags/F37 - Premier SQL Server lié à dcorp-mssql.md",
-    "training/flags/F36 - Groupe droits enroll sur CA-Integration.md",
-    "training/flags/F35 - Attribut CA autorisant les SAN.md",
-    "training/flags/F34 - Template ADCS Certificate Request Agent.md",
-    "training/flags/F33 - Template ADCS ENROLLEE_SUPPLIES_SUBJECT.md",
-    "training/flags/F32 - Contenu de secret.txt (eurocorp-dc).md",
-    "training/flags/F31 - Service TGS demandé sur eurocorp-dc.md",
-    "training/flags/F30 - NTLM krbtgt de moneycorp.local.md",
-    "training/flags/F29 - SID history injecté (Enterprise Admins).md",
-    "training/flags/F28 - Machine où ciadmin configure RBCD.md",
-    "training/flags/F27 - Service alternatif via constrained deleg.md",
-    "training/flags/F26 - Valeur msds-allowedtodelegateto adminsrv.md",
-    "training/flags/F25 - Creds compromis via printer bug.md",
-    "training/flags/F24 - User domaine local admin dcorp-appsrv.md",
-    "training/flags/F23 - SPN kerberoasté (TGS demandé).md",
-    "training/flags/F22 - SDDL WMI root-cimv2 (studentx = BA).md",
-    "training/flags/F21 - Attaque avec droits de réplication.md",
-    "training/flags/F20 - Clé registre logon DSRM.md",
-    "training/flags/F19 - Compte source du Diamond Ticket.md",
-    "training/flags/F18 - Service pour Silver Ticket (winrs-PSRemoting).md",
-    "training/flags/F17 - NTLM du Domain Admin (Administrator).md",
-    "training/flags/F16 - NTLM de krbtgt.md",
-    "training/flags",
+    "05 - Training/flags/F02 - Droits AD de RDPUsers sur ControlxUser.md",
+    "01 - Cheatsheets/Cheatsheet - ACL et droits AD.md",
+    "05 - Training/flags/F01 - SID membre du groupe Enterprise Admins.md",
+    "05 - Training/flags/Flags - Index.md",
+    "05 - Training/Learning/_Template - LO.md",
+    "05 - Training/Learning",
+    "05 - Training/Learning/LO23 - LSASS et ASR bypass.md",
+    "05 - Training/Learning/LO01 - Énumération.md",
+    "05 - Training/flags/F40 - Privilèges OS sur eu-sql.md",
+    "05 - Training/flags/F39 - Privilèges SQL sur eu-sql.md",
+    "05 - Training/flags/F38 - User SQL du lien sql1 - mgmt.md",
+    "05 - Training/flags/F37 - Premier SQL Server lié à dcorp-mssql.md",
+    "05 - Training/flags/F36 - Groupe droits enroll sur CA-Integration.md",
+    "05 - Training/flags/F35 - Attribut CA autorisant les SAN.md",
+    "05 - Training/flags/F34 - Template ADCS Certificate Request Agent.md",
+    "05 - Training/flags/F33 - Template ADCS ENROLLEE_SUPPLIES_SUBJECT.md",
+    "05 - Training/flags/F32 - Contenu de secret.txt (eurocorp-dc).md",
+    "05 - Training/flags/F31 - Service TGS demandé sur eurocorp-dc.md",
+    "05 - Training/flags/F30 - NTLM krbtgt de moneycorp.local.md",
+    "05 - Training/flags/F29 - SID history injecté (Enterprise Admins).md",
+    "05 - Training/flags/F28 - Machine où ciadmin configure RBCD.md",
+    "05 - Training/flags/F27 - Service alternatif via constrained deleg.md",
+    "05 - Training/flags/F26 - Valeur msds-allowedtodelegateto adminsrv.md",
+    "05 - Training/flags/F25 - Creds compromis via printer bug.md",
+    "05 - Training/flags/F24 - User domaine local admin dcorp-appsrv.md",
+    "05 - Training/flags/F23 - SPN kerberoasté (TGS demandé).md",
+    "05 - Training/flags/F22 - SDDL WMI root-cimv2 (studentx = BA).md",
+    "05 - Training/flags",
     "03 - Cours/Objectives/Carte d'attaque.canvas",
     "00 - Navigation/1. CRTP - Index.md.tmp.81121.dc65a34665ae",
     "00 - Navigation/Flashcards - MOC.md.tmp.81121.b4da5d6bcd6f",
@@ -303,10 +304,9 @@
     "w. Sliver C2/Sliver - Attack map.canvas",
     "training/_Template - LO.md.tmp.81121.d4199316bd05",
     "00 - Navigation/1. CRTP - Index.md.tmp.81121.2fe6b8c96b6f",
-    "training",
+    "05 - Training",
     "02 - Révision/Synthèse - Énumération.md.tmp.81121.03d14a2519b4",
     "w. Sliver C2/Cheatsheets/Sliver - AD CS, SQL et persistance.md.tmp.81121.4441ad77fb3d",
-    "w. Sliver C2/Cheatsheets/Sliver - Énumération AD.md.tmp.81121.f91b523183f3",
     "00 - Navigation/3. Attack map.canvas",
     "Sans titre.canvas",
     "z. Ressources/Schema/The Lab Environment_Attack_Paths.png",
