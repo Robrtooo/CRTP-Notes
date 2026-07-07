@@ -3,6 +3,10 @@
 > [!summary] Objectif
 > Énumérer domaines, forêts et relations de confiance avant les modules cross-trust. Distinguer intra-forest / external, repérer `FILTER_SIDS`.
 
+> [!abstract] Pourquoi · Chaînage
+> Couche **identité (AD)**, inter-domaine. **Repérer** sens/type du trust + FILTER_SIDS = flag · **Exploiter** = trust key / SID history pour traverser.
+> **Prérequis** DA d'un côté du trust → **débloque** EA (intra-forêt) / accès cross-forest.
+
 ### PowerView view
 
 ```powershell

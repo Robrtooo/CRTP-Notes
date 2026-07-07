@@ -6,6 +6,10 @@
 > [!warning]- Required
 > N'importe quel compte de domaine valide (aucune élévation) + au moins un compte *user* portant un SPN dans l'annuaire.
 
+> [!abstract] Pourquoi · Chaînage
+> **Repérer** un user avec SPN = flag · **Exploiter** = demander son TGS + crack offline → mdp du compte de service (souvent DA).
+> **Prérequis** n'importe quel compte de domaine → **débloque** les creds du compte ciblé.
+
 ### Find SPN accounts
 
 ```powershell

@@ -3,6 +3,10 @@
 > [!summary] Objectif
 > Forger un ticket Kerberos pour usurper une identité sans repasser par le KDC (Golden, Silver) ou en repartant d'un TGT réel (Diamond, plus furtif). Le lab charge Rubeus via `Loader.exe` (build obfusqué `evasive-*`).
 
+> [!abstract] Pourquoi · Chaînage
+> **Exploiter / persister**: forger un ticket pour usurper qui tu veux sans repasser par le KDC.
+> **Prérequis** clé krbtgt (Golden/Diamond) ou hash service (Silver) via DCSync/DA → **débloque** impersonation domaine ou d'un service.
+
 ### Golden Ticket — clé krbtgt, tout le domaine
 
 > Sert à s'authentifier partout sur le domaine en usurpant n'importe quel compte (Administrator, DA, EA...) avec les groupes de son choix, **sans jamais connaître son mot de passe** et sans repasser par le KDC — une fois forgé, l'accès est illimité et hors-ligne tant que `krbtgt` n'est pas régénéré deux fois.

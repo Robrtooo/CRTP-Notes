@@ -3,6 +3,10 @@
 > [!summary] Objectif
 > First-pass recon : identifier domaine, SID, DC, policy et services AD exposés, avant LDAP / SMB / Kerberos / BloodHound. Début de lab, pour valider la cible.
 
+> [!abstract] Pourquoi · Chaînage
+> Couche **identité (AD)** — carte de départ, **pas d'exploit**. **Repérer** domaine, SID, DC, policy.
+> **Prérequis** un compte de domaine → **débloque** tout le reste (users, ACL, kerberoast, BloodHound).
+
 ### DNS / basic network
 
 ```bash

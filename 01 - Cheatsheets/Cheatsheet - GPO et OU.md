@@ -3,6 +3,10 @@
 > [!summary] Objectif
 > Lister les OU, relier une OU à sa GPO (`gplink`) et recouper les ACL des policies. Ordre à garder : OU → gplink → GPO → ACL.
 
+> [!abstract] Pourquoi · Chaînage
+> Couche **identité (AD)**. **Repérer** quelle GPO frappe quelle OU (gplink) = flag · **Exploiter** = droit d'écriture sur la GPO → SharpGPOAbuse → code sur toutes les machines de l'OU.
+> **Prérequis** write sur la GPO → **débloque** exec/admin sur les machines liées.
+
 ### OU enumeration
 
 ```powershell

@@ -3,6 +3,10 @@
 > [!summary] Objectif
 > Trouver un template de certificat mal configuré et l'abuser pour obtenir un certificat utilisable comme DA/EA — le certificat sert ensuite à demander un TGT (`Rubeus asktgt /certificate:`), sans jamais connaître de mot de passe.
 
+> [!abstract] Pourquoi · Chaînage
+> **Repérer** un template vulnérable (ESC1/ESC3) = flag · **Exploiter** = cert au nom d'Administrator → TGT → DA/EA, sans mot de passe.
+> **Prérequis** droits d'enrôlement (souvent Domain Users) → **débloque** DA/EA.
+
 ### Enumerate CA and templates
 
 ```powershell

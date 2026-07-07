@@ -3,6 +3,10 @@
 > [!summary] Objectif
 > Lire les objets AD (users, computers, attributs), tester SMB et préparer les attaques Kerberos (SPN, preauth, delegation).
 
+> [!abstract] Pourquoi · Chaînage
+> Couche **identité (AD)** — lecture brute des objets. **Repérer** users/computers/attributs (SPN, preauth, `description` = hints).
+> **Prérequis** compte de domaine → **débloque** Kerberoast (SPN), AS-REP (preauth), delegation.
+
 ### Users / computers
 
 ```powershell

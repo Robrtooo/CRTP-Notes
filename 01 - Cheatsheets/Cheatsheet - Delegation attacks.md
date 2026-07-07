@@ -3,6 +3,10 @@
 > [!summary] Objectif
 > Détecter et abuser les délégations Kerberos. Ne jamais mélanger les 4 cas : unconstrained / constrained user / constrained computer / RBCD.
 
+> [!abstract] Pourquoi · Chaînage
+> **Repérer** un compte en délégation (unconstrained/constrained) = flag · **Exploiter** = usurper un DA (S4U ou capture de TGT + coercition).
+> **Prérequis** accès/clé du compte délégué → **débloque** impersonation d'un DA sur le service cible.
+
 ### Unconstrained delegation
 
 > Compromettre ce serveur permet de capturer le **TGT complet** de tout user qui s'y connecte (y compris un DA) et de le rejouer pour l'usurper intégralement — combiné à une coercition (Printer Bug), on force même le DC à s'y authentifier pour voler son TGT.

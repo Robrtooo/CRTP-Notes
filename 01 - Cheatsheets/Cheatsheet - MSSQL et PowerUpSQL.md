@@ -6,6 +6,10 @@
 > [!warning]- Required
 > Un compte de domaine dont l'authentification Windows est acceptée par au moins une instance SQL de la chaîne (souvent le cas par défaut) — pas besoin d'un login SQL dédié.
 
+> [!abstract] Pourquoi · Chaînage
+> **Repérer** les database links entre serveurs = flag · **Exploiter** = crawler les links → `xp_cmdshell` → exec d'un serveur à l'autre (même cross-forest).
+> **Prérequis** un compte de domaine accepté par une instance → **débloque** exec sur les serveurs liés.
+
 ### Discover SQL instances
 
 ```powershell

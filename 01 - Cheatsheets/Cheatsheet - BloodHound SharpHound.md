@@ -3,6 +3,10 @@
 > [!summary] Objectif
 > Collecter les relations AD (SharpHound) et lire les chemins d'attaque (shortest path, object control, ACL, delegation). Le vrai intérêt est la lecture des paths, pas la collecte.
 
+> [!abstract] À quoi ça sert — et à quoi PAS
+> Carte de la couche **identité/AD** seulement (ACL, sessions, admin rights, delegation, chemins → DA). **Aveugle** à la couche hôte (services Windows, Jenkins, web) → pour ça, énum locale ([[Cheatsheet - Privilege escalation]]).
+> Exploiter = clic sur une **arête** → onglet **Abuse Info** = les commandes.
+
 > [!important] Chemins réels (VM student) — cf [[Cheatsheet - Chemins des outils]]
 > Le collector est **double-niché** :
 > - `.exe` : `C:\AD\Tools\BloodHound-master\BloodHound-master\Collectors\SharpHound.exe`

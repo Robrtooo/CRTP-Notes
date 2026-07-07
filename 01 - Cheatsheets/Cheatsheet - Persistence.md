@@ -3,6 +3,10 @@
 > [!summary] Objectif
 > Persistance spécifique AD : DCSync (extraire n'importe quel hash à volonté) et l'administrateur DSRM du DC (compte local du DC, indépendant d'un reset de mot de passe de domaine).
 
+> [!abstract] Pourquoi · Chaînage
+> **Garder** l'accès: DCSync (hash à volonté), DSRM, Skeleton Key.
+> **Prérequis** DA / droits de réplication → **débloque** creds-on-demand (krbtgt → Golden) + retour durable sur le DC.
+
 ### DCSync — droits de réplication
 
 > Une fois le droit posé, permet d'extraire à volonté le hash de *n'importe quel* compte du domaine (dont `krbtgt`, la clé pour forger des Golden Tickets) sans jamais se connecter au DC ni laisser de trace de dump local — un accès credential-on-demand qui survit à la plupart des remédiations ponctuelles.

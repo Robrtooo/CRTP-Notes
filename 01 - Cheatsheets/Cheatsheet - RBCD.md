@@ -6,6 +6,10 @@
 > [!warning]- Required
 > Un droit d'écriture (`GenericWrite`/`GenericAll`) sur l'objet computer cible — à repérer via [[Cheatsheet - ACL et droits AD]] ou BloodHound ([[Cheatsheet - BloodHound SharpHound]]). Un compte machine que l'on contrôle déjà (pour le `/aes256` du s4u) suffit comme "attaquant".
 
+> [!abstract] Pourquoi · Chaînage
+> **Repérer** un GenericWrite sur un computer = flag · **Exploiter** = t'ajouter dans `msDS-AllowedToActOnBehalfOf` → S4U → usurper Administrator sur cette machine.
+> **Prérequis** GenericWrite sur la cible + un compte machine contrôlé → **débloque** admin sur la machine cible.
+
 ### Find the write path
 
 ```powershell

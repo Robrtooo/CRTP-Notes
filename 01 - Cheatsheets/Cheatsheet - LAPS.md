@@ -6,6 +6,10 @@
 > [!warning]- Required
 > Un droit de lecture sur `ms-Mcs-AdmPwd` de la machine visée (ExtendedRight / ReadProperty), généralement accordé à un groupe délégué. Se repère via [[Cheatsheet - ACL et droits AD]] ou BloodHound.
 
+> [!abstract] Pourquoi · Chaînage
+> **Repérer** qui peut lire `ms-Mcs-AdmPwd` = tes cibles · **Exploiter** = lire le mdp admin local en clair.
+> **Prérequis** droit de lecture sur l'attribut → **débloque** admin local sur les machines couvertes.
+
 ### Repérer les machines LAPS et qui peut lire
 
 ```powershell

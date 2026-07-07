@@ -3,6 +3,10 @@
 > [!summary] Objectif
 > Passer d'une machine à une autre en rejouant des creds sans mot de passe clair, ou en atteignant un hôte où une session privilégiée traîne déjà.
 
+> [!abstract] Pourquoi · Chaînage
+> **Exploiter** un cred/hash déjà volé pour atteindre une **nouvelle machine** (sans mdp clair) ou une session privilégiée qui y traîne.
+> **Prérequis** hash/clé/mdp ([[Cheatsheet - Post-exploitation]]) → **débloque** une nouvelle machine / identité.
+
 ### Basic remote access
 
 ```powershell
