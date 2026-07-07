@@ -39,6 +39,12 @@ Get-DomainComputer -Identity dcorp-ci | select dnshostname,ipv4address   # trouv
 ```
 Navigateur → `http://<dcorp-ci>:8080`
 
+#### Other way
+
+We can ping the domain as well to get the IP of the Jenkins server
+![[Pasted image 20260707160622.png]]
+
+
 **2. S'authentifier → flag F07 (user de la console web)**
 - Jenkins n'a souvent **pas de politique de mdp** → teste `username = password`.
 - Sinon, la page autorise parfois **Sign up / créer un compte**.
