@@ -9,7 +9,13 @@ statut: à faire
 > Jenkins user used to access Jenkins web console
 
 ## Commande qui marche
+
+
 ```powershell
+
+IP du serveur trouver en pingant le domain 
+Get-DomainComputer -Identity dcorp-ci | select dnshostname
+
 ```
 
 ## Fiches liées
