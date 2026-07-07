@@ -49,9 +49,9 @@
 >
 > **« Je me connecte à quoi avec ce compte local ? »** → à **rien d'autre**. Tu l'utilises **sur place** : shell élevé → dump LSASS → et ce sont les **creds/tickets de DOMAINE** récupérés qui servent ensuite à sauter sur les autres hôtes.
 >
-> **Ouvrir le shell élevé depuis un shell non-interactif :** `RunasCs.exe john 'Password123!' powershell.exe` ou `PsExec -u .\john -p '…' -h cmd`. **PAS `runas /user:.\john`** → il échoue (`RUNAS ERROR: Unable to acquire user password`) car il exige une vraie console interactive.
+> **Ouvrir un shell élevé depuis un shell non-interactif :** `runas /user:.\john` échoue (`RUNAS ERROR: Unable to acquire user password`) car il exige une vraie console. `RunasCs`/`PsExec` **ne sont PAS** dans `C:\AD\Tools` par défaut. À la place : PSCredential built-in + `Invoke-Command -ComputerName localhost -Credential $c` (WinRM local), ou `SharpWMI.exe` / `WSManWinRM.exe`.
 >
-> **Encore mieux : pas besoin du compte.** `Invoke-ServiceAbuse -Name <svc> -Command "<charge>"` exécute directement ta charge (mimikatz / reverse shell) **en tant que SYSTEM** — inutile de créer un user puis de s'y reconnecter.
+> **Encore mieux : pas besoin du compte.** `Invoke-ServiceAbuse -Name <svc> -Command "<charge>"` lance ta charge **en tant que compte du service = SYSTEM sur CET hôte** : c'est une privesc **hôte**, PAS « vers un compte de domaine ». La charge = dump LSASS (`SafetyKatz`/`mimikatz`) ou reverse shell SYSTEM ; le **compte de domaine** s'obtient *ensuite* en dumpant les secrets/tickets présents sur la box.
 
 ## Voir aussi
 [[Cheatsheet - Privilege escalation]] · [[Cheatsheet - Reconnaissance AD]] · [[Cheatsheet - BloodHound SharpHound]] · [[Cheatsheet - Post-exploitation]] · [[Cheatsheet - Chemins des outils]]
