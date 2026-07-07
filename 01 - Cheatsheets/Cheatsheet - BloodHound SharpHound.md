@@ -130,9 +130,6 @@ MATCH p=shortestPath((u:User {name:"STUDENTX@DOLLARCORP.MONEYCORP.LOCAL"})-[*1..
 > 4. **Cause fréquente d'import partiel : BOM UTF-8** (`EF BB BF`) en tête des `.json` (export via redirection PowerShell) — certaines versions n'ingèrent pas. Fix : retirer le BOM puis ré-importer (wipe la db avant).
 > 5. **Recherche insensible casse / partielle** : `MATCH (n) WHERE toUpper(n.name) CONTAINS "SVCADMIN" RETURN n`.
 
-> [!note] SYSTEM ≠ simple compte local
-> En **SYSTEM** sur une box jointe, tu agis sur le réseau comme le **compte machine** (`DCORP-STDx$`) : objet AD **présent** dans BloodHound (exploitable en delegation/RBCD). À distinguer d'un user **local** créé sur la box (ex. `john`) qui, lui, n'est **jamais** dans l'AD. *Lève la confusion local vs SYSTEM vs compte machine au moment du pivot.*
-
 ## Related
 - [[Cheatsheet - Chemins des outils]]
 - [[Enumeration]]

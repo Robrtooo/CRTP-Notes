@@ -14,24 +14,14 @@ Enter-PSSession -ComputerName <TARGET> -Credential <DOMAIN>\<USER>
 winrs -r:<TARGET> cmd
 ```
 
-### Après `Find-PSRemotingLocalAdminAccess` (où suis-je admin en WinRM)
+### Après `Find-PSRemotingLocalAdminAccess`
 
-Le script liste les hôtes où **ton identité courante** est admin local via PSRemoting. Ensuite :
+Il liste les hôtes où **ton identité courante** est admin via PSRemoting. `Enter-PSSession -ComputerName <TARGET>` → tu es sur la box : tape les commandes **direct** (`whoami /all`, `klist`, dump), puis re-hunt → saut suivant (vers DA). Compte **dumpé** ≠ user courant → OverPass-the-Hash d'abord (ci-dessous).
 
-```powershell
-Enter-PSSession -ComputerName <TARGET>                              # interactif
-Invoke-Command -ComputerName <TARGET> -ScriptBlock { whoami /all; klist }
-```
-
-Sur la nouvelle box : re-dump les creds → nouvelles identités/tickets → re-hunt → saut suivant (vers DA). Pour y aller avec un compte **dumpé** (≠ user courant) : OverPass-the-Hash d'abord (ci-dessous), puis `Enter-PSSession` en Kerberos.
-
-> [!warning] Double-hop
-> Dans une session PSRemoting, tes creds **ne se propagent pas** vers un 3e hôte (logon réseau, pas de délégation) → *access denied* plus loin. Contourne : OverPass-the-Hash **dans** la session (injecte un TGT), `-Credential` explicite, ou CredSSP. Sinon, lance les outils **localement** sur la box distante.
-> **Piège fréquent :** tu es DÉJÀ dans la session → relancer `Invoke-Command -ComputerName <même box>` de l'intérieur = un 2e hop → `Access is denied`. Tape les commandes **direct** dans le prompt `[box]:`.
-
-> [!note] `Enter-PSSession` réussit ≠ tu es admin/SYSTEM
-> Réussir à remoter = juste *Remote Management Users*. Ça garde **ton** identité (pas SYSTEM). Vérifie l'admin réel : `whoami /groups` (High Mandatory Level + `BUILTIN\Administrators`) ou `net localgroup Administrators`. Admin local **suffit** pour dumper LSASS.
-> Charger un outil sur la box distante **sans 2e hop** : `Copy-Item <tool>.ps1 -Destination C:\Users\Public\ -ToSession $sess` (le canal de la session, pas une connexion réseau).
+> [!warning] Pièges PSRemoting
+> - **Double-hop** : tes creds ne franchissent pas un 2e saut réseau → `Access denied`. Donc ne refais **pas** `Invoke-Command -ComputerName <box>` *depuis l'intérieur* de la session. Franchir : OverPass-the-Hash **dans** la session, `-Credential`, ou CredSSP.
+> - `Enter-PSSession` qui marche = *Remote Management Users*, **pas** forcément admin → vérifie `whoami /groups`. Admin local suffit pour dumper.
+> - Charger un outil sans 2e hop : `Copy-Item tool.ps1 -ToSession $sess`.
 
 ### OverPass-the-Hash (rejouer un hash/clé AES en TGT)
 

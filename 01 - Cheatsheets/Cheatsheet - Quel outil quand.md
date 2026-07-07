@@ -44,14 +44,10 @@
 6. Choisir le saut suivant (lateral / abuse ACL / delegation…)
 ```
 
-> [!warning] Compte LOCAL ≠ compte de DOMAINE
-> Un admin **local** (ex. `john` créé via abus de service) te donne le **contrôle de la machine** (dump LSASS, tools élevés) — PAS de droits AD. La recon domaine reste sur ton compte **de domaine**. La valeur d'un admin local = extraire des **secrets de domaine** qui, eux, font avancer dans l'AD.
->
-> **« Je me connecte à quoi avec ce compte local ? »** → à **rien d'autre**. Tu l'utilises **sur place** : shell élevé → dump LSASS → et ce sont les **creds/tickets de DOMAINE** récupérés qui servent ensuite à sauter sur les autres hôtes.
->
-> **Ouvrir un shell élevé depuis un shell non-interactif :** `runas /user:.\john` échoue (`RUNAS ERROR: Unable to acquire user password`) car il exige une vraie console. `RunasCs`/`PsExec` **ne sont PAS** dans `C:\AD\Tools` par défaut. À la place : PSCredential built-in + `Invoke-Command -ComputerName localhost -Credential $c` (WinRM local), ou `SharpWMI.exe` / `WSManWinRM.exe`.
->
-> **Encore mieux : pas besoin du compte.** `Invoke-ServiceAbuse -Name <svc> -Command "<charge>"` lance ta charge **en tant que compte du service = SYSTEM sur CET hôte** : c'est une privesc **hôte**, PAS « vers un compte de domaine ». La charge = dump LSASS (`SafetyKatz`/`mimikatz`) ou reverse shell SYSTEM ; le **compte de domaine** s'obtient *ensuite* en dumpant les secrets/tickets présents sur la box.
+> [!warning] Compte LOCAL ≠ DOMAINE — et « pourquoi j'ai john »
+> `Invoke-ServiceAbuse` **exécute une commande en tant que compte du service (SYSTEM)**. Sans `-Command`, PowerUp lance sa charge par défaut = créer l'admin **local** `john`. Donc john = **preuve** que tu exécutes en SYSTEM, **pas** l'objectif.
+> Un admin **local** = contrôle de la **machine** seulement (jamais dans BloodHound, zéro portée AD). Sa **seule** valeur : dump LSASS → voler des **creds de DOMAINE**, qui eux font avancer.
+> **Le plus direct :** saute john, mets ta charge d'emblée → `Invoke-ServiceAbuse -Name <svc> -Command "<dump / reverse shell>"` tourne en SYSTEM. (`runas .\john` échoue en shell non-interactif ; `RunasCs`/`PsExec` absents de `C:\AD\Tools`.)
 
 ## Voir aussi
 [[Cheatsheet - Privilege escalation]] · [[Cheatsheet - Reconnaissance AD]] · [[Cheatsheet - BloodHound SharpHound]] · [[Cheatsheet - Post-exploitation]] · [[Cheatsheet - Chemins des outils]]
