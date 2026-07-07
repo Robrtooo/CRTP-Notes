@@ -14,6 +14,25 @@ Enter-PSSession -ComputerName <TARGET> -Credential <DOMAIN>\<USER>
 winrs -r:<TARGET> cmd
 ```
 
+### Après `Find-PSRemotingLocalAdminAccess` (où suis-je admin en WinRM)
+
+Le script liste les hôtes où **ton identité courante** est admin local via PSRemoting. Ensuite :
+
+```powershell
+Enter-PSSession -ComputerName <TARGET>                              # interactif
+Invoke-Command -ComputerName <TARGET> -ScriptBlock { whoami /all; klist }
+```
+
+Sur la nouvelle box : re-dump les creds → nouvelles identités/tickets → re-hunt → saut suivant (vers DA). Pour y aller avec un compte **dumpé** (≠ user courant) : OverPass-the-Hash d'abord (ci-dessous), puis `Enter-PSSession` en Kerberos.
+
+> [!warning] Double-hop
+> Dans une session PSRemoting, tes creds **ne se propagent pas** vers un 3e hôte (logon réseau, pas de délégation) → *access denied* plus loin. Contourne : OverPass-the-Hash **dans** la session (injecte un TGT), `-Credential` explicite, ou CredSSP. Sinon, lance les outils **localement** sur la box distante.
+> **Piège fréquent :** tu es DÉJÀ dans la session → relancer `Invoke-Command -ComputerName <même box>` de l'intérieur = un 2e hop → `Access is denied`. Tape les commandes **direct** dans le prompt `[box]:`.
+
+> [!note] `Enter-PSSession` réussit ≠ tu es admin/SYSTEM
+> Réussir à remoter = juste *Remote Management Users*. Ça garde **ton** identité (pas SYSTEM). Vérifie l'admin réel : `whoami /groups` (High Mandatory Level + `BUILTIN\Administrators`) ou `net localgroup Administrators`. Admin local **suffit** pour dumper LSASS.
+> Charger un outil sur la box distante **sans 2e hop** : `Copy-Item <tool>.ps1 -Destination C:\Users\Public\ -ToSession $sess` (le canal de la session, pas une connexion réseau).
+
 ### OverPass-the-Hash (rejouer un hash/clé AES en TGT)
 
 > Permet de devenir intégralement le compte visé (toute action Kerberos : `winrs`, partages, autres tickets) à partir d'un simple hash/clé AES volé — jamais besoin de casser ni de connaître le mot de passe en clair pour l'utiliser.

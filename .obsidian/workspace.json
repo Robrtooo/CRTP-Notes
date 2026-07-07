@@ -49,20 +49,6 @@
             }
           },
           {
-            "id": "eaff04a613da6a62",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - Outils Windows Linux.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cheatsheet - Outils Windows Linux"
-            }
-          },
-          {
             "id": "0668f4b07ef867de",
             "type": "leaf",
             "state": {
@@ -74,6 +60,20 @@
               },
               "icon": "lucide-file",
               "title": "Cheatsheet - Privilege escalation"
+            }
+          },
+          {
+            "id": "ef0146df9b443bf7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - Cheatsheets/Cheatsheet - Post-exploitation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Cheatsheet - Post-exploitation"
             }
           },
           {
@@ -157,7 +157,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -365,24 +365,24 @@
       "bases:Créer une nouvelle base": false
     }
   },
-  "active": "238dbb54cb10553b",
+  "active": "ef0146df9b443bf7",
   "lastOpenFiles": [
+    "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.388889.7fdfc38d5145",
+    "01 - Cheatsheets/Cheatsheet - Lateral movement.md.tmp.388889.943ffada32f1",
+    "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.388889.4c1533d54690",
+    "01 - Cheatsheets/Cheatsheet - Lateral movement.md.tmp.388889.ccf6b7aaaa1e",
+    "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.388889.d963894a1ccd",
+    "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
+    "01 - Cheatsheets/Cheatsheet - Outils Windows Linux.md",
+    "01 - Cheatsheets/Cheatsheet - Quel outil quand.md",
     "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.388889.2cc9e17f474b",
     "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.388889.cf2742f7bcf0",
     "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
-    "01 - Cheatsheets/Cheatsheet - Outils Windows Linux.md",
     "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md.tmp.388889.0353bf498c63",
     "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.388889.aa9e6104d294",
     "01 - Cheatsheets/Cheatsheet - Privilege escalation.md.tmp.355327.eb14f5619e07",
-    "01 - Cheatsheets/Cheatsheet - Quel outil quand.md",
     "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.355327.4e9797cc6460",
-    "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
     "05 - Training/flags/F07 - User Jenkins console web.md",
-    "01 - Cheatsheets/Cheatsheet - Persistence.md.tmp.355327.c682526fde24",
-    "01 - Cheatsheets/Cheatsheet - LAPS.md.tmp.355327.74411a9fd5ff",
-    "01 - Cheatsheets/Cheatsheet - MSSQL et PowerUpSQL.md.tmp.355327.54fecedf8810",
-    "01 - Cheatsheets/Cheatsheet - AD CS et certificats.md.tmp.355327.cb14a861b16b",
-    "01 - Cheatsheets/Cheatsheet - RBCD.md.tmp.355327.d62e7c1dd85d",
     "05 - Training/flags/F06 - Script hunt admin via PS Remoting.md",
     "05 - Training/flags/F05 - Service abusé pour privesc locale.md",
     "w. Sliver C2/Cheatsheets/Sliver - AD CS, SQL et persistance.md",
