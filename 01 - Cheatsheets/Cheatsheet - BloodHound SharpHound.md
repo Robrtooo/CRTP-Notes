@@ -121,6 +121,15 @@ MATCH p=shortestPath((u:User {name:"STUDENTX@DOLLARCORP.MONEYCORP.LOCAL"})-[*1..
 > [!tip] Noms en MAJUSCULES
 > Dans neo4j les `name` sont en **UPPER@FQDN** (ex `RDPUSERS@DOLLARCORP.MONEYCORP.LOCAL`). Respecte la casse dans le Cypher sinon 0 résultat.
 
+> [!warning] Debug — « je vois des nodes mais la recherche dit no data / user introuvable »
+> Dans l'ordre :
+>
+> 1. **Compte cherché absent = compte LOCAL, pas de domaine.** Un user créé sur une box (ex. `john` via abus de service) n'est **jamais** dans SharpHound → c'est normal, pas un bug. La search ne connaît que l'AD.
+> 2. **`RETURN u.name` renvoie un tableau, pas un graphe** → la vue graphe affiche « no data ». Pour voir des nodes, retourne le node : `MATCH (u:User) RETURN u LIMIT 100`.
+> 3. **Vérifie l'ingest réel** : `MATCH (n) RETURN labels(n)[0], count(n)`. Si `User = 0` alors que le zip contient des users → **import partiel**.
+> 4. **Cause fréquente d'import partiel : BOM UTF-8** (`EF BB BF`) en tête des `.json` (export via redirection PowerShell) — certaines versions n'ingèrent pas. Fix : retirer le BOM puis ré-importer (wipe la db avant).
+> 5. **Recherche insensible casse / partielle** : `MATCH (n) WHERE toUpper(n.name) CONTAINS "SVCADMIN" RETURN n`.
+
 ## Related
 - [[Cheatsheet - Chemins des outils]]
 - [[Enumeration]]

@@ -46,6 +46,12 @@
 
 > [!warning] Compte LOCAL ≠ compte de DOMAINE
 > Un admin **local** (ex. `john` créé via abus de service) te donne le **contrôle de la machine** (dump LSASS, tools élevés) — PAS de droits AD. La recon domaine reste sur ton compte **de domaine**. La valeur d'un admin local = extraire des **secrets de domaine** qui, eux, font avancer dans l'AD.
+>
+> **« Je me connecte à quoi avec ce compte local ? »** → à **rien d'autre**. Tu l'utilises **sur place** : shell élevé → dump LSASS → et ce sont les **creds/tickets de DOMAINE** récupérés qui servent ensuite à sauter sur les autres hôtes.
+>
+> **Ouvrir le shell élevé depuis un shell non-interactif :** `RunasCs.exe john 'Password123!' powershell.exe` ou `PsExec -u .\john -p '…' -h cmd`. **PAS `runas /user:.\john`** → il échoue (`RUNAS ERROR: Unable to acquire user password`) car il exige une vraie console interactive.
+>
+> **Encore mieux : pas besoin du compte.** `Invoke-ServiceAbuse -Name <svc> -Command "<charge>"` exécute directement ta charge (mimikatz / reverse shell) **en tant que SYSTEM** — inutile de créer un user puis de s'y reconnecter.
 
 ## Voir aussi
 [[Cheatsheet - Privilege escalation]] · [[Cheatsheet - Reconnaissance AD]] · [[Cheatsheet - BloodHound SharpHound]] · [[Cheatsheet - Post-exploitation]] · [[Cheatsheet - Chemins des outils]]
