@@ -13,67 +13,39 @@
             "state": {
               "type": "bases",
               "state": {
-                "file": "Sans titre.base",
+                "file": "BASE.base",
                 "viewName": "Vue"
               },
               "icon": "lucide-layout-grid",
-              "title": "Sans titre"
+              "title": "BASE"
             }
           },
           {
-            "id": "4d0b5ff7b710a19c",
+            "id": "2d7b446631585642",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Training/flags/F02 - Droits AD de RDPUsers sur ControlxUser.md",
+                "file": "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "F02 - Droits AD de RDPUsers sur ControlxUser"
+              "title": "1. Cheatsheet - Toutes les commandes"
             }
           },
           {
-            "id": "30d46bfec00be220",
+            "id": "d3c2e3b52793cbd2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Training/flags/F05 - Service abusé pour privesc locale.md",
+                "file": "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "F05 - Service abusé pour privesc locale"
-            }
-          },
-          {
-            "id": "c7942b928cf41661",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05 - Training/flags/F06 - Script hunt admin via PS Remoting.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "F06 - Script hunt admin via PS Remoting"
-            }
-          },
-          {
-            "id": "775bb1bc383e847d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05 - Training/flags/F02 - Droits AD de RDPUsers sur ControlxUser.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "F02 - Droits AD de RDPUsers sur ControlxUser"
+              "title": "Cheatsheet - BloodHound SharpHound"
             }
           },
           {
@@ -96,12 +68,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md",
+                "file": "zzz. old-refactor-CRTP-bad-backup/z. Side Note.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Cheatsheet - BloodHound SharpHound"
+              "title": "z. Side Note"
             }
           },
           {
@@ -129,7 +101,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -337,13 +309,26 @@
       "bases:Créer une nouvelle base": false
     }
   },
-  "active": "6f525752a06bfbc1",
+  "active": "d3c2e3b52793cbd2",
   "lastOpenFiles": [
-    "05 - Training/flags/F06 - Script hunt admin via PS Remoting.md",
-    "05 - Training/flags/F07 - User Jenkins console web.md",
     "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
+    "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md",
+    "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md.tmp.355327.33781fa2fefe",
     "01 - Cheatsheets/Cheatsheet - Reconnaissance AD.md",
+    "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md.tmp.355327.bd05819011c6",
+    "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md.tmp.355327.4494aa053a8b",
+    "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md.tmp.355327.cdb0e7224f4f",
     "05 - Training/flags/F02 - Droits AD de RDPUsers sur ControlxUser.md",
+    "01 - Cheatsheets/Cheatsheet - Chemins des outils.md",
+    "01 - Cheatsheets/Cheatsheet - Chemins des outils.md.tmp.355327.56ebe7a1d7af",
+    "05 - Training/flags/F06 - Script hunt admin via PS Remoting.md",
+    "zzz. old-refactor-CRTP-bad-backup/z. Side Note.md",
+    "w. Sliver C2/Sans titre.md",
+    "00 - Navigation/Tools map.md",
+    "w. Sliver C2/Sliver - Exécution et évasion.md",
+    "BASE.base",
+    "Sans titre.canvas",
+    "05 - Training/flags/F07 - User Jenkins console web.md",
     "05 - Training/flags/F01 - SID membre du groupe Enterprise Admins.md",
     "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
     "05 - Training/flags/F05 - Service abusé pour privesc locale.md",
@@ -352,7 +337,6 @@
     "01 - Cheatsheets/Cheatsheet - PowerShell.md",
     "05 - Training/flags/F03 - GPO appliquée sur StudentMachines OU.md",
     "01 - Cheatsheets/Cheatsheet - GPO et OU.md",
-    "Sans titre.base",
     "02 - Révision/Synthèse - ACL et GPO.md",
     "01 - Cheatsheets/Cheatsheet - ACL et droits AD.md",
     "05 - Training/flags/Flags - Index.md",
@@ -360,25 +344,12 @@
     "05 - Training/Learning",
     "05 - Training/Learning/LO23 - LSASS et ASR bypass.md",
     "05 - Training/Learning/LO01 - Énumération.md",
-    "05 - Training/flags/F40 - Privilèges OS sur eu-sql.md",
-    "05 - Training/flags/F39 - Privilèges SQL sur eu-sql.md",
-    "05 - Training/flags/F38 - User SQL du lien sql1 - mgmt.md",
-    "05 - Training/flags/F37 - Premier SQL Server lié à dcorp-mssql.md",
-    "05 - Training/flags/F36 - Groupe droits enroll sur CA-Integration.md",
-    "05 - Training/flags/F35 - Attribut CA autorisant les SAN.md",
-    "05 - Training/flags/F34 - Template ADCS Certificate Request Agent.md",
     "05 - Training/flags",
     "03 - Cours/Objectives/Carte d'attaque.canvas",
     "00 - Navigation/1. CRTP - Index.md.tmp.81121.dc65a34665ae",
     "00 - Navigation/Flashcards - MOC.md.tmp.81121.b4da5d6bcd6f",
-    "00 - Navigation/Flashcards - MOC.md.tmp.81121.389887e837fc",
     "w. Sliver C2/Sliver - Attack map.canvas",
-    "training/_Template - LO.md.tmp.81121.d4199316bd05",
-    "00 - Navigation/1. CRTP - Index.md.tmp.81121.2fe6b8c96b6f",
-    "05 - Training",
-    "02 - Révision/Synthèse - Énumération.md.tmp.81121.03d14a2519b4",
     "00 - Navigation/3. Attack map.canvas",
-    "Sans titre.canvas",
     "z. Ressources/Schema/The Lab Environment_Attack_Paths.png",
     "z. Ressources/Schema/The Lab Environment.png",
     "z. Ressources/Schema/ACL_Mindmap.png",

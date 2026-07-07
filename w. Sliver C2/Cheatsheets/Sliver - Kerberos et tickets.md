@@ -4,7 +4,7 @@
 > Toutes les attaques Kerberos via **Rubeus** exécuté en mémoire : Kerberoasting, OverPass-the-Hash (`asktgt`), Golden/Silver/Diamond ticket, et DCSync. Rubeus est souvent lancé en self-inject (`-i -M -E`) ou empaqueté par PEzor pour l'exécuter à distance. Théorie : [[Kerberos]], [[Attaques AD]].
 
 > [!warning]- Required
-> Pour Kerberoast/asktgt : un compte de domaine valide. Pour Golden/DCSync : privilèges Domain Admin (ou droits de réplication). Injection : voir [[Sliver - Exécution et évasion]].
+> Pour Kerberoast/asktgt : un compte de domaine valide. Pour Golden/DCSync : privilèges Domain Admin (ou droits de réplication). Injection : voir [[w. Sliver C2/Sliver - Exécution et évasion]].
 
 ### Kerberoasting (StandIn + Rubeus + Hashcat)
 

@@ -19,7 +19,7 @@
 Master : **[[Sliver - Toutes les commandes]]**.
 
 - [[Sliver - Setup et beacons]] — serveur, listeners, generate, delivery, sessions/beacons, migrate
-- [[Sliver - Exécution et évasion]] — execute-assembly (`-i -M -E`), inline-execute, PEzor, armory, bypass des logs/AMSI
+- [[w. Sliver C2/Sliver - Exécution et évasion]] — execute-assembly (`-i -M -E`), inline-execute, PEzor, armory, bypass des logs/AMSI
 - [[Sliver - Énumération AD]] — StandIn, ADSearch, ADCollector, SharpHound
 - [[Sliver - Kerberos et tickets]] — Rubeus (asktgt, kerberoast, s4u), Golden/Silver/Diamond, DCSync
 - [[Sliver - Delegation et RBCD]] — unconstrained + SpoolSample, constrained S4U, RBCD

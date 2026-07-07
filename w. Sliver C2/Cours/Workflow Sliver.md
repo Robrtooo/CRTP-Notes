@@ -50,6 +50,6 @@ Ce workflow est le « comment » ; le « quoi/quand » reste [[2. Attack flow]] 
 ## Notes associées
 - [[Qu'est-ce que Sliver]]
 - [[Flashcards - Workflow Sliver]]
-- [[Sliver - Exécution et évasion]]
+- [[w. Sliver C2/Sliver - Exécution et évasion]]
 - [[2. Attack flow]]
 - [[Sliver - Index]]

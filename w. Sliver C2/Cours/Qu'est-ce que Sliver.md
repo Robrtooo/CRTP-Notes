@@ -41,7 +41,7 @@ Le fil rouge du parcours Sliver : **ne pas exécuter PowerShell directement** (c
 - **AMSI / Defender** : inspection du code avant exécution.
 - **ETW** : télémétrie .NET vers les EDR.
 
-Sliver répond avec l'injection de processus, le **PPID spoofing** (se faire passer pour un enfant légitime), et les bypass AMSI/ETW intégrés à `execute-assembly` (`-M`, `-E`). Le détail est dans [[Workflow Sliver]] et [[Sliver - Exécution et évasion]].
+Sliver répond avec l'injection de processus, le **PPID spoofing** (se faire passer pour un enfant légitime), et les bypass AMSI/ETW intégrés à `execute-assembly` (`-M`, `-E`). Le détail est dans [[Workflow Sliver]] et [[w. Sliver C2/Sliver - Exécution et évasion]].
 
 ## Ce qui change (et ne change pas) par rapport au CRTP classique
 

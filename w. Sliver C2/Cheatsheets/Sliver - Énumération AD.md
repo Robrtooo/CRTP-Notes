@@ -1,7 +1,7 @@
 # Sliver - Énumération AD
 
 > [!summary] Objectif
-> Cartographier le domaine sans PowerView/SharpView (détectés), via des outils à requêtes LDAP brutes exécutés en mémoire : **StandIn** et **ADSearch** pour users/groupes/OU/ACL/trusts, **ADCollector** pour les ACL, **SharpHound** pour le graphe. Toute commande passe par `execute-assembly` (voir [[Sliver - Exécution et évasion]]). Concepts : [[Énumération AD]].
+> Cartographier le domaine sans PowerView/SharpView (détectés), via des outils à requêtes LDAP brutes exécutés en mémoire : **StandIn** et **ADSearch** pour users/groupes/OU/ACL/trusts, **ADCollector** pour les ACL, **SharpHound** pour le graphe. Toute commande passe par `execute-assembly` (voir [[w. Sliver C2/Sliver - Exécution et évasion]]). Concepts : [[Énumération AD]].
 
 > [!warning]- Required
 > Une session migrée + les assemblies dans `C:\AD\Tools\Sliver`. Pour éviter le double hop Kerberos sur certaines requêtes, fournir `--user/--pass` du compte foothold.
@@ -76,6 +76,6 @@ execute-assembly -p explorer.exe -t 45 '/mnt/c/AD/Tools/Sliver/StandIn.exe' '--o
 
 ## Related
 - [[Énumération AD]]
-- [[Sliver - Exécution et évasion]]
+- [[w. Sliver C2/Sliver - Exécution et évasion]]
 - [[Sliver - Privesc et lateral]]
 - [[Sliver - Toutes les commandes]]

