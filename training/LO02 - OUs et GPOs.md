@@ -1,6 +1,6 @@
 ---
 lo: 2
-statut: à faire
+statut: fait
 ---
 # LO2 - OUs et GPOs
 
