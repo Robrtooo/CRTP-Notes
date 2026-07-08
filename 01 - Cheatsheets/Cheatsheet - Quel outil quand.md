@@ -48,10 +48,12 @@
 > `mimikatz` / `SafetyKatz` / `Rubeus` lancés bruts = signatures → Defender/ASR les bloquent (notif). Toujours via **`Loader.exe`** (mémoire + patch AMSI/ETW) + commandes **`evasive-*`** (`evasive-keys`…) + bypass AMSI. **SafetyKatz ≠ bypass AV** (juste moins signaturé). Vrai même quand SYSTEM: le service qui lance le .exe brut se fait choper pareil. Cf [[Cheatsheet - Évasion et OPSEC]].
 > → payload de service évasif: `Invoke-ServiceAbuse -Name <svc> -Command "cmd /c C:\AD\Tools\Loader.exe -path C:\AD\Tools\SafetyKatz.exe -args sekurlsa::evasive-keys exit > C:\Users\Public\o.txt"`
 
-> [!warning] Compte LOCAL ≠ DOMAINE — et « pourquoi j'ai john »
-> `Invoke-ServiceAbuse` **exécute une commande en tant que compte du service (SYSTEM)**. Sans `-Command`, PowerUp lance sa charge par défaut = créer l'admin **local** `john`. Donc john = **preuve** que tu exécutes en SYSTEM, **pas** l'objectif.
-> Un admin **local** = contrôle de la **machine** seulement (jamais dans BloodHound, zéro portée AD). Sa **seule** valeur : dump LSASS → voler des **creds de DOMAINE**, qui eux font avancer.
-> **Le plus direct :** saute john, mets ta charge d'emblée → `Invoke-ServiceAbuse -Name <svc> -Command "<dump / reverse shell>"` tourne en SYSTEM. (`runas .\john` échoue en shell non-interactif ; `RunasCs`/`PsExec` absents de `C:\AD\Tools`.)
+> [!warning] Compte LOCAL ≠ DOMAINE — service abuse
+> `Invoke-ServiceAbuse` **exécute une commande en tant que compte du service** (souvent SYSTEM ; vérifie — peut être un compte de domaine). Sans `-Command`, la charge **par défaut** de PowerUp crée un admin **local** placeholder → c'est une **preuve** d'exécution SYSTEM, **pas** l'objectif.
+> Un admin **local** = contrôle de la **machine** seulement (jamais dans BloodHound, zéro portée AD). Sa **seule** valeur : dump LSASS → voler des **creds de DOMAINE**, qui font avancer.
+> **Direct :** mets ta charge dans `-Command "<dump / reverse shell>"` → tourne en SYSTEM tout de suite (`runas .\<local>` échoue en shell non-interactif ; `RunasCs`/`PsExec` absents du toolset).
+>
+> ⚠ **Integrity levels :** admin local ≠ *High Integrity*. Sous UAC un shell d'admin local reste **Medium** → pas d'accès LSASS (`Not in high integrity`). Il faut **High** ou **SYSTEM** (le service abuse `-Command` donne SYSTEM directement).
 
 ## Voir aussi
 [[Cheatsheet - Privilege escalation]] · [[Cheatsheet - Reconnaissance AD]] · [[Cheatsheet - BloodHound SharpHound]] · [[Cheatsheet - Post-exploitation]] · [[Cheatsheet - Chemins des outils]]
