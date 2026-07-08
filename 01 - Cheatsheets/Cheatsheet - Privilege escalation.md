@@ -50,30 +50,26 @@ C:\AD\Tools\Loader.exe -Path C:\AD\Tools\winPEASx64.exe -args
 
 Ne lis pas `Invoke-AllChecks` comme une liste de faits : chaque entrée nomme la **faiblesse exploitable** (`Modifiable service`, `Unquoted service path`, `CanRestart: True`) → c'est ta primitive d'abus.
 
-### Exploiter un service Windows faible (ex. AbyssWebServer) — LO5
+### Exploiter un service Windows faible — cycle d'abus
 
-> [!info] Repérer → Exploiter
-> `Get-CimInstance win32_service` / `Invoke-AllChecks` **repère** le service (nom = flag). L'**objectif** = t'en servir pour devenir **admin local**. 3 primitives selon ce que PowerUp remonte :
+> [!info] Repérer → Exploiter → Restaurer
+> `Get-CimInstance win32_service` / `Invoke-AllChecks` **repèrent** le service faible (nom = flag). L'**objectif** = exécuter du code **en tant que compte du service** (souvent SYSTEM). 3 primitives selon ce que PowerUp remonte :
+> - **a)** service/binaire modifiable → `Invoke-ServiceAbuse -Name <svc>` (charge par défaut = crée un admin local placeholder = simple **preuve** d'exécution) OU **direct** : `-Command "<ta charge>"` → tourne en SYSTEM d'emblée (dump, reverse shell…).
+> - **b)** binaire remplaçable → écraser l'exe pointé par `PathName`, `Restart-Service <svc>`.
+> - **c)** unquoted path → déposer un exe malveillant dans le 1er espace du chemin.
+>
+> **Restaurer** pour rejouer proprement : `Restore-ServiceBinary -Name <svc>` (sinon 2e abus refusé). Si `-Command` semble ne rien produire : `Get-Service <svc>` puis `Restart-Service <svc> -Force` puis rejouer.
 
 ```powershell
-# a) service/binaire modifiable → PowerUp t'ajoute aux admins locaux automatiquement
 . C:\AD\Tools\PowerUp.ps1
-Invoke-ServiceAbuse -Name 'AbyssWebServer' -UserName 'dcorp\studentx'
-
-# b) binaire remplaçable à la main → écraser l'exe pointé par PathName, puis relancer le service
-Restart-Service AbyssWebServer        # ou: sc.exe stop/start ; ou attendre un reboot
-
-# c) unquoted service path → déposer un exe malveillant dans le 1er espace du chemin
+Invoke-ServiceAbuse -Name <svc> -Command "<charge SYSTEM>"     # payload direct = évite le détour Medium Integrity
+Restore-ServiceBinary -Name <svc>
 ```
 
-Vérifier l'élévation (nouvelle session) :
-```powershell
-net localgroup administrators
-whoami /all      # doit montrer le SID S-1-5-32-544 (Administrators)
-```
+⚠ **Integrity levels :** un shell d'admin local sous UAC reste **Medium** → pas d'accès LSASS (`Not in high integrity`). Route ta charge via `-Command` du service → **SYSTEM/High** direct. Cf [[Cheatsheet - Quel outil quand]] (§ compte LOCAL ≠ DOMAINE).
 
 > [!warning] Le flag ≠ l'objectif
-> Répondre `AbyssWebServer` (le nom) valide le flag mais ne te donne PAS l'accès. Sans l'abus (a/b/c) → pas d'admin local → tu seras bloqué aux LO qui exigent de dumper des creds. Fais l'exploitation, pas juste l'identification.
+> Répondre le **nom** du service valide le flag mais ne te donne **pas** l'accès. Sans l'abus (a/b/c) → pas de code SYSTEM → bloqué aux LO qui exigent de dumper des creds.
 
 ### Chaînage — ce que cette étape débloque
 Admin local (via service faible) **ou** shell service account (via Jenkins) → dump creds/hash en mémoire ([[Cheatsheet - Post-exploitation]]) → ces secrets alimentent le lateral movement AD ([[Cheatsheet - Lateral movement]]) et souvent le pivot vers dcorp-mgmt (LO7).
