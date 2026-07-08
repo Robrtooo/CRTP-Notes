@@ -85,11 +85,15 @@ Demander un TGS en RC4 sur un compte configuré AES-only déclenche un downgrade
 # Récupérer le PID de LSASS via API custom plutôt qu'un outil signé/flaggé
 C:\AD\Tools\FindLSASSPID.exe
 
-# Dump/execution via SafetyKatz (MiniDump + Katz en mémoire)
-C:\AD\Tools\Loader.exe -path C:\AD\Tools\SafetyKatz.exe -args "sekurlsa::ekeys" exit
+# Dump via Loader + commande OBFUSQUÉE (evasive-*), jamais le .exe brut
+C:\AD\Tools\Loader.exe -path C:\AD\Tools\SafetyKatz.exe -args "sekurlsa::evasive-keys" "exit"
 ```
 
 L'accès direct à `lsass.exe` par `mimikatz.exe` est signé et souvent bloqué par les règles ASR de Defender. Passer par un dump en mémoire (SafetyKatz) et une résolution de PID maison réduit la surface de détection. En présence de MDE, préférer les techniques qui n'ouvrent pas un handle classique sur LSASS.
+
+> [!danger] SafetyKatz n'est PAS un bypass AV
+> `SafetyKatz.exe` = mimikatz .NET **moins signaturé**, pas un contournement de Defender. Le lancer **brut** (`SafetyKatz.exe ...` ou via un service) = binaire flaggé → Defender/ASR le choppe (notif). Ce qui te rend évasif = **Loader.exe** (charge en mémoire, patch AMSI+ETW → rien de flaggé sur disque) **+** les commandes renommées **`evasive-keys` / `evasive-lsa` / `evasive-dcsync`** du build du lab **+** bypass AMSI + InviShell.
+> Deux défenses distinctes: **AMSI** (scripts, → patch AMSI) ≠ **Defender AV/ASR** (binaires + accès LSASS, → Loader + evasive). Bypasser l'une ne bypasse pas l'autre.
 
 ### Énumération furtive
 

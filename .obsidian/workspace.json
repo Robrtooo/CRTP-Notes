@@ -11,13 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "BASE.base",
-                "viewName": "Vue"
+                "file": "01 - Cheatsheets/Cheatsheet - Évasion et OPSEC.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-grid",
-              "title": "BASE"
+              "icon": "lucide-file",
+              "title": "Cheatsheet - Évasion et OPSEC"
             }
           },
           {
@@ -82,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
+                "file": "01 - Cheatsheets/Cheatsheet - ACL et droits AD.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1. Cheatsheet - Toutes les commandes"
+              "title": "Cheatsheet - ACL et droits AD"
             }
           },
           {
@@ -170,8 +171,7 @@
               "title": "Nouvel onglet"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -234,8 +234,7 @@
               "title": "File Tree"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -380,8 +379,16 @@
       "bases:Créer une nouvelle base": false
     }
   },
-  "active": "89adebd4e7628ee5",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.355327.035c509a6931",
+    "BASE.base",
+    "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.355327.8de727ff3bae",
+    "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
+    "01 - Cheatsheets/Cheatsheet - Quel outil quand.md",
+    "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
+    "01 - Cheatsheets/Cheatsheet - ACL et droits AD.md",
+    "00 - Navigation/1. CRTP - Index.md",
     "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md.tmp.388889.276ed98aa266",
     "01 - Cheatsheets/Cheatsheet - Lateral movement.md.tmp.388889.db1adcf2eb3e",
     "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.388889.d5cc419640f8",
@@ -391,13 +398,7 @@
     "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md.tmp.388889.5a9ca1ea796e",
     "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.388889.3d4b109f6466",
     "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.388889.7fdfc38d5145",
-    "01 - Cheatsheets/Cheatsheet - Lateral movement.md.tmp.388889.943ffada32f1",
-    "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.388889.4c1533d54690",
-    "01 - Cheatsheets/Cheatsheet - Lateral movement.md.tmp.388889.ccf6b7aaaa1e",
-    "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
     "01 - Cheatsheets/Cheatsheet - Outils Windows Linux.md",
-    "01 - Cheatsheets/Cheatsheet - Quel outil quand.md",
-    "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
     "05 - Training/flags/F07 - User Jenkins console web.md",
     "05 - Training/flags/F06 - Script hunt admin via PS Remoting.md",
     "05 - Training/flags/F05 - Service abusé pour privesc locale.md",
@@ -418,8 +419,6 @@
     "01 - Cheatsheets/Cheatsheet - PowerShell.md",
     "05 - Training/flags/F03 - GPO appliquée sur StudentMachines OU.md",
     "01 - Cheatsheets/Cheatsheet - GPO et OU.md",
-    "02 - Révision/Synthèse - ACL et GPO.md",
-    "01 - Cheatsheets/Cheatsheet - ACL et droits AD.md",
     "03 - Cours/Objectives/Carte d'attaque.canvas",
     "w. Sliver C2/Sliver - Attack map.canvas",
     "00 - Navigation/3. Attack map.canvas",
