@@ -11,182 +11,13 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - Évasion et OPSEC.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cheatsheet - Évasion et OPSEC"
-            }
-          },
-          {
-            "id": "2d7b446631585642",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05 - Training/flags/F06 - Script hunt admin via PS Remoting.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "F06 - Script hunt admin via PS Remoting"
-            }
-          },
-          {
-            "id": "238dbb54cb10553b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - Quel outil quand.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cheatsheet - Quel outil quand"
-            }
-          },
-          {
-            "id": "50361afc56c22ecb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - Évasion et OPSEC.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cheatsheet - Évasion et OPSEC"
-            }
-          },
-          {
-            "id": "0668f4b07ef867de",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cheatsheet - Privilege escalation"
-            }
-          },
-          {
-            "id": "ef0146df9b443bf7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - Post-exploitation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cheatsheet - Post-exploitation"
-            }
-          },
-          {
-            "id": "89adebd4e7628ee5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - ACL et droits AD.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cheatsheet - ACL et droits AD"
-            }
-          },
-          {
-            "id": "c3ffe800ac92fd28",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05 - Training/flags/F07 - User Jenkins console web.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "F07 - User Jenkins console web"
-            }
-          },
-          {
-            "id": "d3c2e3b52793cbd2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "w. Sliver C2/Cheatsheets/Sliver - AD CS, SQL et persistance.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Sliver - AD CS, SQL et persistance"
-            }
-          },
-          {
-            "id": "8cc1eb90cb3b4b62",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05 - Training/flags/F06 - Script hunt admin via PS Remoting.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "F06 - Script hunt admin via PS Remoting"
-            }
-          },
-          {
-            "id": "6f525752a06bfbc1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "zzz. old-refactor-CRTP-bad-backup/z. Side Note.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "z. Side Note"
-            }
-          },
-          {
-            "id": "36cfcedf64c96bba",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - Trusts et forêts.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cheatsheet - Trusts et forêts"
-            }
-          },
-          {
-            "id": "496056b531edacb1",
-            "type": "leaf",
-            "state": {
               "type": "empty",
               "state": {},
               "icon": "lucide-file",
               "title": "Nouvel onglet"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -249,7 +80,8 @@
               "title": "File Tree"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -356,8 +188,8 @@
             "state": {
               "type": "review-queue-list-view",
               "state": {},
-              "icon": "SpacedRepIcon",
-              "title": "Cartes à apprendre"
+              "icon": "lucide-ghost",
+              "title": "review-queue-list-view"
             }
           },
           {
@@ -371,7 +203,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -394,49 +226,49 @@
       "bases:Créer une nouvelle base": false
     }
   },
-  "active": "50361afc56c22ecb",
+  "active": "c0bf750018a97910",
   "lastOpenFiles": [
+    "03 - Cours/PowerShell/What is PowerShell.md",
+    "03 - Cours/PowerShell/Using tools.md",
+    "03 - Cours/Objectives/Flashcards - Attack flow.md",
+    "02 - Révision/Synthèse - Active Directory.md",
+    "02 - Révision/Synthèse - Attaques AD.md",
+    "02 - Révision/Synthèse - Énumération.md",
+    "02 - Révision/Synthèse - Kerberos.md",
+    "02 - Révision/Synthèse - Monitoring et détections.md",
+    "02 - Révision/Synthèse - Trusts et forêts.md",
+    "02 - Révision/Checklist - Méthodologie CRTP.md",
+    "BASE.base",
+    "00 - Navigation/2. Attack flow.md",
+    "00 - Navigation/3. Attack map.canvas",
+    "00 - Navigation/Active Directory - MOC.md",
+    "00 - Navigation/Attaques AD - MOC.md",
+    "00 - Navigation/Cheatsheets - MOC.md",
+    "00 - Navigation/Cours - MOC.md",
+    "00 - Navigation/Flashcards - MOC.md",
+    "00 - Navigation/Labs - MOC.md",
+    "00 - Navigation/PowerShell - MOC.md",
+    "00 - Navigation/Tools map.md",
+    "05 - Training/flags/Flags - Index.md",
+    "01 - Cheatsheets/Cheatsheet - Évasion et OPSEC.md",
     "01 - Cheatsheets/Cheatsheet - Privilege escalation.md.tmp.466929.8d4451cfed97",
     "01 - Cheatsheets/Cheatsheet - Quel outil quand.md",
     "01 - Cheatsheets/Cheatsheet - Privilege escalation.md.tmp.466929.c7cc24f5d7d4",
     "05 - Training/flags/F06 - Script hunt admin via PS Remoting.md",
-    "01 - Cheatsheets/Cheatsheet - Évasion et OPSEC.md",
     "05 - Training/flags/F05 - Service abusé pour privesc locale.md",
     "05 - Training/flags/F04 - Sens du trust dollarcorp - eurocorp.md",
     "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
     "01 - Cheatsheets/Cheatsheet - Privilege escalation.md.tmp.466929.e828a2d5cab6",
     "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.466929.e8a520512a0a",
     "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.355327.035c509a6931",
-    "BASE.base",
     "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.355327.8de727ff3bae",
-    "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
-    "01 - Cheatsheets/Cheatsheet - ACL et droits AD.md",
-    "00 - Navigation/1. CRTP - Index.md",
     "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md.tmp.388889.276ed98aa266",
     "01 - Cheatsheets/Cheatsheet - Lateral movement.md.tmp.388889.db1adcf2eb3e",
     "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.388889.d5cc419640f8",
-    "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.388889.55e4dd0d1f54",
-    "01 - Cheatsheets/Cheatsheet - Post-exploitation.md",
-    "01 - Cheatsheets/Cheatsheet - Outils Windows Linux.md",
-    "05 - Training/flags/F07 - User Jenkins console web.md",
-    "w. Sliver C2/Cheatsheets/Sliver - AD CS, SQL et persistance.md",
     "z. Ressources/IMG/Pasted image 20260707160622.png",
-    "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md",
-    "01 - Cheatsheets/Cheatsheet - Reconnaissance AD.md",
-    "05 - Training/flags/F02 - Droits AD de RDPUsers sur ControlxUser.md",
-    "01 - Cheatsheets/Cheatsheet - Chemins des outils.md",
-    "zzz. old-refactor-CRTP-bad-backup/z. Side Note.md",
-    "w. Sliver C2/Sans titre.md",
-    "00 - Navigation/Tools map.md",
-    "w. Sliver C2/Sliver - Exécution et évasion.md",
     "Sans titre.canvas",
-    "05 - Training/flags/F01 - SID membre du groupe Enterprise Admins.md",
-    "01 - Cheatsheets/Cheatsheet - Trusts et forêts.md",
-    "01 - Cheatsheets/Cheatsheet - PowerShell.md",
-    "05 - Training/flags/F03 - GPO appliquée sur StudentMachines OU.md",
     "03 - Cours/Objectives/Carte d'attaque.canvas",
     "w. Sliver C2/Sliver - Attack map.canvas",
-    "00 - Navigation/3. Attack map.canvas",
     "z. Ressources/Schema/The Lab Environment_Attack_Paths.png",
     "z. Ressources/Schema/The Lab Environment.png",
     "z. Ressources/Schema/ACL_Mindmap.png",
