@@ -59,6 +59,8 @@ Ne lis pas `Invoke-AllChecks` comme une liste de faits : chaque entrée nomme la
 > - **c)** unquoted path → déposer un exe malveillant dans le 1er espace du chemin.
 >
 > **Restaurer** pour rejouer proprement : `Restore-ServiceBinary -Name <svc>` (sinon 2e abus refusé). Si `-Command` semble ne rien produire : `Get-Service <svc>` puis `Restart-Service <svc> -Force` puis rejouer.
+>
+> ⚠ **Service bloqué après 1er abus** (`Restart-Service ... stop failed`) : le binaire écrasé rend le service instoppable proprement. Séquence de secours : `sc.exe queryex <svc>` (note PID) → `Stop-Process -Id <PID> -Force` → `sc.exe stop <svc>` → `Restore-ServiceBinary -Name <svc>`. **Toujours restaurer AVANT de rejouer**, jamais 2 `Invoke-ServiceAbuse` d'affilée.
 
 ```powershell
 . C:\AD\Tools\PowerUp.ps1
