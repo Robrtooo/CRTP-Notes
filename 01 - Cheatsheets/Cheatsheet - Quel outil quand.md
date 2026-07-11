@@ -3,6 +3,11 @@
 > [!summary] Objectif
 > Choisir le BON outil selon l'objectif. Erreur n°1: confondre les outils de la couche **AD** (annuaire) et ceux de la couche **HÔTE** (la machine). Noms proches ≠ même job.
 
+> [!warning] Méthodo AVANT de choisir l'outil — 3 réflexes qui débloquent la plupart des blocages
+> **1. Les flags ≠ une recette linéaire.** Chaque question = un **LO auto-contenu** (une technique), pas "question suivante = étape suivante". Chaque technique a un **prérequis d'ACCÈS/IDENTITÉ** → la bonne question n'est pas "quelle est l'étape d'après" mais **"quelle identité a le droit requis"**.
+> **2. Repérer ≠ Exploiter.** Répondre un flag (un nom, un SID, un attribut) = souvent juste de l'**énum** ; ça ne donne **pas** l'accès. N'exploite QUE ce qui te fait **avancer** (box/privilège suivant), pas tout ce que tu trouves. (Ex vécu : popper un shell SYSTEM sur la student VM alors que le flag voulait juste le **nom** du service = temps perdu.)
+> **3. À chaque changement d'identité** (nouveau user/creds/ticket) ou **nouvelle box** → **RE-ÉNUMÈRE**. L'énum reflète l'**identité qui la lance** ; un nouvel accès révèle de nouveaux droits (ACL, GPO, sessions, PSRemoting).
+
 ## Le principe: 2 couches, 2 familles
 
 | Couche | Ce que tu attaques | Outils |

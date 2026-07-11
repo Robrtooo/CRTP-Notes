@@ -11,10 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "01 - Cheatsheets/Cheatsheet - GPO et OU.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nouvel onglet"
+              "title": "Cheatsheet - GPO et OU"
             }
           }
         ]
@@ -80,8 +84,7 @@
               "title": "File Tree"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -226,8 +229,11 @@
       "bases:Créer une nouvelle base": false
     }
   },
-  "active": "c0bf750018a97910",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.915916.67f7bd2e6262",
+    "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.679737.7378f3e3aec8",
+    "00 - Navigation/Tools map.md",
     "03 - Cours/PowerShell/What is PowerShell.md",
     "03 - Cours/PowerShell/Using tools.md",
     "03 - Cours/Objectives/Flashcards - Attack flow.md",
@@ -248,7 +254,6 @@
     "00 - Navigation/Flashcards - MOC.md",
     "00 - Navigation/Labs - MOC.md",
     "00 - Navigation/PowerShell - MOC.md",
-    "00 - Navigation/Tools map.md",
     "05 - Training/flags/Flags - Index.md",
     "01 - Cheatsheets/Cheatsheet - Évasion et OPSEC.md",
     "01 - Cheatsheets/Cheatsheet - Privilege escalation.md.tmp.466929.8d4451cfed97",
@@ -257,14 +262,12 @@
     "05 - Training/flags/F06 - Script hunt admin via PS Remoting.md",
     "05 - Training/flags/F05 - Service abusé pour privesc locale.md",
     "05 - Training/flags/F04 - Sens du trust dollarcorp - eurocorp.md",
-    "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
     "01 - Cheatsheets/Cheatsheet - Privilege escalation.md.tmp.466929.e828a2d5cab6",
     "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.466929.e8a520512a0a",
     "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.355327.035c509a6931",
     "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.355327.8de727ff3bae",
     "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md.tmp.388889.276ed98aa266",
     "01 - Cheatsheets/Cheatsheet - Lateral movement.md.tmp.388889.db1adcf2eb3e",
-    "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.388889.d5cc419640f8",
     "z. Ressources/IMG/Pasted image 20260707160622.png",
     "Sans titre.canvas",
     "03 - Cours/Objectives/Carte d'attaque.canvas",
