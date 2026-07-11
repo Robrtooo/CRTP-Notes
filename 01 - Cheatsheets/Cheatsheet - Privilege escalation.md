@@ -64,6 +64,10 @@ Ne lis pas `Invoke-AllChecks` comme une liste de faits : chaque entrée nomme la
 >
 > ⚠ Piège vécu : `Restart-Service <svc> -Force` échoue avec `stop failed` après un `-Command` — normal, le binPath pointe sur un `cmd /c ...` (pas un vrai service), SCM ne peut pas dialoguer avec. Utilise `sc.exe stop <svc>` à la place, puis rejoue `Invoke-ServiceAbuse`.
 
+> [!tip] `1053 / timeout 30s` sur `sc start` = **normal**, pas un échec de charge
+> Après binPath modifié, SCM lance ta charge, attend 30s un callback « je suis un service » (que `cmd`/`Reverse.exe` ne renvoient **jamais**) → tue le process + renvoie `1053`. La charge a quand même tourné (fenêtre ~30s avant kill). **Discriminant exec SYSTEM** (0 réseau, 0 AV) : `-Command "cmd /c echo RAN > C:\Users\Public\p.txt"` → si `p.txt` contient `RAN`, l'exécution SYSTEM marche ; le reste (revshell) = pb réseau/AV, pas exec.
+> ⚠ Sous Defender actif : un **builtin** (`echo`) passe, mais un **.exe on-disk** (signature statique scannée) ou un **script PS** (AMSI) échoue. Donc `echo RAN` prouve l'**exec SYSTEM**, **pas** que ton bypass AMSI tient — `cmd /c echo` ne passe **jamais** par AMSI (AMSI = scan scripts PS/.NET en RAM).
+
 ```powershell
 . C:\AD\Tools\PowerUp.ps1
 Invoke-ServiceAbuse -Name <svc> -Command "<charge SYSTEM>"     # payload direct = évite le détour Medium Integrity
