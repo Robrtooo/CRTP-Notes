@@ -99,6 +99,13 @@ klist
 ```
 → `klist` montre un **TGT `krbtgt/DOLLARCORP` pour svcadmin** (un **ticket**, pas un mot de passe — c'est ça la preuve). `/ptt` injecte dans la session courante.
 
+> [!warning] `asktgt /ptt` injecte DÉJÀ — ne relance pas un `ptt` séparé
+> Le `/ptt` d'`asktgt` a **déjà** importé le TGT (`[+] Ticket successfully imported!`). Refaire un `Rubeus.exe ptt /ticket:<base64>` derrière est **redondant** et échoue en général (`[X]/ticket:X must either be a .kirbi file or a base64 encoded .kirbi`) : le base64 se **casse au copier-coller** (wrap console = retours ligne/espaces injectés). Ta preuve = **`klist`**, pas l'output Rubeus.
+> - Si tu veux vraiment récupérer un `.kirbi` copiable : ajoute **`/nowrap`** (base64 sur une seule ligne, sans retour).
+> - Rubeus chargé en mémoire imprime **déjà** dans la console → inutile de rediriger `[Console]::SetOut($sw)` vers un fichier. Si tu le fais quand même, **ré-assigne stdout après** sinon le terminal reste muet : `$o=[IO.StreamWriter]::new([Console]::OpenStandardOutput()); $o.AutoFlush=$true; [Console]::SetOut($o)`.
+>
+> Rappel : ici tu as fait un **OverPass-the-Hash** (clé aes256 → TGT), pas un **Pass-the-Ticket** (`.kirbi` existant rejoué). Les deux mènent au même `klist`, mais ne confonds pas les deux primitives.
+
 Preuve DA :
 ```cmd
 dir \\dcorp-dc.dollarcorp.moneycorp.local\C$
@@ -114,6 +121,7 @@ Accès OK = **Domain Admin atteint → LO7 validé.**
 > - `iwr` du tool depuis student VM dans le build → `Unable to connect` = FW student VM (même cause). → exfil OUT via userContent, pas download IN.
 > - `mimikatz.exe` / `Rubeus.exe` en natif → `Access denied` / zéro sortie = **Defender local student VM**. → tout en mémoire dans la session PowerShell AMSI-bypassée.
 > - dump téléchargé au navigateur → `acquireLSA ; Handle on memory` = binaire corrompu. → `iwr` + vérif taille.
+> - `Rubeus.exe ptt /ticket:<base64>` en 2e commande après `asktgt /ptt` → `must be a .kirbi or base64` = base64 cassé au copier-coller **et** ptt redondant (le TGT était déjà injecté). → osef, `klist` prouve déjà l'injection.
 
 ## Fiches liées
 

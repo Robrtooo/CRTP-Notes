@@ -1,7 +1,7 @@
 ---
 flag: 5
 machine: Student VM
-statut: à faire
+statut: validé
 ---
 # F05 · Service abusé pour privesc locale
 

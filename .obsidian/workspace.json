@@ -41,12 +41,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
+                "file": "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1. Cheatsheet - Toutes les commandes"
+              "title": "Cheatsheet - BloodHound SharpHound"
+            }
+          },
+          {
+            "id": "782053ec6a216202",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Training/Learning/LO07 - Session DA et escalade.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LO07 - Session DA et escalade"
             }
           },
           {
@@ -111,12 +125,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
+                "file": "05 - Training/flags/F09 - Attribut Group Policy modifié.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1. Cheatsheet - Toutes les commandes"
+              "title": "F09 - Attribut Group Policy modifié"
             }
           },
           {
@@ -146,7 +160,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -209,8 +223,7 @@
               "title": "File Tree"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -355,45 +368,45 @@
       "bases:Créer une nouvelle base": false
     }
   },
-  "active": "c8a145d626432264",
+  "active": "253f9faebc78fda6",
   "lastOpenFiles": [
-    "05 - Training/Learning/LO05 - Privesc locale et Jenkins.md.tmp.981148.76aebb3530ca",
-    "05 - Training/Learning/LO05 - Privesc locale et Jenkins.md.tmp.981148.eba356caada2",
-    "05 - Training/Learning/LO07 - Session DA et escalade.md.tmp.981148.160e6308c3d7",
-    "05 - Training/flags/F10 - Process utilisant svcadmin.md",
-    "05 - Training/flags/F09 - Attribut Group Policy modifié.md",
-    "05 - Training/flags/F08 - User de domaine du service Jenkins.md",
+    "05 - Training/flags/F11 - NTLM de svcadmin.md.tmp.1293326.df882e333268",
+    "05 - Training/flags/F11 - NTLM de svcadmin.md.tmp.1293326.13e26da53564",
+    "05 - Training/flags/F10 - Process utilisant svcadmin.md.tmp.1293326.422870a9137b",
+    "05 - Training/flags/F10 - Process utilisant svcadmin.md.tmp.1293326.4390ca2adfd5",
+    "05 - Training/flags/F08 - User de domaine du service Jenkins.md.tmp.1293326.162e1815cb16",
+    "05 - Training/flags/F08 - User de domaine du service Jenkins.md.tmp.1293326.84035b116943",
+    "05 - Training/flags/F06 - Script hunt admin via PS Remoting.md.tmp.1293326.3552f988b534",
+    "05 - Training/flags/F05 - Service abusé pour privesc locale.md.tmp.1293326.78b08f30f606",
+    "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md.tmp.1293326.4b83d4833b23",
+    "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
+    "05 - Training/Learning/LO07 - Session DA et escalade.md",
+    "05 - Training/Learning/LO06 - Derivative local admin.md",
+    "05 - Training/Learning/LO05 - Privesc locale et Jenkins.md",
     "05 - Training/flags/F07 - User Jenkins console web.md",
+    "05 - Training/Learning/LO07 - Session DA et escalade.md.tmp.1293326.aab0bba44647",
+    "05 - Training/Learning/LO07 - Session DA et escalade.md.tmp.1293326.6a2e1e431cb4",
+    "05 - Training/flags/F06 - Script hunt admin via PS Remoting.md",
+    "05 - Training/flags/F08 - User de domaine du service Jenkins.md",
+    "05 - Training/flags/F09 - Attribut Group Policy modifié.md",
+    "05 - Training/flags/F10 - Process utilisant svcadmin.md",
+    "05 - Training/flags/F11 - NTLM de svcadmin.md",
+    "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md",
+    "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
     "05 - Training/flags/F05 - Service abusé pour privesc locale.md",
     "05 - Training/flags/F04 - Sens du trust dollarcorp - eurocorp.md",
-    "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
+    "05 - Training/flags/F03 - GPO appliquée sur StudentMachines OU.md",
     "01 - Cheatsheets/Cheatsheet - Kerberoasting.md",
     "01 - Cheatsheets/Cheatsheet - Post-exploitation.md",
-    "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
-    "z. Ressources/Slides/Attacking_and_Defending_ActiveDirectory.pdf",
     "00 - Navigation/Tools map.md",
-    "05 - Training/Learning/LO05 - Privesc locale et Jenkins.md",
     "01 - Cheatsheets/Cheatsheet - GPO et OU.md",
-    "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.915916.67f7bd2e6262",
-    "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.679737.7378f3e3aec8",
     "03 - Cours/PowerShell/What is PowerShell.md",
     "03 - Cours/PowerShell/Using tools.md",
     "03 - Cours/Objectives/Flashcards - Attack flow.md",
     "02 - Révision/Synthèse - Active Directory.md",
     "02 - Révision/Synthèse - Attaques AD.md",
     "02 - Révision/Synthèse - Énumération.md",
-    "02 - Révision/Synthèse - Kerberos.md",
-    "02 - Révision/Synthèse - Monitoring et détections.md",
-    "02 - Révision/Synthèse - Trusts et forêts.md",
-    "02 - Révision/Checklist - Méthodologie CRTP.md",
-    "BASE.base",
-    "00 - Navigation/2. Attack flow.md",
     "00 - Navigation/3. Attack map.canvas",
-    "00 - Navigation/Active Directory - MOC.md",
-    "01 - Cheatsheets/Cheatsheet - Privilege escalation.md.tmp.466929.8d4451cfed97",
-    "01 - Cheatsheets/Cheatsheet - Privilege escalation.md.tmp.466929.c7cc24f5d7d4",
-    "01 - Cheatsheets/Cheatsheet - Privilege escalation.md.tmp.466929.e828a2d5cab6",
-    "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.466929.e8a520512a0a",
     "z. Ressources/IMG/Pasted image 20260707160622.png",
     "Sans titre.canvas",
     "03 - Cours/Objectives/Carte d'attaque.canvas",

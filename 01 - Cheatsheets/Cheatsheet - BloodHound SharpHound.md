@@ -60,9 +60,12 @@ Inbound / Outbound Object Control   (Applocked, DevOps, studentx, RDPUsers)
 
 > [!note] Attention à la compatibilité collecteur/UI entre Legacy et CE.
 
-## Visualiser (après la collecte)
+## Visualiser — lancer Neo4j PUIS BloodHound
 
-## NEO4J passwd : cyber
+> [!important] Où lancer Neo4j (EN PREMIER, avant d'ouvrir la GUI ; laisse la fenêtre ouverte = c'est le serveur de base, la fermer coupe la GUI)
+> Sur la **VM student**, chemin **double-niché** (cf bloc ci-dessous). Console web `http://localhost:7474`, Bolt `bolt://localhost:7687`.
+> 1er login `neo4j`/`neo4j` → force le changement. **Mdp de ce pod : `cyber`.**
+
 ```powershell
 # 1. base de données neo4j  (chemin DOUBLE-niché !)
 C:\AD\Tools\neo4j-community-4.4.5-windows\neo4j-community-4.4.5\bin\neo4j.bat console

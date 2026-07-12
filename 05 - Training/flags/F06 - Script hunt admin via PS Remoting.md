@@ -1,7 +1,7 @@
 ---
 flag: 6
 machine: Student VM
-statut: à faire
+statut: validé
 ---
 # F06 · Script hunt admin via PS Remoting
 
