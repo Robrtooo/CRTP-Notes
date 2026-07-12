@@ -20,8 +20,133 @@
               "icon": "lucide-file",
               "title": "Cheatsheet - GPO et OU"
             }
+          },
+          {
+            "id": "2f36f509a56b6aaa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Cheatsheet - Privilege escalation"
+            }
+          },
+          {
+            "id": "253f9faebc78fda6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1. Cheatsheet - Toutes les commandes"
+            }
+          },
+          {
+            "id": "0825aa2db2c8e784",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - Cheatsheets/Cheatsheet - Post-exploitation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Cheatsheet - Post-exploitation"
+            }
+          },
+          {
+            "id": "fd0a260ae7ca7ebd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Cheatsheet - Privilege escalation"
+            }
+          },
+          {
+            "id": "c62ae527e6b584d1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - Cheatsheets/Cheatsheet - Kerberoasting.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Cheatsheet - Kerberoasting"
+            }
+          },
+          {
+            "id": "6307e69861ea0f23",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Training/flags/F10 - Process utilisant svcadmin.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "F10 - Process utilisant svcadmin"
+            }
+          },
+          {
+            "id": "c8a145d626432264",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1. Cheatsheet - Toutes les commandes"
+            }
+          },
+          {
+            "id": "710d37ce7b262b02",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "z. Ressources/Slides/Attacking_and_Defending_ActiveDirectory.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Attacking_and_Defending_ActiveDirectory"
+            }
+          },
+          {
+            "id": "73495aafcfca7290",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - Cheatsheets/Cheatsheet - Post-exploitation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Cheatsheet - Post-exploitation"
+            }
           }
-        ]
+        ],
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -53,7 +178,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "rubeu",
+                "query": "rube",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -84,7 +209,8 @@
               "title": "File Tree"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -229,11 +355,27 @@
       "bases:Créer une nouvelle base": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "c8a145d626432264",
   "lastOpenFiles": [
+    "05 - Training/Learning/LO05 - Privesc locale et Jenkins.md.tmp.981148.76aebb3530ca",
+    "05 - Training/Learning/LO05 - Privesc locale et Jenkins.md.tmp.981148.eba356caada2",
+    "05 - Training/Learning/LO07 - Session DA et escalade.md.tmp.981148.160e6308c3d7",
+    "05 - Training/flags/F10 - Process utilisant svcadmin.md",
+    "05 - Training/flags/F09 - Attribut Group Policy modifié.md",
+    "05 - Training/flags/F08 - User de domaine du service Jenkins.md",
+    "05 - Training/flags/F07 - User Jenkins console web.md",
+    "05 - Training/flags/F05 - Service abusé pour privesc locale.md",
+    "05 - Training/flags/F04 - Sens du trust dollarcorp - eurocorp.md",
+    "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
+    "01 - Cheatsheets/Cheatsheet - Kerberoasting.md",
+    "01 - Cheatsheets/Cheatsheet - Post-exploitation.md",
+    "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
+    "z. Ressources/Slides/Attacking_and_Defending_ActiveDirectory.pdf",
+    "00 - Navigation/Tools map.md",
+    "05 - Training/Learning/LO05 - Privesc locale et Jenkins.md",
+    "01 - Cheatsheets/Cheatsheet - GPO et OU.md",
     "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.915916.67f7bd2e6262",
     "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.679737.7378f3e3aec8",
-    "00 - Navigation/Tools map.md",
     "03 - Cours/PowerShell/What is PowerShell.md",
     "03 - Cours/PowerShell/Using tools.md",
     "03 - Cours/Objectives/Flashcards - Attack flow.md",
@@ -248,26 +390,10 @@
     "00 - Navigation/2. Attack flow.md",
     "00 - Navigation/3. Attack map.canvas",
     "00 - Navigation/Active Directory - MOC.md",
-    "00 - Navigation/Attaques AD - MOC.md",
-    "00 - Navigation/Cheatsheets - MOC.md",
-    "00 - Navigation/Cours - MOC.md",
-    "00 - Navigation/Flashcards - MOC.md",
-    "00 - Navigation/Labs - MOC.md",
-    "00 - Navigation/PowerShell - MOC.md",
-    "05 - Training/flags/Flags - Index.md",
-    "01 - Cheatsheets/Cheatsheet - Évasion et OPSEC.md",
     "01 - Cheatsheets/Cheatsheet - Privilege escalation.md.tmp.466929.8d4451cfed97",
-    "01 - Cheatsheets/Cheatsheet - Quel outil quand.md",
     "01 - Cheatsheets/Cheatsheet - Privilege escalation.md.tmp.466929.c7cc24f5d7d4",
-    "05 - Training/flags/F06 - Script hunt admin via PS Remoting.md",
-    "05 - Training/flags/F05 - Service abusé pour privesc locale.md",
-    "05 - Training/flags/F04 - Sens du trust dollarcorp - eurocorp.md",
     "01 - Cheatsheets/Cheatsheet - Privilege escalation.md.tmp.466929.e828a2d5cab6",
     "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.466929.e8a520512a0a",
-    "01 - Cheatsheets/Cheatsheet - Post-exploitation.md.tmp.355327.035c509a6931",
-    "01 - Cheatsheets/Cheatsheet - Quel outil quand.md.tmp.355327.8de727ff3bae",
-    "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md.tmp.388889.276ed98aa266",
-    "01 - Cheatsheets/Cheatsheet - Lateral movement.md.tmp.388889.db1adcf2eb3e",
     "z. Ressources/IMG/Pasted image 20260707160622.png",
     "Sans titre.canvas",
     "03 - Cours/Objectives/Carte d'attaque.canvas",
