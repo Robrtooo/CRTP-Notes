@@ -22,17 +22,17 @@
 
 ## Table de décision (par objectif)
 
-| Je veux… | Outil | Couche |
-|---|---|---|
-| Énumérer le domaine (users, groupes, ACL, SPN, trusts) | **PowerView** (ou AD module signé si Constrained Language Mode) | AD |
-| Voir les chemins d'attaque AD (qui contrôle quoi, path→DA) | **BloodHound** + SharpHound | AD |
-| Trouver une **privesc locale** (rapide, ciblé services/AD) | **PowerUp** `Invoke-AllChecks` | Hôte |
-| Audit privesc local **exhaustif** (si PowerUp ne trouve rien) | **winPEAS** (verbeux) · **PrivEscCheck** | Hôte |
-| Inventaire host (tokens, .NET, AV, creds sur disque) | **Seatbelt** | Hôte |
-| **Où suis-je déjà admin** (PSRemoting/WMI/sessions) | **Find-PSRemotingLocalAdminAccess** · **Find-WMILocalAdminAccess** · **Invoke-SessionHunter** | Hôte↔AD |
-| **Dumper** creds/hash/tickets (besoin admin/SYSTEM) | **SafetyKatz** / **mimikatz** / Invoke-Mimi | Hôte |
-| Forger / rejouer des tickets Kerberos | **Rubeus** | AD |
-| Surface locale brute (ports, services, apps → Jenkins, SQL) | `Get-CimInstance win32_service` · `Get-NetTCPConnection` · `netstat` | Hôte |
+| Je veux…                                                      | Outil                                                                                         | Couche  |
+| ------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ------- |
+| Énumérer le domaine (users, groupes, ACL, SPN, trusts)        | **PowerView** (ou AD module signé si Constrained Language Mode)                               | AD      |
+| Voir les chemins d'attaque AD (qui contrôle quoi, path→DA)    | **BloodHound** + SharpHound                                                                   | AD      |
+| Trouver une **privesc locale** (rapide, ciblé services/AD)    | **PowerUp** `Invoke-AllChecks`                                                                | Hôte    |
+| Audit privesc local **exhaustif** (si PowerUp ne trouve rien) | **winPEAS** (verbeux) · **PrivEscCheck**                                                      | Hôte    |
+| Inventaire host (tokens, .NET, AV, creds sur disque)          | **Seatbelt**                                                                                  | Hôte    |
+| **Où suis-je déjà admin** (PSRemoting/WMI/sessions)           | **Find-PSRemotingLocalAdminAccess** · **Find-WMILocalAdminAccess** · **Invoke-SessionHunter** | Hôte↔AD |
+| **Dumper** creds/hash/tickets (besoin admin/SYSTEM)           | **SafetyKatz** / **mimikatz** / Invoke-Mimi                                                   | Hôte    |
+| Forger / rejouer des tickets Kerberos                         | **Rubeus**                                                                                    | AD      |
+| Surface locale brute (ports, services, apps → Jenkins, SQL)   | `Get-CimInstance win32_service` · `Get-NetTCPConnection` · `netstat`                          | Hôte    |
 
 ## Règle mentale (3 questions)
 1. **Monter en privilège SUR une machine ?** → outils **HÔTE**. PowerUp d'abord (ciblé/rapide), winPEAS si rien.
