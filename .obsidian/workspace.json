@@ -11,184 +11,13 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - GPO et OU.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Cheatsheet - GPO et OU"
-            }
-          },
-          {
-            "id": "2f36f509a56b6aaa",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cheatsheet - Privilege escalation"
-            }
-          },
-          {
-            "id": "253f9faebc78fda6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05 - Training/flags/F11 - NTLM de svcadmin.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "F11 - NTLM de svcadmin"
-            }
-          },
-          {
-            "id": "bedf1c2b0732b3c9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - Tickets Kerberos.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cheatsheet - Tickets Kerberos"
-            }
-          },
-          {
-            "id": "d76a2b198b9537cf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - Quel outil quand.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cheatsheet - Quel outil quand"
-            }
-          },
-          {
-            "id": "782053ec6a216202",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05 - Training/Learning/LO07 - Session DA et escalade.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "LO07 - Session DA et escalade"
-            }
-          },
-          {
-            "id": "0825aa2db2c8e784",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - Post-exploitation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cheatsheet - Post-exploitation"
-            }
-          },
-          {
-            "id": "fd0a260ae7ca7ebd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cheatsheet - Privilege escalation"
-            }
-          },
-          {
-            "id": "c62ae527e6b584d1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - Kerberoasting.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cheatsheet - Kerberoasting"
-            }
-          },
-          {
-            "id": "6307e69861ea0f23",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05 - Training/flags/F10 - Process utilisant svcadmin.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "F10 - Process utilisant svcadmin"
-            }
-          },
-          {
-            "id": "c8a145d626432264",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05 - Training/flags/F09 - Attribut Group Policy modifié.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "F09 - Attribut Group Policy modifié"
-            }
-          },
-          {
-            "id": "710d37ce7b262b02",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "z. Ressources/Slides/Attacking_and_Defending_ActiveDirectory.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Attacking_and_Defending_ActiveDirectory"
-            }
-          },
-          {
-            "id": "73495aafcfca7290",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - Post-exploitation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Cheatsheet - Post-exploitation"
+              "title": "Nouvel onglet"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -251,7 +80,8 @@
               "title": "File Tree"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -396,15 +226,15 @@
       "bases:Créer une nouvelle base": false
     }
   },
-  "active": "d76a2b198b9537cf",
+  "active": "c0bf750018a97910",
   "lastOpenFiles": [
+    "01 - Cheatsheets/Cheatsheet - Quel outil quand.md",
     "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
     "01 - Cheatsheets/Cheatsheet - Tickets Kerberos.md",
     "02 - Révision/Synthèse - Kerberos.md",
     "01 - Cheatsheets/Cheatsheet - Post-exploitation.md",
     "01 - Cheatsheets/Cheatsheet - Kerberoasting.md",
     "01 - Cheatsheets/Cheatsheet - Privilege escalation.md",
-    "01 - Cheatsheets/Cheatsheet - Quel outil quand.md",
     "05 - Training/Learning/LO08 - DCSync et Golden ticket.md",
     "05 - Training/Learning/LO07 - Session DA et escalade.md",
     "05 - Training/flags/F11 - NTLM de svcadmin.md",
