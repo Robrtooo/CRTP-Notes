@@ -121,6 +121,49 @@ MATCH p=(n)-[:GetChanges|GetChangesAll*1..]->(d:Domain) RETURN p
 MATCH p=shortestPath((u:User {name:"STUDENTX@DOLLARCORP.MONEYCORP.LOCAL"})-[*1..]->(g:Group {name:"DOMAIN ADMINS@DOLLARCORP.MONEYCORP.LOCAL"})) RETURN p
 ```
 
+### Bloc GPO — tout voir (LO06 / F03 / F09)
+
+> [!important] Les GPO edges nécessitent `-c Container` (inclus dans `-c All`)
+> `-c Default` **n'inclut PAS** `GpLink` ni `Contains` → `MATCH ()-[:GpLink]->() RETURN count(*)` = 0 = ré-collecte requise avec `-c All` (ou au minimum `-c Container,GPOLocalGroup,ACL`).
+
+```cypher
+// juste les nodes GPO
+MATCH (g:GPO) RETURN g
+
+// GPOs + leur cible (OU/Domain)
+MATCH p=(g:GPO)-[:GpLink]->(o) RETURN p
+
+// chaîne complète GPO → OU → tous les objets impactés
+MATCH p=(g:GPO)-[:GpLink]->(container)-[:Contains*1..]->(n) RETURN p LIMIT 300
+
+// qui CONTRÔLE une GPO (Inbound Object Control) — modif = RCE sur toutes les machines liées
+MATCH p=(n)-[:GenericAll|GenericWrite|WriteDacl|WriteOwner]->(g:GPO) RETURN p
+
+// GPO ciblant une OU précise (ex StudentMachines → F03)
+MATCH p=(g:GPO)-[:GpLink]->(o:OU) WHERE toUpper(o.name) CONTAINS "STUDENT" RETURN p
+
+// diagnostic collecte
+MATCH (g:GPO) RETURN count(g)                    // nb de GPOs
+MATCH ()-[r:GpLink]->() RETURN count(r)          // nb d'edges GpLink (0 = pas de -c Container)
+```
+
+Panneau **Analysis** pré-baked :
+- `Find GPOs with Interesting Permissions` = équivalent visuel de la req "qui contrôle une GPO".
+
+> [!warning] Le compteur "N GPOs" dans le Node Info ne rend rien au clic
+> Cause fréquente : filtre de node type ou GPOs très à l'écart hors viewport. Options :
+> - **Menu ☰ → Settings → Node Types** : coche `GPO` (peut être décoché par défaut selon version).
+> - Après clic sur le compteur, **Fit to Screen** (icône ⛶ ou `Ctrl+A`) pour recentrer.
+> - Bypass : lance directement le Cypher `MATCH p=(g:GPO)-[:GpLink]->(o)-[:Contains*1..]->(n {name:"<CIBLE>"}) RETURN p`.
+
+### Reset de la vue graphe
+
+Pas de "home button" — la vue **change** avec chaque nouvelle requête, elle ne s'accumule pas.
+- Clear search bar (X) → tape le nom du domain → clic.
+- Ou icône **↻ Refresh** en haut de la sidebar.
+- Ou Cypher fourre-tout : `MATCH (n) RETURN n LIMIT 300`.
+- **Wipe complet DB** (à faire seulement avant ré-upload propre) : `MATCH (n) DETACH DELETE n`.
+
 > [!tip] Noms en MAJUSCULES
 > Dans neo4j les `name` sont en **UPPER@FQDN** (ex `RDPUSERS@DOLLARCORP.MONEYCORP.LOCAL`). Respecte la casse dans le Cypher sinon 0 résultat.
 
