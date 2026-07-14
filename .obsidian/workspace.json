@@ -80,7 +80,8 @@
               "title": "File Tree"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -225,8 +226,25 @@
       "bases:Créer une nouvelle base": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "c0bf750018a97910",
   "lastOpenFiles": [
+    "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
+    "zz. Archives/old-refactor-CRTP-bad-backup/README.md",
+    "z. Ressources/Conventions du vault.md",
+    "05 - Tools/Tools list.md",
+    "04 - Révision/Checklist - Méthodologie CRTP.md",
+    "04 - Révision/Synthèse - Énumération.md",
+    "04 - Révision/Synthèse - Attaques AD.md",
+    "04 - Révision/Synthèse - AD CS.md",
+    "04 - Révision/Synthèse - ACL et GPO.md",
+    "03 - Cours/Enumeration/Énumération AD.md",
+    "03 - Cours/Attack flow.md",
+    "03 - Cours/Enumeration/Enumeration.md",
+    "03 - Cours/Active Directory/Fondamentaux AD.md",
+    "03 - Cours/Active Directory/Flashcards - Kerberos.md",
+    "03 - Cours/Active Directory/Flashcards - Fondamentaux AD.md",
+    "03 - Cours/Active Directory/Flashcards - Attaques AD.md",
+    "03 - Cours/Active Directory/Attaques AD.md",
     "03 - Cours/Objectives/sed8oQaVo",
     "03 - Cours/Enumeration/sed5Wlx3t",
     "04 - Révision/sed4jY56B",
@@ -237,8 +255,6 @@
     "03 - Cours/Offensive .NET/sedRuZxa4",
     "03 - Cours/Active Directory/sedb5awGt",
     "03 - Cours/Enumeration/sedpGhxnf",
-    "04 - Révision/sedaYCL3R",
-    "03 - Cours/Attack flow.md",
     "Index.md",
     "06 - Sliver C2/Cours/Workflow Sliver.md",
     "06 - Sliver C2/Cours/Qu'est-ce que Sliver.md",
@@ -248,22 +264,7 @@
     "06 - Sliver C2/Cheatsheets/Sliver - Toutes les commandes.md",
     "06 - Sliver C2/Cheatsheets/Sliver - Setup et beacons.md",
     "06 - Sliver C2/Cheatsheets/Sliver - Privesc et lateral.md",
-    "06 - Sliver C2/Cheatsheets/Sliver - Kerberos et tickets.md",
-    "06 - Sliver C2/Cheatsheets/Sliver - Exécution et évasion.md",
-    "06 - Sliver C2/Cheatsheets/Sliver - Delegation et RBCD.md",
-    "06 - Sliver C2/Cheatsheets/Sliver - AD CS, SQL et persistance.md",
-    "06 - Sliver C2/Sliver - Index.md",
     "06 - Sliver C2/Sliver - Attack map.canvas",
-    "05 - Tools/Tools list.md",
-    "04 - Révision/Synthèse - Énumération.md",
-    "04 - Révision/Synthèse - Trusts et forêts.md",
-    "04 - Révision/Synthèse - Monitoring et détections.md",
-    "04 - Révision/Synthèse - MSSQL.md",
-    "04 - Révision/Synthèse - Kerberos.md",
-    "04 - Révision/Synthèse - Attaques AD.md",
-    "04 - Révision/Synthèse - Active Directory.md",
-    "04 - Révision/Synthèse - AD CS.md",
-    "04 - Révision/Synthèse - ACL et GPO.md",
     "00 - Navigation/3. Attack map.canvas",
     "z. Ressources/IMG/Pasted image 20260707160622.png",
     "Sans titre.canvas",
