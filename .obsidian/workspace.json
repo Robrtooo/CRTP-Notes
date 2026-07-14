@@ -11,10 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "00 - Navigation/Flashcards - MOC.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nouvel onglet"
+              "title": "Flashcards - MOC"
             }
           }
         ]
@@ -80,8 +84,7 @@
               "title": "File Tree"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -226,8 +229,17 @@
       "bases:Créer une nouvelle base": false
     }
   },
-  "active": "c0bf750018a97910",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "03 - Cours/Active Directory/Fondamentaux AD.md.tmp.11601.4486bf96fe30",
+    "03 - Cours/Offensive .NET/Offensive .NET.md.tmp.11601.0bc075d91a69",
+    "03 - Cours/Active Directory/Fondamentaux AD.md.tmp.11601.524880d008cd",
+    "01 - Cheatsheets/Cheatsheet - Chemins des outils.md.tmp.11601.3d7f60b437e6",
+    "05 - Training/flags/Flags - Index.md.tmp.11601.243ad070a710",
+    "05 - Training/Learning/Journal - Index.md.tmp.11601.e838021650d7",
+    "00 - Navigation/Labs - MOC.md",
+    "00 - Navigation/Flashcards - MOC.md",
+    "00 - Navigation/Cours - MOC.md",
     "01 - Cheatsheets/Cheatsheet - Quel outil quand.md",
     "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
     "01 - Cheatsheets/Cheatsheet - Tickets Kerberos.md",
@@ -250,20 +262,11 @@
     "01 - Cheatsheets/Cheatsheet - AD CS et certificats.md",
     "05 - Training/flags/F04 - Sens du trust dollarcorp - eurocorp.md",
     "05 - Training/flags/F01 - SID membre du groupe Enterprise Admins.md",
-    "02 - Révision/Synthèse - Attaques AD.md",
-    "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md",
-    "00 - Navigation/2. Attack flow.md",
-    "05 - Training/flags/F05 - Service abusé pour privesc locale.md",
     "05 - Training/flags/F11 - NTLM de svcadmin.md.tmp.1293326.df882e333268",
     "05 - Training/flags/F11 - NTLM de svcadmin.md.tmp.1293326.13e26da53564",
     "05 - Training/flags/F10 - Process utilisant svcadmin.md.tmp.1293326.422870a9137b",
     "05 - Training/flags/F10 - Process utilisant svcadmin.md.tmp.1293326.4390ca2adfd5",
     "05 - Training/flags/F08 - User de domaine du service Jenkins.md.tmp.1293326.162e1815cb16",
-    "05 - Training/flags/F08 - User de domaine du service Jenkins.md.tmp.1293326.84035b116943",
-    "05 - Training/flags/F06 - Script hunt admin via PS Remoting.md.tmp.1293326.3552f988b534",
-    "05 - Training/flags/F05 - Service abusé pour privesc locale.md.tmp.1293326.78b08f30f606",
-    "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md.tmp.1293326.4b83d4833b23",
-    "05 - Training/Learning/LO07 - Session DA et escalade.md.tmp.1293326.aab0bba44647",
     "00 - Navigation/3. Attack map.canvas",
     "z. Ressources/IMG/Pasted image 20260707160622.png",
     "Sans titre.canvas",

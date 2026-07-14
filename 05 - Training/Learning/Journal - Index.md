@@ -10,7 +10,7 @@
 
 ```dataview
 TABLE statut AS "Statut"
-FROM "training"
+FROM "05 - Training/Learning"
 WHERE lo
 SORT lo ASC
 ```

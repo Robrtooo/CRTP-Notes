@@ -34,6 +34,9 @@ La détection Defender la plus simple est **basée sur la signature** : elle rec
 - **Obfuscation du code source** — renommer symboles et chaînes avant compilation casse les signatures statiques (ex. Codecepticon, [[Offensiv .NET#^419960]]).
 - **Obfuscation du binaire compilé** — packing/renommage après compilation quand on n'a pas la source (ex. ConfuserEx, [[Offensiv .NET#^oe]]).
 
+> [!note] Boucle de travail typique (AV bypass)
+> On cible ici la détection **par signature** de Windows Defender. DefenderCheck repère la chaîne / séquence d'octets flaggée, puis on itère : obfuscation du code source si on a les sources, obfuscation du binaire compilé sinon — jusqu'à ce que le scan passe.
+
 ## Contourner l'inspection à l'exécution
 
 - **Patch AMSI** — neutralise l'interface qui soumet le code à l'antivirus juste avant exécution.

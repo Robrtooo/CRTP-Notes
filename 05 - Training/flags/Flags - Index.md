@@ -6,7 +6,7 @@
 ## Progression
 ```dataview
 TABLE machine AS "Machine", statut AS "Statut"
-FROM "CTRP-refactor/05 - Training/flags"
+FROM "05 - Training/flags"
 WHERE flag
 SORT flag ASC
 ```

@@ -1,11 +1,20 @@
 # Fondamentaux AD
 
 > [!summary] Objectif
-> Comprendre la structure d'Active Directory du point de vue de l'attaquant : quels sont les objets, où vit le secret, et pourquoi la forêt — et non le domaine — est la vraie frontière de sécurité. Ce cours pose le vocabulaire mobilisé par toutes les cheatsheets. Notes brutes : [[General Notes]], [[Components of AD]]. Révision : [[Flashcards - Fondamentaux AD]].
+> Comprendre la structure d'Active Directory du point de vue de l'attaquant : quels sont les objets, où vit le secret, et pourquoi la forêt — et non le domaine — est la vraie frontière de sécurité. Ce cours pose le vocabulaire mobilisé par toutes les cheatsheets. Révision : [[Flashcards - Fondamentaux AD]].
 
 ## Ce qu'est réellement Active Directory
 
 Un annuaire : une base de données hiérarchique qui centralise l'authentification et l'autorisation d'un réseau Windows. Le principe fondateur : **tout est un objet** (utilisateurs, machines, groupes, GPO, unités d'organisation). Un objet porte des attributs, et surtout une liste de contrôle d'accès (DACL) qui dit *qui a le droit de faire quoi dessus*. Cette dernière propriété est la source de la moitié des attaques modernes : compromettre AD, c'est souvent exploiter une DACL mal configurée, pas une faille logicielle.
+
+> [!NOTE] Définition Microsoft
+> Active Directory enables centralized, secure management of an entire network, which might span a building, a city or multiple locations throughout the world.
+
+En pratique, la sécurité réelle dépend fortement de la maintenance, des durcissements et de l'hygiène d'administration — la centralisation n'est un gain défensif que si l'annuaire est correctement tenu.
+
+![[Pasted image 20260211101806.png]]
+
+*Légende : vue schématique générale d'un environnement Active Directory.*
 
 ## La hiérarchie : OU, domaine, arbre, forêt
 
@@ -16,6 +25,13 @@ Un annuaire : une base de données hiérarchique qui centralise l'authentificati
 
 > [!important] La forêt est la frontière de sécurité, pas le domaine
 > Contrairement à l'intuition, compromettre un domaine ne « contient » pas la brèche. À l'intérieur d'une forêt, les relations de confiance et les privilèges *Enterprise* permettent de rebondir d'un domaine à l'autre. L'objectif final d'un pentest AD n'est donc pas Domain Admin mais **Enterprise Admin** / la compromission de la forêt. C'est aussi pourquoi beaucoup d'outils d'attaque ne fonctionnent que si l'on opère depuis une machine *membre* de la forêt.
+
+![[Pasted image 20260211102326.png]]
+
+*Légende : relation entre forêt, domaines et composants de l'annuaire.*
+
+> [!warning] Point de vigilance
+> Une compromission d'un domaine peut avoir des conséquences sur le reste de la forêt selon les relations de confiance et les privilèges présents. À réviser uniquement dans le cadre du lab.
 
 ## Le contrôleur de domaine et le secret
 

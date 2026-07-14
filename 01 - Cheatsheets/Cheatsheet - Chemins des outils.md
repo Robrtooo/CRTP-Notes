@@ -2,7 +2,7 @@
 
 > [!info] Map outil → chemin (VM student CRTP)
 > Racine `C:\AD\Tools\` = versions **canoniques**. `Sliver\` = arsenal élargi (suite `Sharp*`, coercion, deleg). `Old_Tools\` / `BloodHound-4.0.3_old\` = obsolètes, éviter.
-> Rappel lancement : `.ps1` → `. .\x.ps1` (dot-source) · `.exe` → `.\x.exe`. Cf [[06 - Methode - utiliser un script ps1]].
+> Rappel lancement : `.ps1` → `. .\x.ps1` (dot-source) · `.exe` → `.\x.exe`.
 
 ## Collecte / Recon
 | Outil | Chemin |
