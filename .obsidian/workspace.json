@@ -11,13 +11,60 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "02 - Writeups/flags/F02 - Droits AD de RDPUsers sur ControlxUser.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nouvel onglet"
+              "title": "F02 - Droits AD de RDPUsers sur ControlxUser"
+            }
+          },
+          {
+            "id": "6d9a1586ff5abbf5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02 - Writeups/Learning/Journal - Index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Journal - Index"
+            }
+          },
+          {
+            "id": "94fd0e183d19849f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03 - Cours/Attack flow.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Attack flow"
+            }
+          },
+          {
+            "id": "52040416d9ec445d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - Cheatsheets/Cheatsheet - Delegation attacks.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Cheatsheet - Delegation attacks"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -80,8 +127,7 @@
               "title": "File Tree"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -226,8 +272,17 @@
       "bases:Créer une nouvelle base": false
     }
   },
-  "active": "c0bf750018a97910",
+  "active": "52040416d9ec445d",
   "lastOpenFiles": [
+    "02 - Writeups/flags/F07 - User Jenkins console web.md.tmp.9920.474fba3d4319",
+    "02 - Writeups/flags/F07 - User Jenkins console web.md.tmp.9920.9a319071fbb4",
+    "02 - Writeups/flags/F03 - GPO appliquée sur StudentMachines OU.md.tmp.9920.dcecdad79a91",
+    "03 - Cours/Attack flow.md",
+    "02 - Writeups/Learning/Journal - Index.md",
+    "02 - Writeups/Writeups.md",
+    "01 - Cheatsheets/Cheatsheet - BloodHound SharpHound.md",
+    "02 - Writeups/flags/F02 - Droits AD de RDPUsers sur ControlxUser.md",
+    "02 - Writeups/flags/F01 - SID membre du groupe Enterprise Admins.md",
     "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
     "zz. Archives/old-refactor-CRTP-bad-backup/README.md",
     "z. Ressources/Conventions du vault.md",
@@ -238,7 +293,6 @@
     "04 - Révision/Synthèse - AD CS.md",
     "04 - Révision/Synthèse - ACL et GPO.md",
     "03 - Cours/Enumeration/Énumération AD.md",
-    "03 - Cours/Attack flow.md",
     "03 - Cours/Enumeration/Enumeration.md",
     "03 - Cours/Active Directory/Fondamentaux AD.md",
     "03 - Cours/Active Directory/Flashcards - Kerberos.md",
@@ -253,17 +307,9 @@
     "03 - Cours/Enumeration/sed0IEspO",
     "03 - Cours/Offensive .NET/sedJXZd31",
     "03 - Cours/Offensive .NET/sedRuZxa4",
-    "03 - Cours/Active Directory/sedb5awGt",
-    "03 - Cours/Enumeration/sedpGhxnf",
     "Index.md",
     "06 - Sliver C2/Cours/Workflow Sliver.md",
     "06 - Sliver C2/Cours/Qu'est-ce que Sliver.md",
-    "06 - Sliver C2/Cours/Flashcards - Workflow Sliver.md",
-    "06 - Sliver C2/Cours/Flashcards - Sliver.md",
-    "06 - Sliver C2/Cheatsheets/Sliver - Énumération AD.md",
-    "06 - Sliver C2/Cheatsheets/Sliver - Toutes les commandes.md",
-    "06 - Sliver C2/Cheatsheets/Sliver - Setup et beacons.md",
-    "06 - Sliver C2/Cheatsheets/Sliver - Privesc et lateral.md",
     "06 - Sliver C2/Sliver - Attack map.canvas",
     "00 - Navigation/3. Attack map.canvas",
     "z. Ressources/IMG/Pasted image 20260707160622.png",

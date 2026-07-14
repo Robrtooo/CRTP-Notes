@@ -48,7 +48,7 @@ Get-GPInheritance -Target (Get-ADOrganizationalUnit -Filter 'name -eq "StudentMa
 
 | Élément | Valeur |
 |---------|--------|
-| DisplayName de la GPO liée à `StudentMachines` OU | `<A REMPLIR DEPUIS LAB>` |
+| DisplayName de la GPO liée à `StudentMachines` OU | `Students` |
 | GUID GPO | `<A REMPLIR DEPUIS LAB>` |
 
 ## Pièges et OPSEC

@@ -1,7 +1,7 @@
 ---
 flag: 7
 machine: dcorp-ci
-statut: à faire
+statut: validé
 technique: Jenkins auth (weak creds / signup)
 LO: [[LO05 - Privesc locale et Jenkins]]
 ---
@@ -42,7 +42,7 @@ Depuis la console → tester `http://<dcorp-ci>:8080/script` (Script Console adm
 
 | Element | Valeur |
 |---------|--------|
-| User console web Jenkins | A REMPLIR DEPUIS LAB |
+| User console web Jenkins | `builduser` (mdp = username → auth "sign in as guest" possible aussi) |
 
 ## Pieges et OPSEC
 - Ne pas confondre le user de connexion (F07) et le **service account** qui exécute le job (F08 = `dcorp\...`).
