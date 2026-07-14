@@ -19,5 +19,4 @@ Here's a checklist :
 ## Notes associées
 
 - [[What is PowerShell]]
-- [[PowerShell - MOC]]
 

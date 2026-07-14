@@ -29,4 +29,3 @@
 
 ## Voir aussi
 - [[Énumération AD]]
-- [[Cours - MOC]]

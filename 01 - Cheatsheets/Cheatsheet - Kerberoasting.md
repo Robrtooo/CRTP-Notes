@@ -37,8 +37,8 @@ C:\AD\Tools\john-1.9.0-jumbo-1-win64\run\john.exe --wordlist=C:\AD\Tools\kerbero
 > [!important] Avant John : retirer le port (`:1433`) du SPN dans `hashes.txt`, sinon le hash ne se charge pas.
 > `...MSSQLSvc/dcorp-mgmt.dollarcorp.moneycorp.local:1433*` → `...moneycorp.local*`
 
-## Related
-- [[Cheatsheet - AS-REP Roasting]]
+## Voir aussi
+- [[Cheatsheet - AS-REP Roasting]] — même workflow (find → request → crack) mais sans preauth, aucun compte de domaine requis
 - [[Cheatsheet - Tickets Kerberos]]
 - [[Cheatsheet - MSSQL et PowerUpSQL]]
 - [[Synthèse - Kerberos]]

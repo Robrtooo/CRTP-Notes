@@ -149,7 +149,4 @@ Traiter ces champs comme des indices à confirmer, pas comme des faits définiti
 ### Notes associées
 
 - [[Cheatsheet - Reconnaissance AD]]
-- [[Cheatsheet - LDAP SMB Kerberos]]
 - [[CheetSheet]]
-- [[PowerShell - MOC]]
-- [[Active Directory - MOC]]

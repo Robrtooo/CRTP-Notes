@@ -29,4 +29,3 @@
 
 ## Voir aussi
 - [[Fondamentaux AD]]
-- [[Cours - MOC]]

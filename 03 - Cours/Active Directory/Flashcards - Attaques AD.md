@@ -29,4 +29,3 @@
 
 ## Voir aussi
 - [[Attaques AD]]
-- [[Cours - MOC]]

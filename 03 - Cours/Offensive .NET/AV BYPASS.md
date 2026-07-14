@@ -15,11 +15,11 @@ We will focus on **signature-based detection** by Windows Defender.
 
 ## Source code obfuscation
 
-- **Evade AV with** [[Offensiv .NET#^419960]]
+- **Evade AV with** [[Offensive .NET#^419960]]
 
 ## Compiled binary obfuscation
 
-- Obfuscate compiled binary with [[Offensiv .NET#^oe]]
+- Obfuscate compiled binary with [[Offensive .NET#^oe]]
 
 ## Notes associées
 

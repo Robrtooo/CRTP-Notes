@@ -26,7 +26,5 @@
 
 - [[Énumération AD]]
 - [[CheetSheet]]
-- [[Cheatsheets - MOC]]
 - [[Cheatsheet - Reconnaissance AD]]
-- [[Cheatsheet - LDAP SMB Kerberos]]
 - [[Cheatsheet - BloodHound SharpHound]]

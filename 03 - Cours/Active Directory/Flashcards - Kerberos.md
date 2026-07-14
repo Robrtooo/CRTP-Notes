@@ -35,4 +35,3 @@
 
 ## Voir aussi
 - [[Kerberos]]
-- [[Cours - MOC]]

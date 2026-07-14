@@ -35,4 +35,3 @@
 
 ## Voir aussi
 - [[What is PowerShell]]
-- [[Cours - MOC]]

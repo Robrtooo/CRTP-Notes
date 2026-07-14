@@ -48,5 +48,5 @@ La délégation permet à un service d'agir *au nom* d'un utilisateur vers un au
 - [[Cheatsheet - Tickets Kerberos]]
 - [[Cheatsheet - Kerberoasting]]
 - [[Cheatsheet - AS-REP Roasting]]
-- [[Components of AD]]
+- [[Fondamentaux AD]]
 - [[Synthèse - Kerberos]]

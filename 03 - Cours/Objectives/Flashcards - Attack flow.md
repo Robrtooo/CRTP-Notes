@@ -1,7 +1,7 @@
 # Flashcards - Attack flow
 
 > [!summary] Comment réviser
-> Réponds de tête, puis déplie. Cours : [[2. Attack flow]].
+> Réponds de tête, puis déplie. Cours : [[Attack flow]].
 
 ## Principe
 
@@ -35,6 +35,4 @@
 
 ## Voir aussi
 
-- [[2. Attack flow]]
-- [[Flashcards - MOC]]
-- [[Cours - MOC]]
+- [[Attack flow]]

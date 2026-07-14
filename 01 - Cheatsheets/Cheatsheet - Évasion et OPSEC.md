@@ -65,7 +65,7 @@ Invoke-Obfuscation
 - **Codecepticon** — obfusque le *code source* C#/.NET avant compilation (renomme symboles et chaînes).
 - **ConfuserEx** — obfusque un *binaire* .NET déjà compilé quand on n'a pas la source.
 
-Voir [[Offensiv .NET]] pour le détail obfuscation source vs binaire.
+Voir [[Offensive .NET]] pour le détail obfuscation source vs binaire, et [[Tools list]] pour l'arsenal complet.
 
 ### Kerberos : éviter les downgrades bruyants
 

@@ -71,7 +71,6 @@ Trois faits structurels rendent AD attaquable même sans faille :
 ## Notes associées
 - [[Attaques AD]]
 - [[Enumeration]]
-- [[2. Attack flow]]
+- [[Attack flow]]
 - [[Flashcards - Fondamentaux AD]]
 - [[Synthèse - Active Directory]]
-- [[Active Directory - MOC]]

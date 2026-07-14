@@ -1,7 +1,7 @@
 # Offensive .NET
 
 > [!summary] Objectif
-> Comprendre pourquoi et comment l'offensive bascule de PowerShell vers des outils .NET compilés exécutés en mémoire, et quels obstacles (détection, livraison, journalisation) cette bascule cherche à contourner. Notes brutes : [[1. General Notes]], [[AV BYPASS]]. Catalogue d'outils : [[Offensiv .NET]], [[Tools list]]. Révision : [[Flashcards - Offensive .NET]].
+> Comprendre pourquoi et comment l'offensive bascule de PowerShell vers des outils .NET compilés exécutés en mémoire, et quels obstacles (détection, livraison, journalisation) cette bascule cherche à contourner. Notes brutes : [[1. General Notes]], [[AV BYPASS]]. Catalogue d'outils : [[Tools list]]. Révision : [[Flashcards - Offensive .NET]].
 
 ## Ce qu'est .NET, et son lien avec PowerShell
 
@@ -31,8 +31,8 @@ Le cœur de la méthode : charger un assembly .NET par réflexion (`Assembly.Loa
 La détection Defender la plus simple est **basée sur la signature** : elle reconnaît des chaînes ou des séquences d'octets connues dans le binaire. On la cartographie et on la casse :
 
 - **DefenderCheck / AmsiTrigger** — localisent précisément la chaîne ou les octets qui déclenchent la détection, pour savoir quoi masquer.
-- **Obfuscation du code source** — renommer symboles et chaînes avant compilation casse les signatures statiques (ex. Codecepticon, [[Offensiv .NET#^419960]]).
-- **Obfuscation du binaire compilé** — packing/renommage après compilation quand on n'a pas la source (ex. ConfuserEx, [[Offensiv .NET#^oe]]).
+- **Obfuscation du code source** — renommer symboles et chaînes avant compilation casse les signatures statiques (ex. Codecepticon, [[Tools list#^419960]]).
+- **Obfuscation du binaire compilé** — packing/renommage après compilation quand on n'a pas la source (ex. ConfuserEx, [[Tools list#^oe]]).
 
 > [!note] Boucle de travail typique (AV bypass)
 > On cible ici la détection **par signature** de Windows Defender. DefenderCheck repère la chaîne / séquence d'octets flaggée, puis on itère : obfuscation du code source si on a les sources, obfuscation du binaire compilé sinon — jusqu'à ce que le scan passe.
@@ -49,7 +49,7 @@ PowerShell reste pratique pour l'énumération légère ; dès qu'il s'agit d'ex
 
 ## Notes associées
 - [[What is PowerShell]]
-- [[2. Attack flow]]
+- [[Attack flow]]
 - [[Flashcards - Offensive .NET]]
 - [[Cheatsheet - PowerShell]]
 - [[Cheatsheet - Post-exploitation]]

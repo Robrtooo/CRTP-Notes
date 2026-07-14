@@ -1,7 +1,7 @@
 {
 	"nodes":[
 		{"id":"n1","type":"text","text":"## 1 · Compte de domaine\n\nAssume breach — AD lisible par tout compte.\n\n- [[Cheatsheet - Reconnaissance AD|Énumérer]] largement\n- [[Cheatsheet - Kerberoasting|Kerberoasting]] (compte à SPN)\n- [[Cheatsheet - BloodHound SharpHound|BloodHound]] → chemin vers DA","x":0,"y":220,"width":380,"height":240},
-		{"id":"n_legend","type":"text","text":"### Carte d'attaque interactive\n\nClique un lien pour ouvrir la fiche.\n\n- Cyan : point d'entrée\n- Rouge : objectif (DA / EA)\n- Orange : voie transverse\n\nCours : [[2. Attack flow]]","x":-600,"y":120,"width":341,"height":210},
+		{"id":"n_legend","type":"text","text":"### Carte d'attaque interactive\n\nClique un lien pour ouvrir la fiche.\n\n- Cyan : point d'entrée\n- Rouge : objectif (DA / EA)\n- Orange : voie transverse\n\nCours : [[Attack flow]]","x":-600,"y":120,"width":341,"height":210},
 		{"id":"n4","type":"text","text":"## 4 · Hash / clé AES\n\n- [[Cheatsheet - Lateral movement|OverPass-the-Hash]]\n- Compte de service → [[Cheatsheet - Tickets Kerberos|Silver Ticket]]\n- Compte privilégié → Domain Admin","x":540,"y":975,"width":380,"height":200},
 		{"id":"n3","type":"text","text":"## 3 · Admin local\n\n- [[Cheatsheet - Post-exploitation|Dump des secrets]] (SafetyKatz)\n- Chasse d'une session DA\n- Unconstrained + coercition → [[Cheatsheet - Delegation attacks|TGT du DC]]","x":540,"y":675,"width":380,"height":230},
 		{"id":"n_adcs","type":"text","text":"## Voie AD CS\n\nDomain User → certificat au nom d'un DA → TGT.\n\n[[Cheatsheet - AD CS et certificats|ESC1 / ESC3]]","x":-760,"y":965,"width":380,"height":160,"color":"2"},

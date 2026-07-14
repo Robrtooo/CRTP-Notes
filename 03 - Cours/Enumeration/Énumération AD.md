@@ -20,7 +20,7 @@ Active Directory est conçu pour être *interrogeable* : tout compte authentifi�
 - **Délégations, AD CS, MSSQL** — les voies rapides (unconstrained/constrained/RBCD, templates ESC, instances SQL).
 
 > [!note] La question qui guide l'énumération
-> Ne pas collecter pour collecter. À chaque objet intéressant, se demander : « quel acquis cet élément me donne-t-il, et vers quelle attaque il pointe ? » L'énumération alimente directement [[2. Attack flow]].
+> Ne pas collecter pour collecter. À chaque objet intéressant, se demander : « quel acquis cet élément me donne-t-il, et vers quelle attaque il pointe ? » L'énumération alimente directement [[Attack flow]].
 
 ## Avec quoi (choix selon la furtivité)
 
@@ -35,7 +35,7 @@ Une requête LDAP isolée ressemble à du trafic normal ; une collecte SharpHoun
 
 ## Notes associées
 - [[Fondamentaux AD]]
-- [[2. Attack flow]]
+- [[Attack flow]]
 - [[Flashcards - Énumération]]
 - [[Synthèse - Énumération]]
-- [[Cheatsheet - LDAP SMB Kerberos]]
+- [[Cheatsheet - Reconnaissance AD]]
