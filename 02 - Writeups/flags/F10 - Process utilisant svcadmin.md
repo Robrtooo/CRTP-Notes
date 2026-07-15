@@ -44,11 +44,30 @@ Get-WmiObject -Class Win32_Service -ComputerName <HOTE_CIBLE> `
 | Élément | Valeur |
 |---------|--------|
 | Hôte où `svcadmin` a une session | `dcorp-mgmt` |
-| Process / service utilisant svcadmin | <A REMPLIR DEPUIS LAB> |
+| **Service / process utilisant svcadmin (CRTP)** | **`MSSQLSERVER`** ✅ |
+
+> [!info] Interprétation
+> Le service Windows `MSSQLSERVER` (moteur SQL Server) tourne sous le compte de domaine `dcorp\svcadmin` sur dcorp-mgmt → sa session logon est en LSASS = jackpot dump. Le walkthrough gitbook (dev-angelist) proposait `SQLSERVERAGENT` (SQL Server Agent) — c'est un service **différent** (agent d'ordonnancement de SQL), rejeté par CRTP sur ce pod. Le bon = **`MSSQLSERVER`** (le moteur DB lui-même).
+
+## Commande de validation
+
+Depuis session admin sur dcorp-mgmt (via ciadmin Jenkins ou OPtH svcadmin) :
+```powershell
+Invoke-Command -ComputerName dcorp-mgmt.dollarcorp.moneycorp.local -ScriptBlock {
+  Get-WmiObject Win32_Service | ? { $_.StartName -match "svcadmin" } | select Name, DisplayName, StartName, PathName | fl
+}
+```
+→ bloc `Name : MSSQLSERVER` avec `StartName : dcorp\svcadmin`.
 
 ## Pièges et OPSEC
+
+> [!failure]- Réponses testées avant validation
+> - `SQLSERVERAGENT` (walkthrough gitbook) → **rejeté** (mauvais service — c'est l'Agent, pas le moteur DB)
+> - `MSSQLSERVER` → ✅ **accepté**
+
 - **Remote Registry** doit être atteignable sur la cible (allumé + FW OK) — `Invoke-SessionHunter` tombe silencieusement sinon. `-NoPortScan` évite du bruit.
 - `dcorp-adminsrv` est une piste **séparée** (AppLocker/GPO) — ne pas confondre avec `dcorp-mgmt` où vit la session DA.
+- Ne pas confondre `MSSQLSERVER` (moteur DB, F10) et `SQLSERVERAGENT` (agent d'ordonnancement, service séparé qui peut tourner sous un compte différent).
 - Traces : Event ID **4624** (logon type 3) côté cible ; l'ouverture de `winreg` peut aussi être auditée.
 
 ## Refs
