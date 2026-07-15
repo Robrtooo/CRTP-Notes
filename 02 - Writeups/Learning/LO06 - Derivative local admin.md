@@ -67,7 +67,7 @@ cd C:\AD\Tools
 Get-DomainGPO -Identity "{0D1CC23D-1F20-4EEE-AF64-D99597AE2A6E}" |
   select displayname, gPCMachineExtensionNames, gPCUserExtensionNames, versionNumber, gpcfilesyspath
 ```
-Attribut qui bouge = **`gPCMachineExtensionNames`** (nouveaux CSE GUIDs pour Scheduled Tasks/Preferences). Cf [[F09 - Attribut Group Policy modifié]].
+Diff observé en LDAP : `versionNumber` bumpe (17→18) + `gPCMachineExtensionNames` gagne 2 CSE GUIDs (Scheduled Tasks/Preferences). **MAIS la réponse CRTP F09 = `gPCFileSysPath`** (interprétation : le path SYSVOL pointé voit son contenu modifié par le dépôt de `ScheduledTasks.xml`, même si la string LDAP elle-même est inchangée avec SharpGPOAbuse). Cf [[F09 - Attribut Group Policy modifié]] pour l'interprétation.
 
 ### 6. Forcer gpupdate distant (non-admin OK via WMI)
 ```powershell
@@ -94,7 +94,7 @@ cd C:\AD\Tools
 > - **GPOddity** (walkthrough gitbook `dev-angelist`) → NTLM relay + rogue SMB share + Invoke-WebRequest coerce. Callback jamais reçu sur le nc listener de la student VM → **FW inbound student VM** (même mur qu'en LO07). Fallback → SharpGPOAbuse (aucun inbound).
 > - `SharpGPOAbuse --RemoveComputerTask` lancé DEPUIS la PSSession dcorp-adminsrv → `not recognized`. L'exe n'existe **que** sur la student VM. Faire le cleanup depuis la student VM.
 > - Session PS polluée par un TGT svcadmin (LO07 déjà fait avant) → `klist purge` avant l'énum pour rester en `studentx`.
-> - Attribut discriminant : `versionNumber` bumpe **toujours** — la vraie réponse F09 = **`gPCMachineExtensionNames`** (nouvel CSE GUID = déclencheur re-processing client).
+> - Réponse F09 CRTP **`gPCFileSysPath`** ≠ ce qui bouge littéralement en LDAP (`versionNumber` + `gPCMachineExtensionNames`). CRTP compte "modification" au sens large : le path SYSVOL a son contenu changé (dépôt de `ScheduledTasks.xml`). Tenté et rejeté avant d'y arriver : `gPCMachineExtensionNames`, `versionNumber`.
 
 ## Fiches liées
 

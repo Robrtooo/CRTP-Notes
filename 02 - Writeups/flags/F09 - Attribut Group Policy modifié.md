@@ -1,7 +1,7 @@
 ---
 flag: 9
 machine: Student VM
-statut: à valider
+statut: validé
 technique: GPO abuse (SharpGPOAbuse — Immediate Task)
 LO: [[LO06 - Derivative local admin]]
 ---
@@ -83,24 +83,27 @@ ls C:\Users
 whoami /groups | Select-String "Administrators"
 ```
 
-## Réponse — candidats (à confirmer)
+## Réponse
 
-Trois attributs bougent quand tu lances SharpGPOAbuse. Le nom exact accepté par CRTP dépend de la formulation attendue :
-
-| Rang | Attribut candidat | Rationale |
-|------|-------------------|-----------|
-| 1 | **`versionNumber`** | SharpGPOAbuse annonce explicitement `[+] versionNumber attribute changed successfully`. Marker canonique de re-processing client. Bumpe **toujours** — 17 → 18 dans ce pod. |
-| 2 | `gPCMachineExtensionNames` | Ajout de 2 CSE GUIDs (Scheduled Tasks/Preferences) : `{AADCED64-746C-4633-A97C-D61349046527}` + `{CAB54552-DEEA-4691-817E-ED4A4D1AFC72}`. |
-| 3 | `gpcfilesyspath` | **UNIQUEMENT si GPOddity** (repointe SYSVOL vers rogue SMB share). Ne bouge PAS via SharpGPOAbuse. |
-
-Variantes de casse à essayer si rejet : `versionNumber`, `versionnumber`, `VersionNumber`.
-
-| Élément contexte | Valeur |
+| Élément | Valeur |
 |---------|--------|
+| **Attribut Group Policy modifié (CRTP)** | **`gPCFileSysPath`** |
 | GPO ciblée | `Applocker` (GUID `{0D1CC23D-1F20-4EEE-AF64-D99597AE2A6E}`) |
 | OU touchée | `Applocked` → `dcorp-adminsrv` |
 | Payload SYSTEM | `net localgroup Administrators dcorp\student426 /add` |
-| Version avant/après | 17 → 18 |
+| versionNumber (bonus) | 17 → 18 |
+
+> [!important] Interprétation de la question CRTP
+> `gPCFileSysPath` est l'attribut LDAP qui **pointe vers le chemin SYSVOL** de la GPO (`\\dollarcorp.moneycorp.local\SysVol\...\Policies\{GUID}\`). Deux lectures :
+> - **Voie SharpGPOAbuse (ce qu'on a fait)** : la **string LDAP** `gPCFileSysPath` **ne bouge pas** (le path reste identique), mais **le contenu du dossier** qu'elle pointe **change** (dépôt de `Machine\Preferences\ScheduledTasks\ScheduledTasks.xml`). CRTP compte ça comme "modification" de l'attribut → réponse **`gPCFileSysPath`**.
+> - **Voie GPOddity** : la **valeur** de `gPCFileSysPath` est **réellement repointée** vers un SMB rogue → même réponse.
+>
+> Attribut(s) qui bougent **littéralement en LDAP** avec SharpGPOAbuse : `versionNumber` (17→18) + `gPCMachineExtensionNames` (ajout de 2 CSE GUIDs Scheduled Tasks/Preferences). Mais **ce n'est PAS la réponse CRTP attendue** — retenue = `gPCFileSysPath`.
+
+> [!failure]- Réponses testées avant validation
+> - `gPCMachineExtensionNames` → **rejeté**
+> - `versionNumber` → **rejeté**
+> - `gPCFileSysPath` → ✅ **accepté**
 
 ## Pièges et OPSEC
 
