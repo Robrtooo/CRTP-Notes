@@ -16,6 +16,9 @@ LO: [[LO07 - Session DA et escalade]]
 - **Ce qu'on a** : accès admin local / session à `dcorp-adminsrv` (via GPO abuse ou chaîne parallèle).
 - **Ce qu'on cherche** : le **nom du store** utilisé par Windows pour persister les creds des scheduled tasks — c'est là que Task Scheduler va chercher le mot de passe quand une tâche tourne sous un compte spécifique.
 
+> [!danger] AppLocker CLM sur dcorp-adminsrv (OU Applocked)
+> La PSSession démarre en **ConstrainedLanguage Mode** → `Invoke-Mimi` bloqué (`vault::cred /patch` = méthodes .NET → `MethodInvocationNotSupportedInConstrainedLanguage`). Bypass : dot-source `Invoke-Mimi.ps1` depuis **`C:\Windows\Tasks\`** (whitelisté par AppLocker Default Rules). Les cmdlets natives (`vaultcmd /list`, `cmdkey /list`) marchent en CLM et suffisent pour identifier le store. Doc complète : [[Cheatsheet - Lateral movement]] §"Piège AppLocker → CLM".
+
 ## Solution
 
 ### Étape 1 : lister les tâches planifiées et leurs comptes

@@ -95,6 +95,7 @@ cd C:\AD\Tools
 > - `SharpGPOAbuse --RemoveComputerTask` lancé DEPUIS la PSSession dcorp-adminsrv → `not recognized`. L'exe n'existe **que** sur la student VM. Faire le cleanup depuis la student VM.
 > - Session PS polluée par un TGT svcadmin (LO07 déjà fait avant) → `klist purge` avant l'énum pour rester en `studentx`.
 > - Réponse F09 CRTP **`gPCFileSysPath`** ≠ ce qui bouge littéralement en LDAP (`versionNumber` + `gPCMachineExtensionNames`). CRTP compte "modification" au sens large : le path SYSVOL a son contenu changé (dépôt de `ScheduledTasks.xml`). Tenté et rejeté avant d'y arriver : `gPCMachineExtensionNames`, `versionNumber`.
+> - **Piège hérité de LO6 pour tout le reste sur adminsrv** : OU `Applocked` = **AppLocker enforcé** → PSSession sur dcorp-adminsrv démarre en **ConstrainedLanguage Mode**. `Invoke-Command -FilePath PowerUp.ps1` → `MethodInvocationNotSupportedInConstrainedLanguage`. Bypass : dot-source depuis `C:\Windows\Tasks\` (whitelisté par Default Rules). Doc complète : [[Cheatsheet - Lateral movement]] §"Piège AppLocker → CLM".
 
 ## Fiches liées
 
