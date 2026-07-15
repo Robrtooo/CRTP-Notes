@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - Cheatsheets/Cheatsheet - Post-exploitation.md",
+                "file": "02 - Writeups/flags/F11 - NTLM de svcadmin.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Cheatsheet - Post-exploitation"
+              "title": "F11 - NTLM de svcadmin"
             }
           }
         ],
@@ -110,7 +110,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "dmp",
+                "query": "ntlm",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -141,8 +141,7 @@
               "title": "File Tree"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -289,6 +288,13 @@
   },
   "active": "9be191467619bce0",
   "lastOpenFiles": [
+    "02 - Writeups/flags/F11 - NTLM de svcadmin.md.tmp.95871.f2dcc930e9bc",
+    "02 - Writeups/flags/F10 - Process utilisant svcadmin.md",
+    "02 - Writeups/flags/F09 - Attribut Group Policy modifié.md",
+    "01 - Cheatsheets/Cheatsheet - Lateral movement.md",
+    "02 - Writeups/flags/F20 - Clé registre logon DSRM.md",
+    "02 - Writeups/flags/F17 - NTLM du Domain Admin (Administrator).md",
+    "01 - Cheatsheets/Cheatsheet - Post-exploitation.md",
     "01 - Cheatsheets/Cheatsheet - LAPS.md",
     "01 - Cheatsheets/1. Cheatsheet - Toutes les commandes.md",
     "02 - Writeups/flags/F10 - Process utilisant svcadmin.md.tmp.95871.7a61078bba73",
@@ -318,13 +324,6 @@
     "04 - Révision/Synthèse - AD CS.md",
     "04 - Révision/Synthèse - ACL et GPO.md",
     "03 - Cours/Enumeration/Énumération AD.md",
-    "03 - Cours/Enumeration/Enumeration.md",
-    "03 - Cours/Active Directory/Fondamentaux AD.md",
-    "03 - Cours/Active Directory/Flashcards - Kerberos.md",
-    "03 - Cours/Active Directory/Flashcards - Fondamentaux AD.md",
-    "03 - Cours/Active Directory/Flashcards - Attaques AD.md",
-    "03 - Cours/Active Directory/Attaques AD.md",
-    "Index.md",
     "06 - Sliver C2/Sliver - Attack map.canvas",
     "00 - Navigation/3. Attack map.canvas",
     "z. Ressources/IMG/Pasted image 20260707160622.png",
