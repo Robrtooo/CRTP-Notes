@@ -67,14 +67,17 @@
             "id": "9be191467619bce0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "02 - Writeups/flags/F11 - NTLM de svcadmin.md",
-                "mode": "source",
-                "source": false
+                "file": "06 - Sliver C2/Sliver - Attack map.canvas",
+                "viewState": {
+                  "x": 335.2757075471699,
+                  "y": 1042.6383647798748,
+                  "zoom": -1.1503007982140494
+                }
               },
-              "icon": "lucide-file",
-              "title": "F11 - NTLM de svcadmin"
+              "icon": "lucide-layout-dashboard",
+              "title": "Sliver - Attack map"
             }
           }
         ],
@@ -288,6 +291,9 @@
   },
   "active": "9be191467619bce0",
   "lastOpenFiles": [
+    "Questions.md",
+    "06 - Sliver C2/Sliver - Attack map.canvas",
+    "02 - Writeups/flags/F11 - NTLM de svcadmin.md",
     "02 - Writeups/flags/F11 - NTLM de svcadmin.md.tmp.95871.f2dcc930e9bc",
     "02 - Writeups/flags/F10 - Process utilisant svcadmin.md",
     "02 - Writeups/flags/F09 - Attribut Group Policy modifié.md",
@@ -305,9 +311,7 @@
     "02 - Writeups/Learning/LO06 - Derivative local admin.md.tmp.95871.b91866c19c3b",
     "01 - Cheatsheets/Cheatsheet - Lateral movement.md.tmp.95871.b86d1d7828ca",
     "01 - Cheatsheets/Cheatsheet - Lateral movement.md.tmp.32915.16f12c977e86",
-    "Questions.md",
     "02 - Writeups/Learning/LO06 - Derivative local admin.md.tmp.32915.6aaa98893d84",
-    "02 - Writeups/Learning/LO06 - Derivative local admin.md.tmp.32915.11c4af21c858",
     "01 - Cheatsheets/Cheatsheet - Delegation attacks.md",
     "03 - Cours/Attack flow.md",
     "02 - Writeups/Learning/Journal - Index.md",
@@ -323,8 +327,6 @@
     "04 - Révision/Synthèse - Attaques AD.md",
     "04 - Révision/Synthèse - AD CS.md",
     "04 - Révision/Synthèse - ACL et GPO.md",
-    "03 - Cours/Enumeration/Énumération AD.md",
-    "06 - Sliver C2/Sliver - Attack map.canvas",
     "00 - Navigation/3. Attack map.canvas",
     "z. Ressources/IMG/Pasted image 20260707160622.png",
     "Sans titre.canvas",
