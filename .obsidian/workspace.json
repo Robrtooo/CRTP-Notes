@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "b. PowerShell/What is PowerShell.md",
+                "file": "guide/05 - Lancer PowerShell en bypass.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "What is PowerShell"
+              "title": "05 - Lancer PowerShell en bypass"
             }
           },
           {
@@ -155,8 +155,7 @@
               "title": "File Tree"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -280,6 +279,8 @@
   },
   "active": "038683f1a0503f90",
   "lastOpenFiles": [
+    "guide/00 - Index.md",
+    "b. PowerShell/What is PowerShell.md",
     "Domain Enumeration/CheetSheet.md",
     "Domain Enumeration/Enumeration.md",
     "[Offensiv .NET.md",
@@ -289,7 +290,6 @@
     "c. Offensiv .NET/e. Assume Breach/Sans titre.md",
     "y. Tools/Offensiv .NET.md",
     "c. Offensiv .NET/AV Bypass/AV BYPASS.md",
-    "b. PowerShell/What is PowerShell.md",
     "b. PowerShell/2. Good practices.md",
     "b. PowerShell/ByPassing AV Signature/Using tools.md",
     "a. Active Directory/General Notes.md",
