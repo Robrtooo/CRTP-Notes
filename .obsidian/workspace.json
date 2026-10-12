@@ -90,7 +90,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +110,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Explorateur de fichiers"
@@ -153,7 +155,8 @@
               "title": "File Tree"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -263,11 +266,11 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "canvas:Créer un nouveau canvas": false,
       "bases:Créer une nouvelle base": false,
       "obsidian-importer:Open Importer": false,
       "switcher:Ouvrir le sélecteur rapide": false,
       "graph:Ouvrir la vue graphique": false,
-      "canvas:Créer une nouvelle toile": false,
       "daily-notes:Ouvrir la note quotidienne": false,
       "templates:Insérer le modèle": false,
       "command-palette:Ouvrir la palette de commandes": false,
@@ -275,13 +278,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "754ccd302727f8a4",
+  "active": "038683f1a0503f90",
   "lastOpenFiles": [
+    "Domain Enumeration/CheetSheet.md",
     "Domain Enumeration/Enumeration.md",
     "[Offensiv .NET.md",
     "Sans titre.base",
     "swdw.md",
-    "Domain Enumeration/CheetSheet.md",
     "c. Offensiv .NET/1. General Notes.md",
     "c. Offensiv .NET/e. Assume Breach/Sans titre.md",
     "y. Tools/Offensiv .NET.md",
