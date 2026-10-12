@@ -3,7 +3,7 @@ flag: 8
 machine: dcorp-ci
 statut: validé
 technique: Jenkins RCE (build step / Groovy)
-LO: [[LO05 - Privesc locale et Jenkins]]
+LO: "[[LO05 - Privesc locale et Jenkins]]"
 ---
 
 # F08 - User de domaine du service Jenkins

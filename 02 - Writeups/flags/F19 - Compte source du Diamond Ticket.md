@@ -3,7 +3,7 @@ flag: 19
 machine: dcorp-dc
 statut: à faire
 technique: Diamond Ticket
-LO: [[LO10 - Diamond ticket]]
+LO: "[[LO10 - Diamond ticket]]"
 ---
 
 # F19 · Compte source du Diamond Ticket

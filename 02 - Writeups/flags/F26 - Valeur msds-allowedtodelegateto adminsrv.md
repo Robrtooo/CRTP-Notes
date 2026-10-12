@@ -3,7 +3,7 @@ flag: 26
 machine: dcorp-adminsrv
 statut: à faire
 technique: Constrained delegation (enum)
-LO: [[LO16 - Constrained delegation]]
+LO: "[[LO16 - Constrained delegation]]"
 ---
 
 # F26 - Valeur msds-allowedtodelegateto adminsrv

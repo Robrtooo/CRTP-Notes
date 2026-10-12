@@ -3,7 +3,7 @@ flag: 33
 machine: dcorp-dc
 statut: à faire
 technique: ADCS-ESC1
-LO: [[LO21 - AD CS (ESC1 et ESC3)]]
+LO: "[[LO21 - AD CS (ESC1 et ESC3)]]"
 ---
 
 # F33 · Template ADCS ENROLLEE_SUPPLIES_SUBJECT

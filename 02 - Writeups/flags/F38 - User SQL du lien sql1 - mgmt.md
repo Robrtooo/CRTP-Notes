@@ -3,7 +3,7 @@ flag: 38
 machine: dcorp-mssql
 statut: à faire
 technique: MSSQL link crawl
-LO: [[LO22 - MSSQL links]]
+LO: "[[LO22 - MSSQL links]]"
 ---
 
 # F38 · User SQL du lien sql1 / mgmt

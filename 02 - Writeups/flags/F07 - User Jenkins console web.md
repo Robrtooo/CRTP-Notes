@@ -3,7 +3,7 @@ flag: 7
 machine: dcorp-ci
 statut: validé
 technique: Jenkins auth (weak creds / signup)
-LO: [[LO05 - Privesc locale et Jenkins]]
+LO: "[[LO05 - Privesc locale et Jenkins]]"
 ---
 
 # F07 - User Jenkins console web

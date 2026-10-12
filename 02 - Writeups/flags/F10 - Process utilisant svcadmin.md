@@ -3,7 +3,7 @@ flag: 10
 machine: dcorp-mgmt
 statut: validé
 technique: Session hunting (Remote Registry)
-LO: [[LO07 - Session DA et escalade]]
+LO: "[[LO07 - Session DA et escalade]]"
 ---
 
 # F10 · Process utilisant svcadmin

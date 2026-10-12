@@ -3,7 +3,7 @@ flag: 34
 machine: dcorp-dc
 statut: à faire
 technique: ADCS-ESC3
-LO: [[LO21 - AD CS (ESC1 et ESC3)]]
+LO: "[[LO21 - AD CS (ESC1 et ESC3)]]"
 ---
 
 # F34 · Template ADCS Certificate Request Agent

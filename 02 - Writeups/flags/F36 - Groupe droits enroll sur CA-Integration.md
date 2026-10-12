@@ -3,7 +3,7 @@ flag: 36
 machine: dcorp-dc
 statut: à faire
 technique: ADCS-enroll-rights
-LO: [[LO21 - AD CS (ESC1 et ESC3)]]
+LO: "[[LO21 - AD CS (ESC1 et ESC3)]]"
 ---
 
 # F36 · Groupe droits enroll sur CA-Integration

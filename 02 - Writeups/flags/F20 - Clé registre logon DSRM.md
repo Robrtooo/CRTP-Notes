@@ -3,7 +3,7 @@ flag: 20
 machine: dcorp-dc
 statut: à faire
 technique: DSRM persistence
-LO: [[LO11 - Persistance DSRM]]
+LO: "[[LO11 - Persistance DSRM]]"
 ---
 
 # F20 · Clé registre logon DSRM

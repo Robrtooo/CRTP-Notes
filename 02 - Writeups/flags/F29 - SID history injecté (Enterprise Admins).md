@@ -3,7 +3,7 @@ flag: 29
 machine: Student VM
 statut: à faire
 technique: Golden Ticket inter-realm + SID history
-LO: [[LO18 - Trust key (Enterprise Admin)]]
+LO: "[[LO18 - Trust key (Enterprise Admin)]]"
 ---
 
 # F29 · SID history injecté (Enterprise Admins)

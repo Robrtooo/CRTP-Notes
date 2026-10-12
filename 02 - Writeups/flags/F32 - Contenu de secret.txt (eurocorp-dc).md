@@ -3,7 +3,7 @@ flag: 32
 machine: eurocorp-dc
 statut: à faire
 technique: Cross-forest share access (referral ticket + CIFS)
-LO: [[LO20 - Cross-forest share]]
+LO: "[[LO20 - Cross-forest share]]"
 ---
 
 # F32 · Contenu de secret.txt (eurocorp-dc)

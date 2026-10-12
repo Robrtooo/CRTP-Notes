@@ -3,7 +3,7 @@ flag: 6
 machine: Student VM
 statut: validé
 technique: Hunt derivative admin (PSRemoting)
-LO: [[LO06 - Derivative local admin]]
+LO: "[[LO06 - Derivative local admin]]"
 ---
 
 # F06 - Script hunt admin via PS Remoting

@@ -3,7 +3,7 @@ flag: 39
 machine: dcorp-mssql
 statut: à faire
 technique: MSSQL link crawl (cross-forest)
-LO: [[LO22 - MSSQL links]]
+LO: "[[LO22 - MSSQL links]]"
 ---
 
 # F39 · Privilèges SQL sur eu-sql

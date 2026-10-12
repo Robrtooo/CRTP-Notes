@@ -3,7 +3,7 @@ flag: 35
 machine: dcorp-dc
 statut: à faire
 technique: ADCS-ESC6
-LO: [[LO21 - AD CS (ESC1 et ESC3)]]
+LO: "[[LO21 - AD CS (ESC1 et ESC3)]]"
 ---
 
 # F35 · Attribut CA autorisant les SAN

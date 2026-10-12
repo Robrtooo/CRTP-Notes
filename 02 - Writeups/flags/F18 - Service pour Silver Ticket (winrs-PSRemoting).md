@@ -3,7 +3,7 @@ flag: 18
 machine: dcorp-dc
 statut: à faire
 technique: Silver Ticket
-LO: [[LO09 - Exec sur le DC (HOST et WMI)]]
+LO: "[[LO09 - Exec sur le DC (HOST et WMI)]]"
 ---
 
 # F18 · Service pour Silver Ticket (winrs/PSRemoting)

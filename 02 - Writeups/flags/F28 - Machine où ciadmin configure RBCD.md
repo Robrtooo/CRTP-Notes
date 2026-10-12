@@ -3,7 +3,7 @@ flag: 28
 machine: dcorp-dc
 statut: à faire
 technique: RBCD (write ACL discovery)
-LO: [[LO17 - RBCD]]
+LO: "[[LO17 - RBCD]]"
 ---
 
 # F28 - Machine ou ciadmin configure RBCD

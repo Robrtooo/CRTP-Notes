@@ -3,7 +3,7 @@ flag: 31
 machine: eurocorp-dc
 statut: à faire
 technique: Trust key inter-forêt + referral TGT + asktgs
-LO: [[LO20 - Cross-forest share]]
+LO: "[[LO20 - Cross-forest share]]"
 ---
 
 # F31 · Service TGS demandé sur eurocorp-dc

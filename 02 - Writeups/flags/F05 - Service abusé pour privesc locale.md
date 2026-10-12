@@ -3,7 +3,7 @@ flag: 5
 machine: Student VM
 statut: validé
 technique: Service Windows faible (PowerUp)
-LO: [[LO05 - Privesc locale et Jenkins]]
+LO: "[[LO05 - Privesc locale et Jenkins]]"
 ---
 
 # F05 - Service abusé pour privesc locale

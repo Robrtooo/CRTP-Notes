@@ -2,6 +2,13 @@
 
 Certif CRTP (lab moneycorp.local).
 
+## Progression
+
+![[BASE.base#🚩 Flags — progression]]
+
+> [!tip]- Autres vues du dashboard
+> Ouvre [[BASE.base]] et bascule de vue : reste à faire par machine, objectifs LO01–LO23, LO non couverts, cheatsheets, flashcards.
+
 ## Utile
 - **[[01 - Cheatsheets]]** — commandes par theme
 - **[[02 - Writeups/flags/Flags - Index|Flags F01-F40]]** — chaque flag = writeup complet

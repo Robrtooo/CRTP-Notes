@@ -1,6 +1,6 @@
 ---
 lo: 2
-statut: fait
+statut: validé
 ---
 # LO2 - OUs et GPOs
 

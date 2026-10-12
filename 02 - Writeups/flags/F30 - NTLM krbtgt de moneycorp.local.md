@@ -3,7 +3,7 @@ flag: 30
 machine: mcorp-dc
 statut: à faire
 technique: DCSync (post-EA)
-LO: [[LO19 - krbtgt hash (Enterprise Admin)]]
+LO: "[[LO19 - krbtgt hash (Enterprise Admin)]]"
 ---
 
 # F30 · NTLM krbtgt de moneycorp.local

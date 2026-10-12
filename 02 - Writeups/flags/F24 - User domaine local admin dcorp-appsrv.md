@@ -3,7 +3,7 @@ flag: 24
 machine: dcorp-appsrv
 statut: à faire
 technique: Unconstrained delegation (enum)
-LO: [[LO15 - Unconstrained delegation]]
+LO: "[[LO15 - Unconstrained delegation]]"
 ---
 
 # F24 - User domaine local admin dcorp-appsrv

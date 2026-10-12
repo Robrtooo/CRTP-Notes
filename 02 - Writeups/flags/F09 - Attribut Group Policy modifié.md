@@ -3,7 +3,7 @@ flag: 9
 machine: Student VM
 statut: validé
 technique: GPO abuse (SharpGPOAbuse — Immediate Task)
-LO: [[LO06 - Derivative local admin]]
+LO: "[[LO06 - Derivative local admin]]"
 ---
 
 # F09 · Attribut Group Policy modifié

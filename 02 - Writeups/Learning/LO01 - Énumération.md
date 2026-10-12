@@ -1,6 +1,6 @@
 ---
 lo: 1
-statut: fait
+statut: validé
 ---
 # LO1 - Énumération
 

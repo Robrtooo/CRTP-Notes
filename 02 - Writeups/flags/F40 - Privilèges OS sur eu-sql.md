@@ -3,7 +3,7 @@ flag: 40
 machine: dcorp-mssql
 statut: à faire
 technique: MSSQL xp_cmdshell (cross-forest)
-LO: [[LO22 - MSSQL links]]
+LO: "[[LO22 - MSSQL links]]"
 ---
 
 # F40 · Privilèges OS sur eu-sql

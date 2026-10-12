@@ -3,7 +3,7 @@ flag: 27
 machine: dcorp-adminsrv
 statut: à faire
 technique: Constrained delegation (S4U + altservice)
-LO: [[LO16 - Constrained delegation]]
+LO: "[[LO16 - Constrained delegation]]"
 ---
 
 # F27 - Service alternatif via constrained deleg

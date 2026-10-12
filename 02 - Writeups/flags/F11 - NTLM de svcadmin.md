@@ -3,7 +3,7 @@ flag: 11
 machine: dcorp-mgmt
 statut: validé
 technique: LSASS dump (comsvcs.dll + Invoke-Mimi)
-LO: [[LO07 - Session DA et escalade]]
+LO: "[[LO07 - Session DA et escalade]]"
 ---
 
 # F11 · NTLM de svcadmin

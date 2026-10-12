@@ -3,7 +3,7 @@ flag: 25
 machine: dcorp-appsrv
 statut: à faire
 technique: Unconstrained delegation + Printer Bug
-LO: [[LO15 - Unconstrained delegation]]
+LO: "[[LO15 - Unconstrained delegation]]"
 ---
 
 # F25 - Creds compromis via printer bug

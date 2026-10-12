@@ -1,5 +1,141 @@
+# Dashboard CRTP — flags, objectifs, cheatsheets
+# Filtres volontairement basés sur les propriétés (hasProperty) et non sur les chemins :
+# la base reste valide quelle que soit la racine de vault ouverte (Notes/ ou Obsidian Vault/).
+
+filters:
+  not:
+    - 'file.path.contains("Archives")'
+    - 'file.name.contains("_Template")'
+
+formulas:
+  # Nombre de flags qui pointent vers cet objectif (backlinks portant la propriété "flag")
+  flags_liés: 'file.backlinks.filter(value.asFile().hasProperty("flag")).length'
+  # Idem, restreint aux flags validés
+  flags_validés: 'file.backlinks.filter(value.asFile().hasProperty("flag") && value.asFile().properties.statut == "validé").length'
+  # Pastille de statut
+  état: 'if(statut == "validé", "✅", if(statut == "en cours", "🟡", "⬜"))'
+  # Dernière modification, lisible
+  modifié: 'file.mtime.format("YYYY-MM-DD")'
+
+properties:
+  formula.flags_liés:
+    displayName: "Flags"
+  formula.flags_validés:
+    displayName: "Validés"
+  formula.état:
+    displayName: ""
+  formula.modifié:
+    displayName: "Modifié"
+  file.name:
+    displayName: "Note"
+  statut:
+    displayName: "Statut"
+  machine:
+    displayName: "Machine"
+  technique:
+    displayName: "Technique"
+  lo:
+    displayName: "#"
+  flag:
+    displayName: "#"
+
 views:
+  # ---------------------------------------------------------------- FLAGS
   - type: table
-    name: Tableau
+    name: "🚩 Flags — progression"
+    filters:
+      - 'file.hasProperty("flag")'
+    groupBy:
+      property: statut
+      direction: ASC
+    order:
+      - formula.état
+      - flag
+      - file.name
+      - machine
+      - technique
+      - LO
+    summaries:
+      flag: Filled
+
+  - type: table
+    name: "🎯 Reste à faire (par machine)"
+    filters:
+      and:
+        - 'file.hasProperty("flag")'
+        - 'statut != "validé"'
+    groupBy:
+      property: machine
+      direction: ASC
+    order:
+      - flag
+      - file.name
+      - technique
+      - LO
+      - statut
+    summaries:
+      flag: Filled
+
+  - type: table
+    name: "🖥️ Vue machine (tous statuts)"
+    filters:
+      - 'file.hasProperty("flag")'
+    groupBy:
+      property: machine
+      direction: ASC
+    order:
+      - formula.état
+      - flag
+      - file.name
+      - technique
+      - statut
+
+  # ---------------------------------------------------------- OBJECTIFS LO
+  - type: table
+    name: "📚 Objectifs (LO01–LO23)"
+    filters:
+      - 'file.hasProperty("lo")'
+    order:
+      - formula.état
+      - lo
+      - file.name
+      - statut
+      - formula.flags_validés
+      - formula.flags_liés
+      - formula.modifié
+    summaries:
+      formula.flags_validés: Sum
+      formula.flags_liés: Sum
+
+  - type: table
+    name: "⚠️ LO non couverts"
+    filters:
+      and:
+        - 'file.hasProperty("lo")'
+        - 'statut != "validé"'
+    order:
+      - lo
+      - file.name
+      - statut
+      - formula.flags_liés
+      - formula.modifié
+
+  # -------------------------------------------------------------- RÉVISION
+  - type: table
+    name: "🗂️ Cheatsheets"
+    filters:
+      - 'file.name.contains("Cheatsheet")'
+    order:
+      - file.name
+      - formula.modifié
+      - file.folder
+
   - type: cards
-    name: Vue
+    name: "🃏 Flashcards & révision"
+    filters:
+      or:
+        - 'file.name.contains("Flashcards")'
+        - 'file.folder.contains("Révision")'
+    order:
+      - file.name
+      - formula.modifié

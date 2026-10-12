@@ -3,7 +3,7 @@ flag: 12
 machine: dcorp-adminsrv
 statut: à faire
 technique: Credential Vault / DPAPI (post-exploit)
-LO: [[LO07 - Session DA et escalade]]
+LO: "[[LO07 - Session DA et escalade]]"
 ---
 
 # F12 · Source des creds tâches planifiées
